@@ -7,7 +7,16 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: intro.jpg
-excerpt: "This page contains a list of my all time favorite posts. You may scroll down to hover through my gallery of posts..."
+excerpt: "This page displays some of my favorite posts. You may scroll down to hover through this gallery of posts..."
+
+feature_row2:
+  - image_path: f4.jpg
+    alt: "A Deserving Recap"
+    title: "A Deserving Recap"
+    excerpt: 'An abstract recap of the years 2014 and 2015 in my life.'
+    url: /2015/12/29/a-deserving-recap.html
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
 
 feature_row:
   - image_path: f1.jpg
@@ -26,15 +35,6 @@ feature_row:
     title: "Konark Sun Temple"
     excerpt: "A set of wonderful arts and craftsmanship. The Sun Temple - Konark"
 
-feature_row2:
-  - image_path: f4.jpg
-    alt: "A Deserving Recap"
-    title: "A Deserving Recap"
-    excerpt: 'An abstract recap of the years 2014 and 2015 in my life.'
-    url: /2015/12/29/a-deserving-recap.html
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
-
 feature_row3:
   - image_path: f5.jpg
     alt: "The Open Source Movement"
@@ -48,8 +48,8 @@ feature_row3:
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row %}
-
 {% include feature_row id="feature_row2" type="left" %}
+
+{% include feature_row %}
 
 {% include feature_row id="feature_row3" type="right" %}
