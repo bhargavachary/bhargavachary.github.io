@@ -9,12 +9,12 @@ header:
   overlay_image: intro.jpg
 excerpt: "This page displays some of my favorite posts. You may scroll down to hover through this gallery of posts..."
 
-feature_row2:
-  - image_path: f4.jpg
-    alt: "A Deserving Recap"
-    title: "A Deserving Recap"
-    excerpt: 'An abstract recap of the years 2014 and 2015 in my life.'
-    url: /2015/12/29/a-deserving-recap.html
+feature_row3:
+  - image_path: f5.jpg
+    alt: "The Open Source Movement"
+    title: "The Open Source Movement"
+    excerpt: 'VLC Media Player, Linux, Android... they have influenced our lives. They are all open source softwares. Here, I post about the open source movement, explaining why and how it has grown to become a significant force in today’s computing environment.'
+    url: /2015/10/21/the-open-source-movement.html
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
@@ -28,19 +28,19 @@ feature_row:
     title: "Odissi Dance"
     excerpt: "One of the most beautiful and oldest dance forms of India."
     url: /2015/10/04/odisha-the-land-slighty-unknown.html
-    btn_label: "Learn about Odisha"
+    btn_label: "More About Odisha"
     btn_class: "btn--inverse"
   - image_path: f3.jpg
     alt: "Konark Sun Temple"
     title: "Konark Sun Temple"
     excerpt: "A set of wonderful arts and craftsmanship. The Sun Temple - Konark"
 
-feature_row3:
-  - image_path: f5.jpg
-    alt: "The Open Source Movement"
-    title: "The Open Source Movement"
-    excerpt: 'A post about the open source movement, which has grown to become a significant force in today’s computing environment.'
-    url: /2015/10/21/the-open-source-movement.html
+feature_row2:
+  - image_path: f4.jpg
+    alt: "A Deserving Recap"
+    title: "A Deserving Recap"
+    excerpt: 'TIme keeps flying. Sometimes we need to take a moment, think and review ourselves. So here is an abstract recap of the years 2014 and 2015 in my life.'
+    url: /2015/12/29/a-deserving-recap.html
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
@@ -48,8 +48,8 @@ feature_row3:
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row id="feature_row2" type="left" %}
+{% include feature_row id="feature_row3" type="left" %}
 
 {% include feature_row %}
 
-{% include feature_row id="feature_row3" type="right" %}
+{% include feature_row id="feature_row2" type="right" %}
