@@ -22,18 +22,18 @@ feature_row:
   - image_path: f1.jpg
     alt: "Jagannath Rath Yatra"
     title: "Jagannath Rath Yatra"
-    excerpt: "The greateast festival of Odisha, Shri Jagannath Rath Yatra"
+    excerpt: "The greateast festival of Odisha, Shri Jagannath Rath Yatra."
   - image_path: f2.jpg
-    alt: "Odissi Dance"
+    alt: "The Odissi Dance"
     title: "Odissi Dance"
     excerpt: "One of the most beautiful and oldest dance forms of India."
     url: /2015/10/04/odisha-the-land-slighty-unknown.html
     btn_label: "More About Odisha"
     btn_class: "btn--inverse"
   - image_path: f3.jpg
-    alt: "Konark Sun Temple"
-    title: "Konark Sun Temple"
-    excerpt: "A set of wonderful arts and craftsmanship. The Sun Temple - Konark"
+    alt: "The Konark - Sun Temple"
+    title: "The Konark - Sun Temple"
+    excerpt: "A set of wonderful arts and craftsmanship. The Sun Temple - Konark, Odisha"
 
 feature_row2:
   - image_path: f4.jpg
