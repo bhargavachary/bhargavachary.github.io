@@ -39,7 +39,7 @@ feature_row2:
   - image_path: f4.jpg
     alt: "A Deserving Recap"
     title: "A Deserving Recap"
-    excerpt: 'TIme keeps flying. Sometimes we need to take a moment, think and review ourselves. So here is an abstract recap of the years 2014 and 2015 in my life.'
+    excerpt: 'Time keeps flying. Sometimes we need to take a moment, think and review ourselves. So here is an abstract recap and review of the years 2014 and 2015 in my life.'
     url: /2015/12/29/a-deserving-recap.html
     btn_label: "Read More"
     btn_class: "btn--inverse"
