@@ -11,10 +11,10 @@ excerpt: "This page displays some of my favorite posts. You may scroll down to h
 
 feature_row3:
   - image_path: f5.jpg
-    alt: "The Open Source Movement"
-    title: "The Open Source Movement"
-    excerpt: 'VLC Media Player, Linux, Android... they have influenced our lives. They are all open source softwares. Here, I post about the open source movement, explaining why and how it has grown to become a significant force in today’s computing environment.'
-    url: /2015/10/21/the-open-source-movement.html
+    alt: "The Social Network Outage"
+    title: "The Social Network Outage"
+    excerpt: 'This decade has been heavily domminated by social networks. Our lives have changed significantly! But, are we moving in the right direction? Click on the read more button for a synthesis.'
+    url: 2016/03/01/the-social-network-outage.html
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
