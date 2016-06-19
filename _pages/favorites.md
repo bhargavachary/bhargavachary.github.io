@@ -7,7 +7,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: intro.jpg
-excerpt: "This page displays some of my favorite posts. You may scroll down to hover through this gallery of posts..."
+excerpt: "Here are some of my all time favorite posts..."
 
 feature_row3:
   - image_path: f5.jpg
