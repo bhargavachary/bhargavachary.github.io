@@ -14,7 +14,7 @@ feature_row3:
     alt: "The Social Network Outage"
     title: "The Social Network Outage"
     excerpt: 'This decade has been heavily domminated by social networks. Our lives have changed significantly! But, are we moving in the right direction? Click on the read more button for a synthesis.'
-    url: 2016/03/01/the-social-network-outage.html
+    url: /2016/03/01/the-social-network-outage.html
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
