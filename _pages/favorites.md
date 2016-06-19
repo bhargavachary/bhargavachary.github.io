@@ -20,7 +20,7 @@ feature_row3:
 
 feature_row:
   - image_path: f1.jpg
-    alt: "Jagannath Rath Yatra"
+    alt: "The Jagannath Rath Yatra"
     title: "Jagannath Rath Yatra"
     excerpt: "The greateast festival of Odisha, Shri Jagannath Rath Yatra."
   - image_path: f2.jpg
