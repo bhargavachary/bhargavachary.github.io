@@ -25,7 +25,7 @@ feature_row:
     excerpt: "The greateast festival of Odisha, Shri Jagannath Rath Yatra."
   - image_path: f2.jpg
     alt: "The Odissi Dance"
-    title: "Odissi Dance"
+    title: "The Odissi Dance"
     excerpt: "One of the most beautiful and oldest dance forms of India."
     url: /2015/10/04/odisha-the-land-slighty-unknown.html
     btn_label: "More About Odisha"
