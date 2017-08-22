@@ -58,4 +58,4 @@ A video and some beautiful views:
 
 <img class="img-responsive" src="/images/posts/life/bam-vzm.jpg" alt="" title="A collage of this beautiful trip!">
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/mZbHO3iWc8I"  frameborder="0"> </iframe>
+<iframe width="560" height="315" src="//www.youtube.com/embed/gbDEXENrSI0"  frameborder="0"> </iframe>
