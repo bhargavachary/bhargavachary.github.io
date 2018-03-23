@@ -54,9 +54,6 @@ Trivia:
 4. Baburao joined us in the very last moment for the trip, and he enjoyed a lot with this being a complete surprise package.
 
   
-A couple of videos:
+A video with the highlight moments...
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/aVGttGAZgnY"  frameborder="0"> </iframe>
-
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/gbDEXENrSI0"  frameborder="0"> </iframe>
