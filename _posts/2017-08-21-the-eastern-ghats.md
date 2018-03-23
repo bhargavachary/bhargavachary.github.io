@@ -54,9 +54,7 @@ Trivia:
 4. Baburao joined us in the very last moment for the trip, and he enjoyed a lot with this being a complete surprise package.
 
   
-A collage and a couple of videos:
-
-<img class="img-responsive" src="/images/posts/life/jeerango-khasada.jpg" alt="" title="A collage of this beautiful trip!">
+A couple of videos:
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/aVGttGAZgnY"  frameborder="0"> </iframe>
 
