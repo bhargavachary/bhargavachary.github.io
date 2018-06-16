@@ -6,8 +6,7 @@ layout: compress
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
-	{% include ads_m.html %}
-	{% include ads.html %}
+	
     {% include head.html %}
     {% include head/custom.html %}
   </head>
@@ -16,7 +15,8 @@ layout: compress
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
-
+	{% include ads_m.html %}
+	{% include ads.html %}
     {{ content }}
 
 <br>
@@ -27,6 +27,8 @@ layout: compress
       <footer>
         {% include footer/custom.html %}
         {% include footer.html %}
+	{% include ads_m.html %}
+	{% include ads.html %}
       </footer>
     </div>
 
