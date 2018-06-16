@@ -1,0 +1,2 @@
+{% include ads_m.html %}
+{% include ads.html %}
