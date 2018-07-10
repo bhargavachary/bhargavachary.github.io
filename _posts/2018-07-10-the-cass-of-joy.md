@@ -1,5 +1,5 @@
 ---
-title: "The CASS of Joy - A Doctoral Fellow's perspective"
+title: "The CASS of Joy - A Doctoral Fellow's Perspective"
 categories: 
   - Technology
   - Society
