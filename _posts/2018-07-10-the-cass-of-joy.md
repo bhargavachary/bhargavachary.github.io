@@ -50,7 +50,7 @@ You may anyway click on the <a href="https://www.cse.iitk.ac.in/users/biswap/CAS
 
 And, those who are still looking to start a career in computer systems, a summer school like <a href="https://www.cse.iitk.ac.in/users/biswap/CASS18/cass.html" target="_blank">CASS-2018</a> is a boon, I would highly recommend any systems enthusiast to attend the coming iterations of it. This is a big initiative by the entire <a href="https://www.cse.iitk.ac.in/users/biswap/CASS18/organizers.html" target="_blank">CASS team</a>, I hope it continues further in building this community stronger and larger with increasing motivation and passion every time.
 
-So here I leave you with some collages and pics, that beautifully portray some of the experiences depicted above:
+Finally, here I leave you with some collages and pics, that beautifully portray some of the experiences depicted above. Stay Curious and Take Care!
 
 <img class="img-responsive" src="/images/posts/phd-fun/CASS1.jpg" alt="">
 <img class="img-responsive" src="/images/posts/phd-fun/CASS2.jpg" alt="">
