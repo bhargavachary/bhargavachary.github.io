@@ -65,7 +65,7 @@ author:
   keybase          :
   instagram        : "bhargav_achary"
   lastfm           :
-  linkedin         :
+  linkedin         : "bhargavachary"
   pinterest        :
   soundcloud       : "bhargav-achary"
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -157,7 +157,7 @@ defaults:
 
 # Outputting
 permalink: /:year/:month/:day/:title.html
-paginate: 3 # amount of posts to show
+paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Calcutta # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
