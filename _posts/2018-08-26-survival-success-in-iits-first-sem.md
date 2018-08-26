@@ -1,5 +1,5 @@
 ---
-title: "How to survive and succeed in IITs in the first semester? (for postgraduate students)"
+title: "Survive and Succeed in IITs in the first semester! (for PG students)"
 categories: 
   - Society
   - Motivation
