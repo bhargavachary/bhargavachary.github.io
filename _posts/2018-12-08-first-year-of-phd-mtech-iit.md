@@ -1,5 +1,5 @@
 ---
-title: "My first year of Ph.D. (M.Tech. + Ph.D.) at IITH is almost over!"
+title: "First year of my PhD (MTech+PhD) at IITH is almost over!"
 categories: 
   - Society
   - Motivation
@@ -16,6 +16,7 @@ Hello friends, welcome back to my blog. I know I did promise I would be regular,
 
 This came to my mind that, I should share some of these experiences so that those who aspire to undergo an M.Tech. or a Ph.D. program in India, would get a decent idea of what it is like to.
 So let’s get started!
+
 ----------
 
 Typically, an M.Tech. or a Ph.D. program in India, involves a good amount of coursework credits to be earned in the first year. This can be termed as some sort of a training phase, where a scholar is trained in varieties of subjects, attains skills thorough assignments, presentations, examinations and so on. This usually includes 6-10 courses, sometimes more and sometimes less depending on the university guidelines and the background of the candidate. After the scholar has cleared this training, he/she is expected to perform research in an area based on choice, availability and other factors like project funding.
@@ -28,7 +29,7 @@ So when I joined IIT Hyderabad this year, I was expected to go through something
 
 3.	The third choice was slightly difficult but that eventually turned out to be quite an enjoyable one. This was “Topics in Data Mining”, which essentially revolved around recommender systems, stream mining, opinion mining, big data analytics. Although, these topics were totally new to me, but they had a lot of intuitive ideas, so I loved the exploration. There was a project component as well, in which we formed a team and worked on finding suitable users(answerers) for new questions asked in Question and Answer Forums like Quora, StackOverflow.
 
-My first semester was something of a blazingly fast set of four months. There was a lot of learning, and a lot of drag in some assignments as well. Believe me, some of the assignments make you work like a robot, you neither sense the day not the night, you just keep thriving for it. The semester ended by the 4th week of April, and I did get a moderate GPA. I was disappointed, since I did not feel that my learning and my GPA had a correlation. However, truth I have to admit that, I never studied anything with the perspective of having some scores in exams. I just studied like a free bird, but the system does expect you to perform in the exams. I basically neglected the exams, and the results neglected my learning. Yeah, I do feel that true learning happens when you enjoy like a free bird, but assessments are assessments. You just can’t make an excuse.
+My first semester was something of an amazingly fast set of four months. There was a lot of learning, and a lot of drag in some assignments as well. Believe me, some of the assignments make you work like a robot, you neither sense the day not the night, you just keep thriving for it. The semester ended by the 4th week of April, and I did get a moderate GPA. I was disappointed, since I did not feel that my learning and my GPA had a correlation. However, truth I have to admit that, I never studied anything with the perspective of having some scores in exams. I just studied like a free bird, but the system does expect you to perform in the exams. I basically neglected the exams, and the results neglected my learning. Yeah, I do feel that true learning happens when you enjoy like a free bird, but assessments are assessments. You just can’t make an excuse.
 
 There was a summer break of almost 3 months, and I started reading literature as suggested by my advisor. Almost every week, I used to go through a few research papers and try to summarize them. There was a week long summer school I attended at IITK, which was a great experience, I have posted a detailed blog on it, please follow the link to read.
 
