@@ -19,6 +19,9 @@ This came to my mind that, I should share some of these experiences so that, tho
 So let’s get started!
 
 ----------
+<iframe width="560" height="315" src="//www.youtube.com/embed/KUMIfRrj_DE"  frameborder="0"> </iframe>
+----------
+
 
 Typically, an M.Tech. or a Ph.D. program in India, involves a good amount of coursework credits to be earned in the first year. This can be termed as some sort of a training phase, where a scholar is trained in varieties of subjects, attains skills through assignments, presentations, examinations and so on. This usually includes 6-12 courses, sometimes more and sometimes less depending on the university guidelines and the background of the candidate. After the scholar has cleared this training, he/she is expected to perform research in an area based on choice, availability and other factors like project funding.
 
@@ -32,7 +35,7 @@ So when I joined IIT Hyderabad this year, I was expected to go through something
 
 My first semester was something of a blazingly fast set of four months. There was a lot of learning, and a lot of drag in some assignments as well. Believe me, some of the assignments make you work like a robot, you neither sense the day not the night, you just keep thriving for it. The semester ended by the 4th week of April, and I did get a moderate GPA. I was disappointed, since I did not feel that my learning and my GPA had a correlation. However, truth I have to admit that, I never studied anything with the perspective of having good scores in exams. I just studied like a free bird, but the system does expect you to perform in the exams. I basically neglected the exams, and the results neglected my learning. Yeah, I do feel that true learning happens when you enjoy like a free bird, but assessments are assessments. You just can’t make an excuse.
 
-There was a summer break of almost 3 months, and I started reading literature as suggested by my advisor. Almost every week, I used to go through a few research papers and try to summarize them. There was a week long summer school I attended at IITK, which was a great experience, I have posted a detailed blog on it, please follow the link to read.
+There was a summer break of almost 3 months, and I started reading literature as suggested by my advisor. Almost every week, I used to go through a few research papers and try to summarize them. There was a week long summer school I attended at IITK, which was a great experience, I have posted a detailed blog on it, please follow the [link](http://bhargavachary.in/2018/12/08/first-year-of-phd-mtech-iit.html) to read.
 
 The second semester also had some twists in the course offering. A course named Applied Machine Learning, which I was eagerly waiting to go though from January, was about to start in August. However, due to some reasons the course was available only to the EMDS students, all others were barred from it. In case you don’t know what EMDS is, EMDS stands form Executive M.Tech. in Data Science, and is offered in online mode to working professionals. I would put a detailed post on EMDS program sometime soon. So, I could not officially credit Applied Machine Learning, but thanks to the support of Prof. Vineeth, I could attend the classes online, which still turned out to be a good learning source.
 
