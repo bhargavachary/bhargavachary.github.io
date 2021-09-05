@@ -1,5 +1,5 @@
 ---
-title: "First year of my PhD (MTech+PhD) at IITH is almost over!"
+title: "First year of my PG (MS / MTech / PhD) at IITH is almost over!"
 categories: 
   - Society
   - Motivation
@@ -14,7 +14,7 @@ tags:
 
 Hello friends, welcome back to my blog. I did promise I would be regular, but I could not for the last 4 months and there are reasons for that. I was heavily loaded with the first two semesters of coursework. I went through 7 advanced postgraduate level courses in the last 11 months and it was truly a heavy learning experience. Though there was not much of personal space, but I still enjoyed this upgradation of my skills and exposure in computer science.
 
-This came to my mind that, I should share some of these experiences so that, those who aspire to undergo an M.Tech. or a Ph.D. program, would get a decent idea of what it is like to.
+This came to my mind that, I should share some of these experiences so that, those who aspire to undergo an M.S. or an M.Tech. or a Ph.D. program, would get a decent idea of what it is like to.
 
 So let’s get started!
 
@@ -23,11 +23,11 @@ So let’s get started!
 ----------
 
 
-Typically, an M.Tech. or a Ph.D. program in India, involves a good amount of coursework credits to be earned in the first year. This can be termed as some sort of a training phase, where a scholar is trained in varieties of subjects, attains skills through assignments, presentations, examinations and so on. This usually includes 6-12 courses, sometimes more and sometimes less depending on the university guidelines and the background of the candidate. After the scholar has cleared this training, he/she is expected to perform research in an area based on choice, availability and other factors like project funding.
+Typically, an M.S. / M.Tech. or a Ph.D. program in India, involves a good amount of coursework credits to be earned in the first year. This can be termed as some sort of a training phase, where a scholar is trained in varieties of subjects, attains skills through assignments, presentations, examinations and so on. This usually includes 6-12 courses, sometimes more and sometimes less depending on the university guidelines and the background of the candidate. After the scholar has cleared this training, he/she is expected to perform research in an area based on choice, availability and other factors like project funding.
 
 So when I joined IIT Hyderabad this year, I was expected to go through something of the same sort. In my first semester, as I had joined in January and usually most admissions happen in July, I had a very limited set of choices in the courses. Many courses were having some prerequisites, that was covered in the last semester and I had not done them. I somehow managed to choose three courses, and the experience is as follows:
 
-1.	“Advanced Computer Architecture”, which was my natural choice, since I am primarily motivated to work on architecture and systems aspects in my Ph.D. research. This course started off from where I had left off in my UG and GATE-CS preparation. Some major topics included in the course were, advanced memory technologies (like STT-RAM, PCM, Flash etc.), branch predictors, low voltage computing, approximate computing, heterogeneous processor architectures etc. This course was the most fun to learn course to me because of my natural inclination towards computer systems.
+1.	“Advanced Computer Architecture”, which was my natural choice, since I am primarily motivated to work on architecture and systems aspects in my research. This course started off from where I had left off in my UG and GATE-CS preparation. Some major topics included in the course were, advanced memory technologies (like STT-RAM, PCM, Flash etc.), branch predictors, low voltage computing, approximate computing, heterogeneous processor architectures etc. This course was the most fun to learn course to me because of my natural inclination towards computer systems.
 
 2.	The second one was an easy choice, since I loved computer security and a course was offered named “Computer and Network Security”. This course was a beautiful mixture of several topics like Cryptography, Wi-Fi and 4G Security, Hardware and Memory Security. This course had a good set of hands on assignments on most of the topics and there was one major project. The project was to develop a basic network firewall, with features like access control, protection against common attacks like DoS.
 
