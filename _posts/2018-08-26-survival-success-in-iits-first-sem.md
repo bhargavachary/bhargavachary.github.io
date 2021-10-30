@@ -1,5 +1,5 @@
 ---
-title: "Survive and Succeed in IITs in the 1st sem! (Post-graduates)"
+title: "Survive and Succeed in IITs in the 1st sem! (Graduates)"
 categories: 
   - Society
   - Motivation
