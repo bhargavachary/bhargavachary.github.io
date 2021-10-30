@@ -1,5 +1,5 @@
 ---
-title: "First year of my PG (MS / MTech / PhD) at IITH is almost over!"
+title: "First year of my PG (MS / MTech / PhD) at IIT is almost over!"
 categories: 
   - Society
   - Motivation
