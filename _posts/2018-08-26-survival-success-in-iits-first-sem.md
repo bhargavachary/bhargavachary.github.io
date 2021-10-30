@@ -1,5 +1,5 @@
 ---
-title: "Survive and Succeed in IITs in the first semester! (PG students)"
+title: "Survive and Succeed in IITs in the 1st sem! (PG students)"
 categories: 
   - Society
   - Motivation
