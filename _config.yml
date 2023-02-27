@@ -1,11 +1,11 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "BhargavAchary.in"
+title                    : "BhargavAchary.github.io"
 title_separator          : "-"
 name                     : &name "Bhargav Achary"
 description              : &description "The personal website and blog of Bhargav Achary."
-url                      : http://bhargavachary.in # the base hostname & protocol for your site.
+url                      : http://BhargavAchary.github.io # the base hostname & protocol for your site.
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 gh_repo                  : 
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -26,7 +26,7 @@ yandex_site_verification :
 twitter:
   username               : &twitter "bhargav_achary"
 facebook:
-  username               : &facebook "bhargavachary.in"
+  username               : &facebook "BhargavAchary.github.io"
   app_id                 :
   publisher              :
 og_image                 : "site-logo.png" # Open Graph/Twitter default site image
@@ -37,7 +37,7 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - "https://twitter.com/bhargav_achary"
-    - "https://facebook.com/bhargavachary.in"
+    - "https://facebook.com/BhargavAchary.github.io"
 
 # Analytics 
 # false (default), "google", "google-universal", "custom"
