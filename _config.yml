@@ -5,7 +5,7 @@ title                    : "BhargavAchary.github.io"
 title_separator          : "-"
 name                     : &name "Bhargav Achary"
 description              : &description "The personal website and blog of Bhargav Achary."
-url                      : http://BhargavAchary.github.io # the base hostname & protocol for your site.
+url                      : https://BhargavAchary.in # the base hostname & protocol for your site.
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 gh_repo                  : 
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
