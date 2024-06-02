@@ -1,10 +1,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "BhargavAchary.in"
+title                    : "www.BhargavAchary.in"
 title_separator          : "-"
-name                     : &name "Bhargav Achary"
-description              : &description "The personal website and blog of Bhargav Achary."
+name                     : &name "D K Bhargav Achary"
+description              : &description "The personal website and blog of D K Bhargav Achary."
 url                      : https://BhargavAchary.in # the base hostname & protocol for your site.
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 gh_repo                  : 
