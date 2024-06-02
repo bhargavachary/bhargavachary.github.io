@@ -1,5 +1,5 @@
 ---
-title: "The Unseen Battles: Understanding and Supporting Neurodiversity in India"
+title: "The Unseen Battles: Understanding Neurodiversity in India"
 categories: 
   - Society
   - Awareness
@@ -27,5 +27,3 @@ Let’s recognize that everyone’s struggles are valid and deserve support. By 
 
 **Warm regards,  
 Bhargav Achary**
-
-#Neurodiversity #Inclusion #ADHD #AutismAwareness #Dyslexia #Dyspraxia #TouretteSyndrome #OCD #BipolarDisorder #MentalHealthAwareness #InvisibleDisabilities #SupportAndEmpathy #InclusiveSociety #DisabilityAwarenessIndia #DEI #DiversityAndInclusion #InclusiveWorkplace #HiringForDiversity

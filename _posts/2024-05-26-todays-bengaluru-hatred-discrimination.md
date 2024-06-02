@@ -1,5 +1,5 @@
 ---
-title: "Today's Bengaluru"
+title: "Today's Bengaluru - from C++ to Hatred++ and Discrimination++"
 categories: 
   - Society
   - Culture
@@ -35,5 +35,3 @@ I am reaching out to my professional network to share this story and initiate a 
 
 **Warm regards,  
 Bhargav Achary**
-
-#Inclusion #Diversity #Respect #Bangalore #CommunityBuilding #EndDiscrimination #LanguageEquality #SafeCity #MigrantRights #Tolerance #UnityInDiversity #StopViolence #PeacefulLiving #TogetherWeCan #CivicResponsibility #BangaloreDiaries #TechCommunity #HumanRights #CulturalRespect #BetterBangalore #RoadRageBangalore #BangaloreTraffic #RoadSafety #TrafficIssues #DriveSafe #BangaloreLife #TrafficJams #UrbanCommuting #StressFreeDriving #SafeRoads
