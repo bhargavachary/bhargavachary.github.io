@@ -7,7 +7,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: intro.jpg
-excerpt: "Dive into my all-time favorite posts—each one a journey worth taking.  Explore and discover; you won't be disappointed!"
+excerpt: "Here is an invitation to dive into my all-time favorite posts—each one a journey worth taking. Explore and discover; you won't be disappointed!"
 
 feature_row3:
   - image_path: f5.jpg
