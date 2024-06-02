@@ -1,7 +1,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "www.BhargavAchary.in"
+title                    : "BhargavAchary.in"
 title_separator          : "-"
 name                     : &name "D K Bhargav Achary"
 description              : &description "The personal website and blog of D K Bhargav Achary."
