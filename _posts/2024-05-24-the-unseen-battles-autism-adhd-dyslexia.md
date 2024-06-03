@@ -21,9 +21,12 @@ Mental health is highly disregarded as an issue in India. We often think and kee
 
 Another big issue is the diagnosis and treatment of these challenges. Awareness and access to qualified doctors who can diagnose and treat neurodiverse conditions are limited, especially in countries like India. In a place where physical disabilities often don't get the attention they deserve, the situation for neurological challenges is even worse. The lack of awareness and resources makes it even harder for people dealing with these conditions.
 
-I feel a deep sense of empathy for those dealing with these challenges. I'm not here to blame anyone but to highlight the urgent need for support and understanding. Having faced lots of challenges in my own life, I've learned the importance of empathy. While I can't say I completely understand what you're going through, I want you to know that I'm here for you. I can listen, support, and help in any way you need.
+I feel a deep sense of empathy for those dealing with these challenges. I'm not here to blame anyone but to highlight the urgent need for support and understanding.  
+Having faced lots of challenges in my own life, I've learned the importance of empathy. While I can't say I completely understand what you're going through, I want you to know that I'm here for you.  
+I can listen, support, and help in any way you need.
 
-Let’s recognize that everyone’s struggles are valid and deserve support. By fostering a more inclusive and empathetic society, we can make sure that people with neurodiverse conditions get the understanding and accommodations they need to succeed. Together we can build a world where all forms of diversity are acknowledged, respected, and supported.
+Let’s recognize that everyone’s struggles are valid and deserve support. By fostering a more inclusive and empathetic society, we can make sure that people with neurodiverse conditions get the understanding and accommodations they need to succeed.  
+Together we can build a world where all forms of diversity are acknowledged, respected, and supported.
 
 **Warm regards,  
 Bhargav Achary**
