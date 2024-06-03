@@ -27,11 +27,11 @@ As a migrant myself who has embraced Bangalore and its culture and has been tryi
 
 #### A Call for Change
 
-I am reaching out to my professional network to share this story and initiate a conversation about how we can collectively address this issue. It's imperative that we:
+I am reaching out to my personal and professional network to share this story and initiate a conversation about how we can collectively address this issue. It's imperative that we:
 
 - **Promote Awareness:** Educate locals about the contributions of the migrant community to the city's growth and prosperity.
 - **Encourage Dialogue:** Create platforms where locals and migrants can interact and understand each other's perspectives.
 - **Advocate for Policy Changes:** Work with local authorities to implement policies that protect all residents from discrimination and violence.
 
-**Warm regards,  
+**Thank you,  
 Bhargav Achary**
