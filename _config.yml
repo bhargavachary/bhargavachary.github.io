@@ -3,14 +3,14 @@
 locale                   : "en-US"
 title                    : "BhargavAchary.in"
 title_separator          : "-"
-name                     : &name "D K Bhargav Achary"
+name                     : &name "Bhargav Achary"
 description              : &description "The personal website and blog of D K Bhargav Achary."
 url                      : https://BhargavAchary.in # the base hostname & protocol for your site.
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 gh_repo                  : 
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 160
+words_per_minute         : 150
 comments:
   provider               : "disqus"
   disqus:
@@ -156,7 +156,7 @@ defaults:
 
 # Outputting
 permalink: /:year/:month/:day/:title.html
-paginate: 5 # amount of posts to show
+paginate: 3 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Calcutta # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 

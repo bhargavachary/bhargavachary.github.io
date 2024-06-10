@@ -1,5 +1,5 @@
 ---
-title: "Today's Bengaluru - from C++ to Hatred++ and Discrimination++"
+title: "Bengaluru - from C++ to Discrimination++"
 categories: 
   - Society
   - Culture
