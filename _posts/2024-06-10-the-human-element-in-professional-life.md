@@ -12,7 +12,9 @@ tags:
   - career
 ---
 
-Greetings, dear reader! In the vast expanse of our professional lives, we find ourselves as travelers on an ever-evolving journey. This journey is marked by significant arrivals, poignant departures, invaluable learnings, and profound growth. Each phase, encounter, and experience weaves together to create a rich tapestry reflecting not only our career paths but also our human essence.
+Greetings, dear reader!
+
+In the vast expanse of our professional lives, we find ourselves as travelers on an ever-evolving journey. This journey is marked by significant arrivals, poignant departures, invaluable learnings, and profound growth. Each phase, encounter, and experience weaves together to create a rich tapestry reflecting not only our career paths but also our human essence.
 
 #### 1. Arrivals: The Dawn of New Beginnings
 
