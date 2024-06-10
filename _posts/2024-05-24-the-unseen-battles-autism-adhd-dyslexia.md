@@ -1,5 +1,5 @@
 ---
-title: "The Unseen Battles: Understanding Neurodiversity in India"
+title: "Unseen Battles: Embracing Neurodiversity in India"
 categories: 
   - Society
   - Awareness
