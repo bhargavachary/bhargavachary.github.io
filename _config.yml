@@ -156,7 +156,7 @@ defaults:
 
 # Outputting
 permalink: /:year/:month/:day/:title.html
-paginate: 4 # amount of posts to show
+paginate: 3 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Calcutta # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
