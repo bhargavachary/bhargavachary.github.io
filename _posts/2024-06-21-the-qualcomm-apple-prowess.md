@@ -1,24 +1,20 @@
-# Snapdragon X Elite vs. Apple M3: The Ultimate Computing Prowess
-
 ---
-
-## Categories:
-- Technology
-- Innovation
-- Computing
-
-## Tags:
-- SnapdragonXElite
-- AppleMSeries
-- CPUPerformance
-- GPUPerformance
-- Efficiency
-- UserExperience
-- AICapabilities
-- Qualcomm
-- Apple
-- TechComparison
-
+title: "Snapdragon X Elite vs. Apple M3: The Ultimate Computing Prowess"
+categories: 
+  - Technology
+  - Innovation
+  - Computing
+tags:
+  - SnapdragonXElite
+  - AppleMSeries
+  - CPUPerformance
+  - GPUPerformance
+  - Efficiency
+  - UserExperience
+  - AICapabilities
+  - Qualcomm
+  - Apple
+  - TechComparison
 ---
 
 Hello my dear reader, I welcome you to another tech analysis blog. Let's get started on this interesting article on Apple vs Who? The battle between chip giants Qualcomm and Apple continues to captivate tech enthusiasts and professionals alike. At the much-anticipated showdown of 2024, two titans have emerged: the Snapdragon X Elite and Apple’s M Series. In this article, I dive into an in-depth analysis of these powerful contenders, exploring their performance, efficiency, user experience, and AI capabilities. The stakes are higher than ever, as these chips aim to redefine what’s possible in personal computing.
@@ -128,6 +124,8 @@ Bhargav
 - Market Implications of Snapdragon X Elite: TechRadar
 - Snapdragon X Elite Execution: NotebookCheck
 - NVIDIA and ARM Impact: TechRadar
+
+(Note: I will try to include specific articles in future)
 
 ---
 
