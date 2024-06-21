@@ -92,7 +92,7 @@ Apple has always emphasised the importance of privacy, and Qualcomm must match t
 
 ## The NVIDIA and ARM Angle
 
-No discussion of the future of high-performance computing would be complete without mentioning NVIDIA and ARM. NVIDIA's GPUs are already leading the industry in AI and deep learning applications, and their acquisition of ARM could potentially revolutionise the computing landscape even further. ARM's architecture is at the core of many modern processors, including Apple's M Series and Qualcomm's Snapdragon. This synergy could lead to even more powerful and efficient chips in the future, further intensifying the competition.
+No discussion of the future of high-performance computing would be complete without mentioning NVIDIA and ARM. NVIDIA's GPUs are already leading the industry in AI and deep learning applications, and their adoption of ARM architecture could potentially revolutionise the computing landscape even further. ARM's architecture is at the core of many modern processors, including Apple's M Series and Qualcomm's Snapdragon. This synergy could lead to even more powerful and efficient chips in the future, further intensifying the competition.
 
 NVIDIA's investment in AI and high-performance computing, combined with ARM's widespread adoption in mobile and embedded systems, positions them uniquely in this landscape. Their ability to influence both the hardware and software aspects of computing could usher in a new era of innovation, impacting everything from cloud computing to autonomous vehicles. As someone deeply involved in computer architecture and deep learning research, I am particularly excited to see how these developments unfold and influence the competitive dynamics between Qualcomm, Apple, and other industry players.
 
