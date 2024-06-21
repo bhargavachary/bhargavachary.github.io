@@ -20,7 +20,7 @@ tags:
 Hello my dear reader, I welcome you to another tech analysis blog.
 Let's get started on this interesting article on Apple vs Who? The battle between chip giants Qualcomm and Apple continues to captivate tech enthusiasts and professionals alike. At the much-anticipated showdown of 2024, two titans have emerged: the Snapdragon X Elite and Apple’s M Series. In this article, I deep dive into an in-depth analysis of these powerful contenders, exploring their performance, efficiency, user experience, and AI capabilities. The stakes are higher than ever, as these chips aim to redefine what’s possible in personal computing.
 
-Drawing from my extensive academic background in deep learning, computer architecture research, and hands-on experience with performance analysis for semiconductor giants, I bring you a detailed article that goes beyond surface-level comparisons. My intention is to offer insights, that only a seasoned professional, who is deeply embedded in the tech landscape can provide.
+Drawing from my extensive academic background in deep learning, computer architecture research, and hands-on experience with performance analysis for semiconductor giants, I bring you a detailed article that goes beyond surface-level comparisons. My intention is to offer insights, that only a seasoned professional, who is deeply embedded in the tech landscape can provide. In this article, we will discuss Snapdragon X Elite with Apple M3, and not the latest M4, as most comparison articles are on M3, since M4 is yet to make its way to MacBooks.
 
 ## Performance
 
