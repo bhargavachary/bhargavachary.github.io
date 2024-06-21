@@ -1,5 +1,5 @@
 ---
-title: "Snapdragon X Elite vs. Apple M Series: The Ultimate Computing Prowess"
+title: "Snapdragon X Elite vs. Apple M3: The Ultimate Computing Prowess"
 categories: 
   - Technology
   - Innovation
