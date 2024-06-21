@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Snapdragon X Elite vs. Apple M Series: The Ultimate Computing Prowess"
 categories: 
@@ -129,4 +128,3 @@ Bhargav
 12. Market Implications of Snapdragon X Elite: [TechRadar](https://www.techradar.com/reviews/apple-m3-chip)
 13. Snapdragon X Elite Execution: [NotebookCheck](https://www.notebookcheck.net/Snapdragon-X-Elite-GPU-Performance)
 14. NVIDIA and ARM Impact: [TechRadar](https://www.techradar.com/reviews/apple-m3-chip)
-```
