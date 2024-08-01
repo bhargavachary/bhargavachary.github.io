@@ -45,7 +45,7 @@ The specific update from CrowdStrike had a misconfiguration in the Falcon sensor
 
 *Can one quirky update quack the quality of countless computing queries? Apparently, yes!*
 
-### Image: Diagram of Faulty Update Process
+### Image: A Faulty Update Process
 <img class="img-responsive" src="/images/posts/microsoft/outage1.png" alt="">
 
 ## Affected Services and Regions
@@ -54,7 +54,7 @@ The impact of this digital disaster was vast:
 - **Services Impacted**: Microsoft 365, Microsoft Teams, PowerBI, Azure services, Bing API, and services relying on these platforms, such as DuckDuckGo and ChatGPT. The widespread nature of the impact showed the critical role Microsoft services play in both business and personal computing.
 - **Regions Affected**: The outage had a global reach, significantly impacting regions including EMEA (Europe, Middle East, Africa), Asia, and North America. Specific impacts were reported in the UK, South Africa, India, and the United States. This global footprint underscores the extensive reliance on Microsoft’s infrastructure.
 
-### Image: Global Impact Map
+### Image: Representative Global Impact Map
 <img class="img-responsive" src="/images/posts/microsoft/outage2.jpg" alt="">
 
 ## Business and Operational Impact
@@ -70,7 +70,7 @@ The outage had severe repercussions across various sectors:
 
 Microsoft and CrowdStrike worked intensively to resolve the issue. Microsoft redirected network traffic to mitigate the impact while CrowdStrike issued fixes for the faulty update. Despite these efforts, the recovery process was slow due to the necessity of manual interventions on affected endpoints. The meticulous and coordinated efforts to restore services showcased the complexity of modern IT infrastructures.
 
-### Image: Recovery and Mitigation
+### Image: Recovery and Mitigation at Endpoints
 <img class="img-responsive" src="/images/posts/microsoft/outage3.png" alt="">
 
 ## The Legacy of Microsoft's Update Policies
@@ -92,8 +92,8 @@ To mitigate the impact of such incidents, implementing robust isolation mechanis
 - **Feature Flags**: Using feature flags allows organizations to enable or disable features dynamically. This can be particularly useful during updates, as it allows new features to be rolled out gradually and rolled back quickly if issues arise. Feature flags can help isolate the impact of new updates and minimize disruptions.
 - **Canary Deployments**: Canary deployments involve rolling out updates to a small subset of users before a full deployment. This approach allows organizations to monitor the impact of the update on a limited scale and catch potential issues early. If problems are detected, the update can be halted or rolled back before it affects the entire user base.
 
-### Image: Isolation Mechanisms Diagram
-<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage4.png" alt="">
+### Image: An Example Isolation Mechanism Diagram
+<img class="img-responsive" src="/images/posts/microsoft/outage4.png" alt="">
 
 ### Why Weren't These Mechanisms in Place?
 
@@ -155,8 +155,8 @@ function rollback(update, server) {
 }
 ```
 
-### Image: Canary Deployment
-<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage5.png" alt="">
+### Image: Example of Canary Deployment
+<img class="img-responsive" src="/images/posts/microsoft/outage5.png" alt="">
 
 ## What Should Microsoft Do in the Future?
 
