@@ -212,7 +212,7 @@ Bhargav
 
 5. **Prepare for a Cloud Outage**
    - Offers a guide on best practices for surviving cloud outages, emphasizing steps businesses can take to improve resilience and ensure continuity.
-   - [Prepare for a Cloud Outage](https://www.techtarget.com/searchcloudcomputing/photostory/252469890/6-steps-to-survive-a-cloud-outage)
+   - [Prepare for a Cloud Outage]. (https://www.techtarget.com/searchcloudcomputing/photostory/252469890/6-steps-to-survive-a-cloud-outage/1/Prepare-for-a-cloud-outage).
 
 6. **Medium: Feature Flags in Software Development**
    - Explains how feature flags can be used to manage software updates effectively, reducing the risk of system failures.
