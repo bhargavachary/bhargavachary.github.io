@@ -46,7 +46,7 @@ The specific update from CrowdStrike had a misconfiguration in the Falcon sensor
 *Can one quirky update quack the quality of countless computing queries? Apparently, yes!*
 
 ### Image: Diagram of Faulty Update Process
-![Faulty Update Process](images/microsoft_outage1.png)
+![Faulty Update Process](/images/posts/life/lonely-boy.jpg)
 *Figure 1: A flowchart illustrating how the faulty update from CrowdStrike's Falcon sensor software led to system crashes.*
 
 ## Affected Services and Regions
