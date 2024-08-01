@@ -46,7 +46,7 @@ The specific update from CrowdStrike had a misconfiguration in the Falcon sensor
 *Can one quirky update quack the quality of countless computing queries? Apparently, yes!*
 
 ### Image: Diagram of Faulty Update Process
-![Faulty Update Process](images/posts/microsoft-outage/microsoft-outage1.png)
+![Faulty Update Process](<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage1.png" alt="">)
 *Figure 1: A flowchart illustrating how the faulty update from CrowdStrike's Falcon sensor software led to system crashes.*
 
 ## Affected Services and Regions
@@ -56,7 +56,7 @@ The impact of this digital disaster was vast:
 - **Regions Affected**: The outage had a global reach, significantly impacting regions including EMEA (Europe, Middle East, Africa), Asia, and North America. Specific impacts were reported in the UK, South Africa, India, and the United States. This global footprint underscores the extensive reliance on Microsoft’s infrastructure.
 
 ### Image: Global Impact Map
-![Global Impact Map](images/posts/microsoft-outage/microsoft-outage2.jpg)
+![Global Impact Map](<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage2.jpg" alt="">)
 *Figure 2: A representative world map highlighting the global services outage.*
 
 ## Business and Operational Impact
@@ -73,7 +73,7 @@ The outage had severe repercussions across various sectors:
 Microsoft and CrowdStrike worked intensively to resolve the issue. Microsoft redirected network traffic to mitigate the impact while CrowdStrike issued fixes for the faulty update. Despite these efforts, the recovery process was slow due to the necessity of manual interventions on affected endpoints. The meticulous and coordinated efforts to restore services showcased the complexity of modern IT infrastructures.
 
 ### Image: Recovery and Mitigation
-![Recovery Process Flowchart](images/posts/microsoft-outage/microsoft-outage3.png)
+![Recovery Process Flowchart](<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage3.png" alt="">)
 *Figure 3: A representative image detailing the recovery and mitigation dimensions.*
 
 ## The Legacy of Microsoft's Update Policies
@@ -96,7 +96,7 @@ To mitigate the impact of such incidents, implementing robust isolation mechanis
 - **Canary Deployments**: Canary deployments involve rolling out updates to a small subset of users before a full deployment. This approach allows organizations to monitor the impact of the update on a limited scale and catch potential issues early. If problems are detected, the update can be halted or rolled back before it affects the entire user base.
 
 ### Image: Isolation Mechanisms Diagram
-![Isolation Mechanisms Diagram](images/posts/microsoft-outage/microsoft-outage4.png)
+![Isolation Mechanisms Diagram](<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage4.png" alt="">)
 *Figure 4: Diagram illustrating one isolation mechanism to avoid global outage.*
 
 ### Why Weren't These Mechanisms in Place?
@@ -160,7 +160,7 @@ function rollback(update, server) {
 ```
 
 ### Image: Canary Deployment
-![Canary Deployment Flowchart](images/posts/microsoft-outage/microsoft-outage5.png)
+![Canary Deployment Flowchart](<img class="img-responsive" src="/images/posts/microsoft-outage/microsoft-outage5.png" alt="">)
 *Figure 5: A flow diagram illustrating the process of canary deployments and rollback mechanisms.*
 
 ## What Should Microsoft Do in the Future?
