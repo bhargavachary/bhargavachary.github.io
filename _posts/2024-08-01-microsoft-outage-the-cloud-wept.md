@@ -25,9 +25,7 @@ tags:
   - IsolationMechanisms
 ---
 
-Hello, my dear readers!
-
-Namaste! Buckle up because today we’re diving into an epic saga that’s straight out of a Bollywood thriller! Microsoft’s latest adventure in the cloud made headlines for all the wrong reasons. Grab your chai and samosas because this one's a blockbuster!
+Hello, my dear readers! Namaste! Buckle up because today we’re diving into an epic saga that’s straight out of a Bollywood thriller! Microsoft’s latest adventure in the cloud made headlines for all the wrong reasons. Grab your chai and samosas because this one's a blockbuster!
 
 ## The Incident
 
