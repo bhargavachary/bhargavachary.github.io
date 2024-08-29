@@ -99,7 +99,7 @@ Homeschooling demands a significant amount of time and effort, which may require
 
 One of the strengths of homeschooling is the flexibility to incorporate various resources into Divisha's education. We don't need to be experts in every subject; we can leverage resources such as online learning tools, educational toys, and community activities to ensure she receives a well-rounded early education.
 
-## Exploring Hybrid Modes of Schooling: The Role of TALC like organizations
+## Exploring Hybrid Modes of Schooling: Role of TALC like organizations
 
 During a casual conversation with a former colleague from AMD, I learned about TALC (The Alternative Learning Community). TALC emphasizes choice-based learning and offers a hybrid model of education that blends the best elements of traditional schooling with the flexibility of homeschooling. As Divisha grows, we might consider a hybrid approach, where she could attend a learning center like TALC a few days a week for group activities and specialized classes, while the rest of the week is spent learning at home.
 
