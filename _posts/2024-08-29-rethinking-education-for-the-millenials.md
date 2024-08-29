@@ -156,5 +156,5 @@ As I continue this homeschooling journey, I find myself increasingly convinced o
 After all, education is not just about acquiring knowledge; it is about nurturing the whole person, fostering creativity, and preparing our children to navigate the complexities of life with confidence and curiosity.
 
 
-Warm regards,
-Bhargav Achary
+Regards,
+Bhargav
