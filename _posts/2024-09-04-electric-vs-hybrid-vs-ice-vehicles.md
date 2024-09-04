@@ -9,6 +9,8 @@ In today’s rapidly evolving automotive landscape, electric vehicles (EVs) have
 
 At the same time, we must consider the stringent policies that are pushing traditional ICE vehicles off the roads, raising new concerns for consumers and industries alike. Amidst this ongoing debate, hybrids—particularly those developed by leaders like Toyota—emerge as a practical and balanced solution that merits serious consideration.
 
+<img class="img-responsive" src="/images/posts/cars/charging-cars.jpg" alt="">
+
 ## The Unseen Environmental Impact of Electric Vehicles
 
 Let’s start by examining the environmental impact of EVs, which are often marketed as the greenest option available. The primary advantage of EVs is clear: they produce no tailpipe emissions, which means they do not directly contribute to air pollution or greenhouse gas emissions. This makes them an appealing choice for anyone concerned about climate change. However, the environmental story of EVs is more complex than it seems.
@@ -96,7 +98,7 @@ In recent years, **third-party companies approved by RTO authorities in various 
 - **Remote Areas**: Hybrids and ICE vehicles remain the better choice for remote and rugged terrain where charging infrastructure is lacking.
 - **Repurposing Old Vehicles**: For city commuting, converting older ICE vehicles into electric ones is a sustainable option that allows owners to continue using their existing cars in a more environmentally friendly way.
 
-## Criticism of Government Policies on ICE Vehicles
+## Not so thought out Government Policies on ICE Vehicles
 
 As India continues its push towards greener transportation, the government has implemented a 15-year restriction policy on ICE vehicles. The idea is to reduce pollution and encourage the adoption of newer, cleaner technologies. However, this policy is not without its drawbacks, particularly for the average consumer who may find themselves forced to retire their vehicle earlier than anticipated.
 
