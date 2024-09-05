@@ -19,19 +19,21 @@ excerpt: "Odisha, a state rich in spiritual and cultural heritage, is deeply int
 
 ## Introduction: The Heart of Odisha’s Spirituality
 
-It’s been nearly a decade since I penned my last blog about Odisha, my home state, and it feels like this sequel is long overdue. Back in 2015, I wrote **"Odisha - The Land Slightly Unknown!"**, hoping to give people a glimpse of the beautiful culture, heritage, and life that define my state. But what sequel could possibly be worth the wait? Well, if there is one story that never gets old and deserves to be revisited, it is the tale of **Jagannatha Sanskruti**.
+It’s been almost a decade since I last wrote about my beloved Odisha, and for that, I owe you all an apology! Back in 2015, I shared my thoughts in [**"Odisha - The Land Slightly Unknown!"**](https://bhargavachary.in/2015/10/04/odisha-the-land-slighty-unknown.html), aiming to introduce the world to the vibrant culture, rich history, and unique traditions of my home state. Little did I know that it would take me nearly **nine years** to finally bring you the much-anticipated sequel! Life, work, and the endless demands of the modern world took over, and for that, I admit – this is long overdue.
 
-In these ten years, I’ve seen how much people are drawn to the essence of Lord Jagannatha—the deity who transcends beyond the religious, becoming a way of life for millions. Today, we explore **Jagannatha Sanskruti**, the spiritual heart of Odisha, which continues to pulse through the lives of its people with **honesty, love, respect, and unwavering devotion**.
+But, as they say, some stories are worth the wait. And when it comes to **Jagannatha Sanskruti**, the heartbeat of Odisha’s spiritual and cultural life, no amount of time could dull its magic. So, let’s dive right back into the wonders of Odisha, and this time, explore the deeper, timeless traditions that revolve around the mighty **Lord Jagannatha** – a deity who doesn’t just belong to temples but walks the streets, celebrating life with his devotees during the legendary **Rath Yatra**.
 
-Let’s delve into this tradition, deeply intertwined with devotion, vibrant festivals, and simplicity of daily living—including the unique and nutritious food that reflects the essence of Odia culture.
+Over the years, I’ve seen how people from all corners of the world are drawn to the essence of Lord Jagannatha – not just as a religious figure, but as a **symbol of devotion, humility, and unity**. The Jagannatha way of life – **Jagannatha Sanskruti** – continues to guide millions, shaping their lives with the values of **honesty, love, respect, and unwavering faith**.
+
+So, without further delay, let’s embark on this journey into the heart of **Jagannatha Sanskruti**, where tradition meets everyday life, and where festivals, devotion, and the simplicity of food come together to create the soul of Odisha.
 
 ---
 
 ## The Essence of Jagannatha: Lord of the Universe
 
-The name **Jagannatha** is synonymous with **Puri** – one of the four sacred Char Dham pilgrimage sites in India. But beyond its religious significance, the Jagannatha temple is the nucleus of a living tradition that transcends religion. Lord Jagannatha, along with his siblings **Balabhadra** and **Subhadra**, is not confined to temple rituals but is a deity who steps out to connect with his people during **Rath Yatra** – the grand chariot festival.
+The name Jagannatha is synonymous with **Puri** – one of the four sacred Char Dham pilgrimage sites in India. But beyond its religious significance, the Jagannatha temple is the nucleus of a living tradition that transcends religion. Lord Jagannatha, along with his siblings Balabhadra and Subhadra, is not confined to temple rituals but is a deity who steps out to connect with his people during **Rath Yatra** – the grand chariot festival.
 
-The story of Jagannatha goes beyond the temple walls. He is the **Darubrahma** – the deity made of wood, a form believed to undergo cycles of renewal every 12 to 19 years in a sacred ritual called **Nabakalebara**. This makes him even more human-like, endearing him to devotees who see Jagannatha as someone who is close to their everyday lives, their joys, and their struggles.
+The story of Jagannatha goes beyond the temple walls. He is the **Darubrahma** – the deity made of wood, a form believed to undergo cycles of renewal every 12 to 19 years in a sacred ritual called Nabakalebara. This makes him even more human-like, endearing him to devotees who see Jagannatha as someone who is close to their everyday lives, their joys, and their struggles.
 
 ---
 
@@ -39,19 +41,19 @@ The story of Jagannatha goes beyond the temple walls. He is the **Darubrahma** �
 
 ## Rath Yatra: A Lesson in Humility and Devotion
 
-If there is one event that defines **Jagannatha Sanskruti**, it is the **Rath Yatra**. Held annually in the city of Puri, this festival is a spectacle that draws millions from around the world. During Rath Yatra, Lord Jagannatha, along with Balabhadra and Subhadra, leaves the temple and embarks on a journey to **Gundicha Temple**, symbolizing his visit to his aunt’s house.
+If there is one event that defines Jagannatha Sanskruti, it is the **Rath Yatra**. Held annually in the city of Puri, this festival is a spectacle that draws millions from around the world. During Rath Yatra, Lord Jagannatha, along with Balabhadra and Subhadra, leaves the temple and embarks on a journey to **Gundicha Temple**, symbolizing his visit to his aunt’s house.
 
-The festival is a beautiful representation of **humility**. During the procession, Lord Jagannatha—who is revered as the ruler of the universe—comes down to the streets and mingles with his devotees, symbolizing the **oneness of all people**. It is a reminder that no matter who you are or where you come from, we are all equal in the eyes of the divine.
+The festival is a beautiful representation of humility. During the procession, Lord Jagannatha—who is revered as the ruler of the universe—comes down to the streets and mingles with his devotees, symbolizing the oneness of all people. It is a reminder that no matter who you are or where you come from, we are all equal in the eyes of the divine.
 
-An interesting anecdote from this event involves the tradition of the **Gajapati Maharaja**, the king of Puri. In a beautiful gesture of humility, the king himself takes on the role of a humble servant during the Rath Yatra by sweeping the chariots with a golden broom. This act, called **Chhera Pahara**, is a reminder of the core values of **Jagannatha Sanskruti**—humility, service, and devotion.
+An interesting anecdote from this event involves the tradition of the Gajapati Maharaja, the king of Puri. In a beautiful gesture of humility, the king himself takes on the role of a humble servant during the Rath Yatra by sweeping the chariots with a golden broom. This act, called **Chhera Pahara**, is a reminder of the core values of Jagannatha Sanskruti—humility, service, and devotion.
 
 But life, as they say, is a mixed bag.
 
-While the **Jagannatha tradition** itself is steeped in values of honesty, devotion, and love, there have been instances where certain groups have deviated from this path. Over the years, some individuals—whether they be **Puri pandas (priests), politicians, or opportunistic groups**—have, at times, tried to manipulate the traditions for personal or political gain, leading to controversies that have unfortunately tarnished the image of this otherwise sacred tradition.
+While the Jagannatha tradition itself is steeped in values of honesty, devotion, and love, there have been instances where certain groups have deviated from this path. Over the years, some individuals—whether they be Puri pandas (priests), politicians, or opportunistic groups—have, at times, tried to manipulate the traditions for personal or political gain, leading to controversies that have unfortunately tarnished the image of this otherwise sacred tradition.
 
-For instance, the commercialization of the **Nabakalebara** festival or issues around temple access have occasionally led to public outcry. The misuse of temple funds and mismanagement during major festivals have often left devotees disheartened. And let's not forget the occasional **political interference** that clouds the spiritual sanctity of **Jagannatha’s abode**.
+For instance, the commercialization of the Nabakalebara festival or issues around temple access have occasionally led to public outcry. The misuse of temple funds and mismanagement during major festivals have often left devotees disheartened. And let's not forget the occasional political interference that clouds the spiritual sanctity of Jagannatha’s abode.
 
-These challenges are undeniable, but they also highlight an important truth—**life is never black and white**. It’s full of complexities, where the good and the not-so-good coexist. The actions of a few do not define an entire culture or its deep-rooted values. Despite these deviations, the majority of **Odia people** and true followers of **Jagannatha Sanskruti** continue to live by the values of honesty, love, and respect for others. 
+These challenges are undeniable, but they also highlight an important truth—life is never black and white. It’s full of complexities, where the good and the not-so-good coexist. The actions of a few do not define an entire culture or its deep-rooted values. Despite these deviations, the majority of Odia people and true followers of Jagannatha Sanskruti continue to live by the values of honesty, love, and respect for others. 
 
 ---
 
@@ -107,4 +109,3 @@ At its heart, **Jagannatha Sanskruti** continues to inspire and guide the lives 
 **Stay connected for more stories of Odisha’s rich culture and life!**  
 **Thank you for reading!**  
 **Jai Jagannatha!**
-
