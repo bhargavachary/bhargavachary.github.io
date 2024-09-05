@@ -22,11 +22,15 @@ However, this Tech-tember as we call it, Intel made a significant comeback with 
 
 Intel’s **Core Ultra 200V series** introduces a new **hybrid architecture** that integrates **Performance cores (P-cores)** and **Efficient cores (E-cores)**. This design is built to handle both **high-intensity workloads** and **everyday tasks** efficiently, providing both **speed** and **power savings**. The **Thread Director** dynamically manages task allocation between P-cores and E-cores, ensuring **optimal performance** and **battery life**.
 
+<img class="img-responsive" src="/images/posts/intel/intel_ai_pc.png" alt="">
+
 ### Key Features:
 - **Thread Director**: This technology intelligently manages core allocation, balancing workloads across **P-cores** and **E-cores** to optimize power efficiency and performance.
 - **Hybrid Design**: By combining performance cores for demanding applications like **gaming** and **video rendering** with energy-efficient cores for lightweight tasks like **browsing** and **document editing**, Intel addresses both **power efficiency** and **performance** needs.
 
 Intel’s hybrid approach parallels Apple’s **M-series** architecture, which also emphasizes efficiency through a combination of **high-performance** and **low-power cores**. However, Intel differentiates itself through its compatibility with multiple operating systems, including **Windows** and **Linux**, offering more flexibility for **developers** and **IT professionals**.
+
+<img class="img-responsive" src="/images/posts/intel/lunar_lake.png" alt="">
 
 ### Challenges:
 While Intel’s **hybrid architecture** is a significant leap, it faces challenges in **software integration**, especially when compared to **Apple’s M-series**, which benefits from the **seamless coupling of hardware and macOS**.
@@ -64,6 +68,8 @@ The **laptop processor space** is now more competitive than ever. While **Apple�
 ### Linux Support: 
 Intel’s longstanding commitment to the **Linux community** continues with the **Core Ultra 200V series**. The chip is designed to work seamlessly with **Linux distributions**, offering **native drivers** and **kernel-level integration**. Unlike **Apple’s closed ecosystem**, Intel processors remain highly compatible with **open-source environments**.
 
+<img class="img-responsive" src="/images/posts/intel/intel_ai_pc.png" alt="">
+
 ---
 
 ## Conclusion: Intel’s Core Ultra 200V – A New Contender in AI and Multi-Threaded Computing
@@ -72,4 +78,6 @@ Intel’s **Core Ultra 200V series** represents a significant leap forward, chal
 
 For **developers**, **business professionals**, and **content creators**, the **Core Ultra 200V series** offers **multi-OS flexibility**, **enterprise-grade features**, and **on-device AI capabilities** that make it a compelling choice. While **Apple’s M-series** still dominates in **battery life** and **single-core tasks**, Intel’s Core Ultra chips provide a more powerful alternative for users requiring **multi-core** and **AI-driven performance**.
 
-The race is on, and the competition between **Intel**, **Apple**, and **Qualcomm** is set to push the boundaries of **laptop computing** further than ever before. For consumers, this means more choices and innovations as these tech giants battle for dominance in the AI-driven laptop era. It would be thrilling to see the move from AMD and Apple subsequently now.
+The race is on, and the competition between **Intel**, **Apple**, and **Qualcomm** is set to push the boundaries of **laptop computing** further than ever before. For consumers, this means more choices and innovations as these tech giants battle for dominance in the AI-driven laptop era. It would be thrilling to see the move from AMD and Apple subsequently now. Here I am signing off wirth a creative visualisation of the semicondctor landscape (no intentions to infringe any content or offend anyone). Thanks for your patience and reading.
+
+<img class="img-responsive" src="/images/posts/intel/creative.png" alt="">
