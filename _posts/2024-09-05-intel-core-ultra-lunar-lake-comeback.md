@@ -27,7 +27,7 @@ So, is this really the comeback of the tech giant? Let's delve into it.
 
 Intel’s Core Ultra 200V series introduces a new hybrid architecture that integrates Performance cores (P-cores) and Efficient cores (E-cores). This design is built to handle both high-intensity workloads and everyday tasks efficiently, providing both speed and power savings. The **Thread Director** dynamically manages task allocation between P-cores and E-cores, ensuring optimal performance and battery life.
 
-![Intel AI PC]( /images/posts/intel/intel_ai_pc.png)
+![Intel Core Ultra - AI PC]( /images/posts/intel/core_ultra.png)
 
 ### Key Features:
 - **Thread Director**: This technology intelligently manages core allocation, balancing workloads across P-cores and E-cores to optimize power efficiency and performance.
