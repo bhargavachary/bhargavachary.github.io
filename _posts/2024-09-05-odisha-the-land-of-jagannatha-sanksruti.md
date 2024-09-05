@@ -15,8 +15,6 @@ tags:
   - Food
   - Spirituality
 excerpt: "Odisha, a state rich in spiritual and cultural heritage, is deeply intertwined with the Jagannatha tradition. This post dives into the essence of Jagannatha Sanskruti, exploring the devotion, rituals, traditions, and food that define the soul of Odisha."
-date: 2024-09-05
-author: Bhargav Achary
 ---
 
 ## Introduction: The Heart of Odisha’s Spirituality
