@@ -16,7 +16,6 @@ tags:
   - Language Barriers
 excerpt: "India's linguistic diversity is both a strength and a challenge. Could a three-language policy, supported by technology, bridge the divide while preserving regional identities? This post explores the potential of language policies and tech in uniting the country."
 ---
-# One Nation, Many Languages: Can Tech and a Three-Language Policy Bridge India’s Divide?
 
 In a recent blog post, ["Bengaluru - from C++ to Discrimination++"](https://bhargavachary.in/2024/05/26/todays-bengaluru-hatred-discrimination.html), I shared an experience that highlighted the growing social tensions surrounding language in India. A local taxi driver, frustrated by the inability to communicate, attacked a young professional simply because he couldn’t speak Kannada. While this might seem like a simple issue of language, it’s far more complex. This incident reflects the **economic disparities**, **cultural insecurities**, and the systemic failure to provide equal opportunities to all. Language, in this scenario, becomes more than just a tool—it becomes a symbol of identity, pride, and belonging.
 
