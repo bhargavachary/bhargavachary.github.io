@@ -1,5 +1,5 @@
 ---
-title: "A Tragic Reflection: The Story of Atul Subhash and the Crisis of Our Times"
+title: "The Story of Atul Subhash and the Crisis of Our Times"
 categories: 
   - Society
   - Mental Health
