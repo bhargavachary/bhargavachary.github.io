@@ -1,5 +1,5 @@
 ---
-title: "A Tribute to Nana: A Legacy of Love, Sacrifice, and Inspiration"
+title: "A Tribute to Nana: A Legacy of Love, Sacrifice, & Inspiration"
 categories:
   - Personal
   - Family
@@ -79,4 +79,7 @@ I miss you, Nana. I’ve missed your hand on my shoulder for a long time now, an
 Though I cannot change what has happened, I can shape how I move forward. Nana’s spirit lives on in every kind act, every patient moment, every decision to uplift rather than tear down. His life was a testament to the strength and beauty of the human spirit, and for that, I will forever remain grateful.
 
 Let's keep making progress!
-Jai Jagannath, Hari Om!
+
+Jai Jagannath!
+
+Hari Om!
