@@ -12,8 +12,6 @@ tags:
 excerpt: "My father, whom I lovingly call Nana, was more than a parent; he was the cornerstone of who I am today. This is a heartfelt tribute to his extraordinary life of sacrifice, inspiration, and unwavering love."
 ---
 
-# **A Tribute to My Father: A Legacy of Love, Sacrifice, and Inspiration**
-
 True character often shines brightest when we pause to reflect on the people who shaped us. My father, Late Shri. Dandapati Jagannath Achary, whom I lovingly call Nana (owing to my Telugu origins), was that guiding light in my life. He was more than a parent; he was the cornerstone of who I am today. His life embodied resilience, selflessness, and unwavering love.
 
 As I remember him, I’m inspired not just by personal memories but by the idea that ordinary individuals can leave extraordinary legacies. This tribute isn’t just for me; it’s for anyone seeking reassurance that kindness, sacrifice, and moral courage still thrive in this world. Nana’s story proves that true greatness doesn’t depend on wealth, status, or public recognition. Instead, it emerges through the quiet impact we have on others—an impact that echoes long after we are gone.
