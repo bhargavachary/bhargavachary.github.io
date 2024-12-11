@@ -1,5 +1,5 @@
 ---
-title: "A Tribute to My Father: A Legacy of Love, Sacrifice, and Inspiration"
+title: "A Tribute to Nana: A Legacy of Love, Sacrifice, and Inspiration"
 categories:
   - Personal
   - Family
