@@ -12,8 +12,6 @@ tags:
   - Indian Legal Reforms
 ---
 
-## **Introduction**
-
 The tragic death of Atul Subhash—a Bengaluru-based professional who succumbed to the pressures of alleged harassment, legal battles, and chronic stress—forces us to confront uncomfortable truths about our society, legal systems, and mental health awareness. His story is not just a singular tragedy; it is emblematic of the struggles faced by countless individuals across the country. It reminds us of the need for a collective reckoning—a shift in how we view mental health, equity, and the essence of living a purposeful life.
 
 ---
