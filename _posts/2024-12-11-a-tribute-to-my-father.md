@@ -18,13 +18,19 @@ As I remember him, I’m inspired not just by personal memories but by the idea 
 
 <img class="img-responsive" src="/images/posts/nana/nana_image1.jpg" alt="">
 
+---
+
 ## **Humble Beginnings: Strength Forged Through Struggle**
 
-Nana’s journey began in hardship. My grandparents faced severe financial constraints, making even basic education for their children a challenge. My grandfather, though a charismatic personality and the king’s goldsmith, fell into drinking and other lavish habits early in his life, leaving his children to fend for themselves. In such circumstances, while others might have faltered, Nana refused to give up. When he needed money for board exams, he sold his only bicycle. At times, he cooked and did chores for his teachers just to pay school fees. These teachers, recognizing his potential and determination, guided him with opportunities that became stepping stones to success.
+Nana’s journey started in hardship. My grandparents faced severe financial constraints, making even basic education for their children a challenge. My grandfather, though a charismatic personality and the king’s goldsmith, fell into drinking and other lavish habits early in his life, mostly leaving his children to God’s mercy. In such circumstances, while others might have faltered, Nana refused to give up. When he needed money for board exams, he sold his only bicycle. At times, he cooked and did chores for his teachers just to pay school fees. These teachers, recognizing his potential and determination, guided him with opportunities that became stepping stones to success.
 
-Despite these challenges, Nana became a math champion. While many students spent hours studying, he was often occupied with chores—cooking, cleaning, and helping his family. Yet, he consistently excelled, often topping his class and scoring full marks. He instilled this love for math in me too, encouraging me to solve hundreds of problems in exchange for firecrackers during the Deepawali season.
+He was a math champion early in his life. While many students would study hard and keep practicing, he would be busy cooking, cleaning utensils, and performing other tasks that deterred him from preparation. Yet, he would end up as the topper, often scoring full marks. He instilled this love for math in me too through clever tricks. He would persuade me to solve hundreds of math problems in exchange for a few firecrackers during the Deepawali season. Let's not deviate...
 
-Friends shared books, offered encouragement, and sometimes even split meals with him. These small acts of kindness created a ripple effect, allowing Nana to remain focused on his studies and instilling in him a deep appreciation for community and cooperation. Later in life, he extended the same generosity to his students. He treated them as his own children, spending on their needs without hesitation or record. His school became his second home, cared for with the same devotion as his family.
+Seeing this charismatic and humble student with an eager attitude, society often extended support in various ways. Friends shared books, offered encouragement, and sometimes even split meals with him. These small acts of kindness created a ripple effect, helping Nana stay focused on his studies and instilling a deep appreciation for community and cooperation. Later in life, he extended the same generosity to his students. He never kept accounts of what he spent for them, treating them like his own children. The school he taught at became his second home, and he cared for it with the same devotion as he did for his family.
+
+<img class="img-responsive" src="/images/posts/nana/nana_image2.jpg" alt="">
+
+---
 
 ## **A Life in Education: Guiding Young Minds**
 
@@ -32,13 +38,15 @@ For 33 of the first 55 years of his life, when he was physically active and unaf
 
 He taught a range of subjects—particularly passionate about mathematics and English—and embraced the mischievous curiosity of 4- to 10-year-olds with patience, humor, and warmth. While others might have seen rambunctious young minds as a challenge, Nana saw boundless potential. He believed that education wasn’t limited to academics; it was a chance to shape character, nurture confidence, and inspire big dreams. Over the course of his career, he touched at least a thousand lives, ensuring his legacy would endure in the hearts of those he taught.
 
-<img class="img-responsive" src="/images/posts/nana/nana_image2.jpg" alt="">
+<img class="img-responsive" src="/images/posts/nana/nana_image3.jpg" alt="">
+
+---
 
 ## **The Rock-Steady Family Man**
 
 Nana was the eldest son in his family, and as the only person with a stable and sustained income, he bore the responsibility of his family wholeheartedly. He was a rock of stability in his post-student life, dedicating his first two decades of personal life after joining the teaching service to his family. His sacrifices were exceptional, going far beyond what one could expect. He prioritized the well-being and needs of others, ensuring his siblings, parents, and extended family had the support they needed. These acts of selflessness touched deep emotions in those around him. While I choose not to discuss every detail out of respect for those close to him, it is undeniable that his actions defined what it means to be a true family man.
 
-<img class="img-responsive" src="/images/posts/nana/nana_image3.jpg" alt="">
+---
 
 ## **A True Partnership: The Role of Amma**
 
@@ -48,11 +56,25 @@ Amma faced her own challenges, which made their life together far from easygoing
 
 In his final years, her care and dedication were nothing short of heroic. She navigated the difficulties of his declining health with patience and love, ensuring his comfort and dignity. Together, they formed a quiet, compassionate alliance that exemplified the very values Nana taught in his classroom—kindness, patience, and the power of steadfast commitment.
 
+<img class="img-responsive" src="/images/posts/nana/nana_image4.jpg" alt="">
+
+---
+
 ## **The Artistic Soul: A Love for Music and Cinema**
 
 Beyond his role as a teacher and father, Nana was a man with an artistic soul. He was deeply inspired by the cinema of Raj Kapoor and became an ardent fan of Mukesh’s soulful voice. His passion for their work was so intense that he spent years saving up to buy a cassette player and collect their music. Owning a cassette player was a dream he nurtured for more than five years, skipping meals and undertaking countless cycle trips until he could finally afford it.
 
 Listening to these cassettes brought him immense joy and solace. They became his sanctuary—a way to connect with life’s beauty and simplicity. This passion wasn’t just about entertainment; it reflected his values of love, humanity, and grace.
+
+---
+
+## **Reflections on Life’s Complexities**
+
+Life is never a straight path. It is a mosaic of choices, circumstances, and fate—a tapestry woven with threads of joy, pain, and countless “what-ifs.” Around the timeline of Nana’s second innings, my own life went through profound upheavals. These are facets of my life that are too close to my heart, moments too raw and intimate to share fully in public. Yet, I can’t help but reflect on how I wish things had unfolded differently.
+
+I wish I had been a more mature person, better equipped to handle the complexities that arose. I wish my father had been more conscious of his deteriorating cardiac health, the alarming blood pressure levels, and the chronic stress he endured—stress brought about by life’s pressures and the actions of some key individuals around us. These were silent battles that compounded over time, and while they were beyond my control, they shaped the path we all walked together.
+
+---
 
 ## **The Second Innings: A Battle Against All Odds**
 
@@ -62,7 +84,9 @@ When I arrived, Nana was in the ICU. Over the weeks that followed, we celebrated
 
 In the first week of October 2024, I visited my parents after taking a break from my professional journey, a pause necessitated by multiple challenging circumstances. During this visit, I told my mother that I would bring them to Bengaluru, as I could no longer bear to see Nana in such a fragile state. Unfortunately, before I could fulfill this promise, Nana left us. He chose to spend his final moments in the home he had built after decades of hard work and struggle—a place he cherished deeply and where he found his peace.
 
-<img class="img-responsive" src="/images/posts/nana/nana_image4.jpg" alt="">
+<img class="img-responsive" src="/images/posts/nana/nana_image5.jpg" alt="">
+
+---
 
 ## **A Void That Cannot Be Filled**
 
@@ -72,13 +96,13 @@ Yet, alongside the sorrow, there’s a deep gratitude for the legacy he left beh
 
 I miss you, Nana. I’ve missed your hand on my shoulder for a long time now, and now I can’t even feel your warmth. I miss your presence, your laughter, your wisdom. The loss is something I carry every day, but so is your legacy.
 
-<img class="img-responsive" src="/images/posts/nana/nana_image5.jpg" alt="">
+---
 
 ## **Moving Forward: Lessons of Endurance**
 
 Though I cannot change what has happened, I can shape how I move forward. Nana’s spirit lives on in every kind act, every patient moment, every decision to uplift rather than tear down. His life was a testament to the strength and beauty of the human spirit, and for that, I will forever remain grateful.
 
-Let's keep making progress!
+Let’s keep making progress!
 
 Jai Jagannath!
 
