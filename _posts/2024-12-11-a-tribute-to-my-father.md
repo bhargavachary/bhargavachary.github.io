@@ -58,9 +58,13 @@ Listening to these cassettes brought him immense joy and solace. They became his
 
 ## **Reflections on Life’s Complexities**
 
+<img class="img-responsive" src="/images/posts/nana/nana_image6.jpg" alt="">
+
 Life is never a straight path. It is a mosaic of choices, circumstances, and fate—a tapestry woven with threads of joy, pain, and countless “what-ifs.” Around the timeline of Nana’s second innings, my own life went through profound upheavals. These are facets of my life that are too close to my heart, moments too raw and intimate to share fully in public. Yet, I can’t help but reflect on how I wish things had unfolded differently.
 
 I wish I had been a more mature person, better equipped to handle the complexities that arose. I wish my father had been more conscious of his deteriorating cardiac health, the alarming blood pressure levels, and the chronic stress he endured—stress brought about by life’s pressures and the actions of some key individuals around us. These were silent battles that compounded over time, and while they were beyond my control, they shaped the path we all walked together.
+
+In 2020, under unusual circumstances, I got married. By 2021, I was blessed with a beautiful baby girl—a joy amidst the chaos. But alongside these milestones came challenges: I had to leave a promising Ph.D. program, incurred loans exceeding 20 lakhs, and found myself grappling with resentment toward certain individuals whose actions inadvertently contributed to the hardships we faced. At the time, the weight of it all was crushing. But looking back now, I realize it was fate—an intricate design beyond blame or control.
 
 ## **The Second Innings: A Battle Against All Odds**
 
@@ -79,6 +83,8 @@ In the aftermath of his passing, I find myself grappling with a void that words 
 Yet, alongside the sorrow, there’s a deep gratitude for the legacy he left behind. His life’s work—his kindness, humor, and unwavering dedication to others—is now a guidepost lighting my path forward. While I can’t bring him back, I can honor his memory by living the values he instilled in me and continuing the cycle of support and compassion he started.
 
 I miss you, Nana. I’ve missed your hand on my shoulder for a long time now, and now I can’t even feel your warmth. I miss your presence, your laughter, your wisdom. The loss is something I carry every day, but so is your legacy.
+
+<img class="img-responsive" src="/images/posts/nana/nana_image7.jpg" alt="">
 
 ## **Moving Forward: Lessons of Endurance**
 
