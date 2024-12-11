@@ -18,8 +18,6 @@ As I remember him, I’m inspired not just by personal memories but by the idea 
 
 <img class="img-responsive" src="/images/posts/nana/nana_image1.jpg" alt="">
 
----
-
 ## **Humble Beginnings: Strength Forged Through Struggle**
 
 Nana’s journey started in hardship. My grandparents faced severe financial constraints, making even basic education for their children a challenge. My grandfather, though a charismatic personality and the king’s goldsmith, fell into drinking and other lavish habits early in his life, mostly leaving his children to God’s mercy. In such circumstances, while others might have faltered, Nana refused to give up. When he needed money for board exams, he sold his only bicycle. At times, he cooked and did chores for his teachers just to pay school fees. These teachers, recognizing his potential and determination, guided him with opportunities that became stepping stones to success.
@@ -30,8 +28,6 @@ Seeing this charismatic and humble student with an eager attitude, society often
 
 <img class="img-responsive" src="/images/posts/nana/nana_image2.jpg" alt="">
 
----
-
 ## **A Life in Education: Guiding Young Minds**
 
 For 33 of the first 55 years of his life, when he was physically active and unaffected by paralysis, Nana dedicated himself wholeheartedly to teaching. He influenced countless children during a pivotal stage of their growth, leaving a profound impact that would shape their futures.
@@ -40,13 +36,9 @@ He taught a range of subjects—particularly passionate about mathematics and En
 
 <img class="img-responsive" src="/images/posts/nana/nana_image3.jpg" alt="">
 
----
-
 ## **The Rock-Steady Family Man**
 
 Nana was the eldest son in his family, and as the only person with a stable and sustained income, he bore the responsibility of his family wholeheartedly. He was a rock of stability in his post-student life, dedicating his first two decades of personal life after joining the teaching service to his family. His sacrifices were exceptional, going far beyond what one could expect. He prioritized the well-being and needs of others, ensuring his siblings, parents, and extended family had the support they needed. These acts of selflessness touched deep emotions in those around him. While I choose not to discuss every detail out of respect for those close to him, it is undeniable that his actions defined what it means to be a true family man.
-
----
 
 ## **A True Partnership: The Role of Amma**
 
@@ -58,23 +50,17 @@ In his final years, her care and dedication were nothing short of heroic. She na
 
 <img class="img-responsive" src="/images/posts/nana/nana_image4.jpg" alt="">
 
----
-
 ## **The Artistic Soul: A Love for Music and Cinema**
 
 Beyond his role as a teacher and father, Nana was a man with an artistic soul. He was deeply inspired by the cinema of Raj Kapoor and became an ardent fan of Mukesh’s soulful voice. His passion for their work was so intense that he spent years saving up to buy a cassette player and collect their music. Owning a cassette player was a dream he nurtured for more than five years, skipping meals and undertaking countless cycle trips until he could finally afford it.
 
 Listening to these cassettes brought him immense joy and solace. They became his sanctuary—a way to connect with life’s beauty and simplicity. This passion wasn’t just about entertainment; it reflected his values of love, humanity, and grace.
 
----
-
 ## **Reflections on Life’s Complexities**
 
 Life is never a straight path. It is a mosaic of choices, circumstances, and fate—a tapestry woven with threads of joy, pain, and countless “what-ifs.” Around the timeline of Nana’s second innings, my own life went through profound upheavals. These are facets of my life that are too close to my heart, moments too raw and intimate to share fully in public. Yet, I can’t help but reflect on how I wish things had unfolded differently.
 
 I wish I had been a more mature person, better equipped to handle the complexities that arose. I wish my father had been more conscious of his deteriorating cardiac health, the alarming blood pressure levels, and the chronic stress he endured—stress brought about by life’s pressures and the actions of some key individuals around us. These were silent battles that compounded over time, and while they were beyond my control, they shaped the path we all walked together.
-
----
 
 ## **The Second Innings: A Battle Against All Odds**
 
@@ -86,8 +72,6 @@ In the first week of October 2024, I visited my parents after taking a break fro
 
 <img class="img-responsive" src="/images/posts/nana/nana_image5.jpg" alt="">
 
----
-
 ## **A Void That Cannot Be Filled**
 
 In the aftermath of his passing, I find myself grappling with a void that words cannot fully capture. I long for his reassuring hand on my shoulder and the warmth of his presence. The world feels quieter and emptier without him.
@@ -95,8 +79,6 @@ In the aftermath of his passing, I find myself grappling with a void that words 
 Yet, alongside the sorrow, there’s a deep gratitude for the legacy he left behind. His life’s work—his kindness, humor, and unwavering dedication to others—is now a guidepost lighting my path forward. While I can’t bring him back, I can honor his memory by living the values he instilled in me and continuing the cycle of support and compassion he started.
 
 I miss you, Nana. I’ve missed your hand on my shoulder for a long time now, and now I can’t even feel your warmth. I miss your presence, your laughter, your wisdom. The loss is something I carry every day, but so is your legacy.
-
----
 
 ## **Moving Forward: Lessons of Endurance**
 
