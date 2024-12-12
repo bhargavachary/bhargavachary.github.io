@@ -1,5 +1,5 @@
 ---
-title: "GitHub, Jekyll and Me!"
+title: "GitHub, Jekyll, and Me!"
 categories: 
   - Technology
   - Personal
@@ -10,27 +10,48 @@ tags:
   - research
   - opensource
 ---
-After going through many alternatives of having a blog and trying out a few of them (WordPress, Drupal, Blogger etc), it was fine. I was planning to have it at any good hosting provider and WordPress being the choice for the content management for ease of control and flexibility.
 
+After exploring various blogging platforms like WordPress, Drupal, and Blogger, I initially thought WordPress would be ideal for its flexibility and ease of use. Hosting with a reputed provider seemed like the obvious plan.
 
-However, I was skeptical about a few things, what if the hosting provider ditches me or asks me to pay more later on or stops inbound traffic! I was still searching for any alternative, I came across this idea of having GitHub pages! I searched for possibilities and ended up having one! 
+However, I began to wonder—what if hosting providers raised prices, restricted traffic, or altered policies? This led me to discover **GitHub Pages** and **Jekyll**, which offered a minimalist, flexible alternative.
 
----
-Here is a gist on why I prefer this.
+## Why I Chose GitHub and Jekyll
 
-  - Your content is with you and a copy is at <a href="http://en.wikipedia.org/wiki/GitHub" target="_blank">GitHub</a>.
-  - You just pay for the domain (if needed).
-  - Its a nice way to avoid databases, dynamic pages and a whole lot of complexity by adopting <a href="http://en.wikipedia.org/wiki/Jekyll_(software)" target="_blank">Jekyll</a>.
-  - Its cool to have an easy version control over the website.
+Here’s why this combination works perfectly for me:
 
----
-Here I post some tips and references to setup a GitHub hosted website with static content and mainly programmed approach to content management.
+- **Content Ownership:** Your data resides with you and is securely backed up on GitHub’s servers.
+- **Cost Efficiency:** The only expense is for a custom domain, if desired.
+- **Streamlined Simplicity:** By avoiding databases and dynamic pages, Jekyll makes website management lightweight and efficient.
+- **Version Control:** GitHub’s robust versioning tracks all changes, making it easy to maintain and revert edits.
 
-- Get friendly with GitHub (sign up and create some repo and do some basic git commands).
-- Building a site (<a href="http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/" target="_blank">refer this</a>).
-- Use any suitable template (search for Jekyll templates).
-- Buy your desired domain (if you need to have a custom URL for your website).
-- Add a CNAME file in the GitHub repo and an A-Record in DNS Records (<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank">refer this</a>).
+This combination of flexibility, control, and minimal cost convinced me to make the switch, and I couldn’t be happier with the results.
 
----
-That's all you need to do to get it started. However, if you are new to coding, web development, HTML and scripting it might take some time to understand GitHub, Jekyll and the way this combo works.
+## Tips for Setting Up a GitHub-Powered Blog
+
+Here’s how you can create your own GitHub-hosted website using Jekyll:
+
+1. **Learn GitHub Basics:** Create repositories, commit changes, and master basic Git commands like `clone`, `add`, and `push`.
+2. **Use GitHub Pages for Hosting:** Create a repository named `<username>.github.io`. GitHub automatically serves the site from this repository, no local setup needed.
+3. **Choose a Jekyll Template:** Browse [Jekyll Themes](https://jekyllthemes.io/) or [GitHub's Jekyll Collection](https://github.com/topics/jekyll-theme) for customizable themes.
+4. **Set Up Your Content:** Edit the `_config.yml` and Markdown files to customize your website. GitHub Pages builds and deploys automatically.
+5. **Custom Domain (Optional):** Purchase a domain, add a CNAME file, and update DNS records. [GitHub's guide](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) explains the process.
+
+## Personal Observations and Learning
+
+Setting up a GitHub-hosted blog isn’t just cost-effective—it’s liberating. While newcomers might find Git, Markdown, or Jekyll intimidating at first, the learning curve is rewarding. With this setup, you own your content entirely and enjoy unparalleled flexibility.
+
+### Why Static Sites Could Be the Future
+
+The simplicity of static site generators like Jekyll, paired with the robustness of GitHub, makes this approach particularly appealing for tech enthusiasts, educators, researchers, and even small businesses. Here’s why:
+
+- **Security:** With no backend servers or databases, static sites are inherently more secure against cyberattacks.
+- **Speed:** Static files are served directly to users, leading to faster load times compared to dynamic sites.
+- **Environmentally Friendly:** With fewer server resources required, static sites leave a smaller carbon footprint.
+
+## Final Thoughts
+
+Setting up a GitHub-hosted Jekyll blog has been a rewarding journey. It not only allowed me to focus on what matters—writing and sharing—but also taught me invaluable lessons about web development, hosting, and open-source tools.
+
+If you’re considering starting a blog or moving your existing one to GitHub, give this method a try. It might just be the minimalist, cost-effective solution you’ve been searching for.
+
+Feel free to share your experiences or ask any questions in the comments below!

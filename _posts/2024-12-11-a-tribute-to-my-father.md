@@ -32,9 +32,17 @@ Seeing this charismatic and humble student with an eager attitude, society often
 
 For 33 of the first 55 years of his life, when he was physically active and unaffected by paralysis, Nana dedicated himself wholeheartedly to teaching. He influenced countless children during a pivotal stage of their growth, leaving a profound impact that would shape their futures.
 
-He taught a range of subjects—particularly passionate about mathematics and English—and embraced the mischievous curiosity of 4- to 10-year-olds with patience, humor, and warmth. While others might have seen rambunctious young minds as a challenge, Nana saw boundless potential. He believed that education wasn’t limited to academics; it was a chance to shape character, nurture confidence, and inspire big dreams. Over the course of his career, he touched at least a thousand lives, ensuring his legacy would endure in the hearts of those he taught.
+He taught a range of subjects—particularly passionate about mathematics and English—and embraced the mischievous curiosity of 4- to 10-year-olds with patience, humor, and warmth. While others might have seen rambunctious young minds as a challenge, Nana saw boundless potential. He believed that education wasn’t limited to academics; it was a chance to shape character, nurture confidence, and inspire big dreams.
+
+Nana also championed progressive education methods, implementing a “learning through happiness” philosophy under the state-funded Ananda Moya Shikshya program. He emphasized choice-based, stress-free learning, ensuring that children could learn at their own pace. Over the course of his career, he touched at least a thousand lives, ensuring his legacy endured in the hearts of those he taught.
 
 <img class="img-responsive" src="/images/posts/nana/nana_image3.jpg" alt="">
+
+## **A Cultural Advocate: Celebrating Odisha’s Heritage**
+
+Nana wasn’t just a teacher—he was a passionate advocate for Odisha’s rich cultural heritage. As an active member of the “Upanta Utkala Sahitya Parishad,” he played a pivotal role in organizing annual Utkal Divas (Odisha Day) celebrations. These events featured poetry recitals, literary discussions, and cultural performances by students and teachers alike.
+
+He believed education was incomplete without fostering a connection to one’s roots and cultural identity. By encouraging students to participate in these programs, he inspired them to appreciate their heritage, blending academic learning with cultural enrichment. His dedication to Odisha’s traditions left a lasting impact on both students and colleagues.
 
 ## **The Rock-Steady Family Man**
 
@@ -52,9 +60,11 @@ In his final years, her care and dedication were nothing short of heroic. She na
 
 ## **The Artistic Soul: A Love for Music and Cinema**
 
-Beyond his role as a teacher and father, Nana was a man with an artistic soul. He was deeply inspired by the cinema of Raj Kapoor and became an ardent fan of Mukesh’s soulful voice. His passion for their work was so intense that he spent years saving up to buy a cassette player and collect their music. Owning a cassette player was a dream he nurtured for more than five years, skipping meals and undertaking countless cycle trips until he could finally afford it.
+Beyond his roles as a teacher and family man, Nana had an artistic soul. He was captivated by the movies of Raj Kapoor and the soulful melodies of Mukesh. This passion wasn’t fleeting—it ran so deep that he spent years saving to buy a cassette player, a luxury item at the time.
 
-Listening to these cassettes brought him immense joy and solace. They became his sanctuary—a way to connect with life’s beauty and simplicity. This passion wasn’t just about entertainment; it reflected his values of love, humanity, and grace.
+Nana’s determination to fulfill this dream was extraordinary. He skipped meals, undertook long cycling trips, and made countless sacrifices. Eventually, his perseverance paid off, and he was able to afford that cassette player, which became his treasure. Listening to his beloved songs brought him immense solace, joy, and connection to life’s simple beauty.
+
+These cycling trips weren’t just about saving money—they were symbolic of his determination. Each ride was a step closer to a dream that, though small to others, was monumental to him. It reflected his values: patience, effort, and cherishing life’s finer moments, no matter how hard they were to achieve.
 
 ## **Reflections on Life’s Complexities**
 
