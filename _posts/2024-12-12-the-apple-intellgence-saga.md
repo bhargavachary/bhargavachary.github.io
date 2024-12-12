@@ -77,9 +77,7 @@ Still, knowing Apple’s history, I haven’t lost hope. The company has a reput
 
 ### Your Thoughts?
 
-Have you ever been let down by the hype of a tech product? If you’ve tried the iOS 18 beta or invested in the iPhone 16 Plus, I’d love to hear about your experience. What do you think Apple needs to do to regain its edge?
-
-Let’s keep the conversation going—share your thoughts below or join me on **Twitter** with **#AppleIntelligenceFuture**.
+Have you ever been let down by the hype of a tech product? If you’ve tried the iOS 18 beta or invested in the iPhone 16 series, I’d love to hear about your experience. What do you think Apple needs to do to regain its edge?
 
 **Warm regards,  
 Bhargav Achary**  
