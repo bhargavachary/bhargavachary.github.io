@@ -1,5 +1,5 @@
 ---
-title: "The Open Source Movement: Driving a Collaborative Future"
+title: "The Open Source Movement: The Collaborative Future"
 categories: 
   - Technology
 tags:
@@ -16,6 +16,8 @@ Over the years, open-source software has grown from humble beginnings to become 
 
 Yet, this dominance hasn’t been universal. While open source thrives in enterprise settings, it has struggled to gain traction with everyday home users. Despite being free and increasingly feature-rich, Linux hasn’t replaced proprietary operating systems like Windows or macOS for the average user. Why? The answer lies beyond technical merits and veers into the realm of user behavior and design priorities.
 
+<img class="img-responsive" src="/images/posts/open-source/world-is-opensource.jpg" alt="">
+
 ## 2. Barriers to Adoption: Bridging the User Experience Gap
 
 Here’s the thing—open-source software often caters to seasoned tech enthusiasts. These are people who value power, efficiency, and customization over simplicity. They don’t mind diving into forums or wikis to resolve issues, seeing the learning curve as part of the fun. However, this philosophy doesn’t align with the needs of novice users, who prioritize ease of use and intuitive design. 
@@ -23,12 +25,6 @@ Here’s the thing—open-source software often caters to seasoned tech enthusia
 This challenge is deeply rooted in the ethos of open source: “designed by hackers, for hackers.” Unlike proprietary software companies, which must balance user experience with market appeal, many open-source projects are built by developers solving problems for themselves. It’s a noble pursuit but creates a gap that projects like GNOME and KDE are working hard to bridge.
 
 Reflecting on my own experience with systems engineering, I see parallels in how hardware and software co-design evolves. The challenge isn’t just about building powerful solutions; it’s about making them accessible and meaningful to end users.
-
----
-
-<img class="img-responsive" src="/images/posts/open-source/world-is-opensource.jpg" alt="">
-
----
 
 ## 3. The Open Source Spectrum: Where It Shines and Where It Struggles
 
