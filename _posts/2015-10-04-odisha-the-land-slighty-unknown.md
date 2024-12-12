@@ -7,82 +7,42 @@ tags:
   - odisha
   - life
 ---
+It’s quite an obvious phenomenon to encounter questions from people on something that they don’t know or they know quite a little about! And, this is probably why I encounter these questions; “how is Odisha? how’s its culture like? what’s special over there?” and on. And, this ultimately triggered me to write this post, Odisha - The land slighlty unknown! So, if you are interested to know about my state Odisha, go on. I believe, you would find it interesting while you get to learn about this wonderful state and its people.
 
-It’s quite obvious to encounter questions from people about things they don’t know much about! And this is why I often face questions like, “How is Odisha?”, “What’s its culture like?”, “What’s special there?” and so on. These questions triggered me to write this post—Odisha: The Land Slightly Unknown! If you’re curious to know about my state, go on. I promise you’ll find it interesting as we explore this wonderful state and its people.
+Currently there are 29 states and 7 union territories in India, Odisha being one of the states in the eastern India. It has an area span of about 155 thousand square kilometers (9th largest of the states in India) and the population being a moderately decent 4.5 crores (approx). It is surrounded by the states of West Bengal to the north-east, Jharkhand to the north, Chhattisgarh to the west and north-west, and Telangana, Andhra Pradesh to the south and south-east. Odisha has 485 kilometres (301 mi) of coastline along the Bay of Bengal on its east, from Balasore to Ganjam. Bhubaneswar is the state capital, which along with Jamshedpur and Chandigarh, was one of modern India's first planned cities. Bhubaneswar in itself has over one thousand temples, earning the tag of the 'Temple City of India'.  There are a total of 30 districts in the state of Odisha, having many similarities and dissimilarities in lifestyle, slang, land etc. This being the basic geography and demography of the state, the state is also one of the largest producers of electricity and steel in the country.
 
-## Geography and Demographics
+Moreover, Odisha is much about a cultural religion called “Odia”. Yeah, nothing to get much confused about. Let me state it clearly and precisely; the language, the culture, the people of Odisha,  are all referred to by the same word "Odia".  
 
-Currently, India has 29 states and 7 union territories, and Odisha is one of the states in eastern India. With an area of about 155,000 square kilometers (the 9th largest in India), Odisha is home to a decent 4.5 crore people (approx). The state is surrounded by West Bengal to the northeast, Jharkhand to the north, Chhattisgarh to the west, and Andhra Pradesh to the south.
+> Odia language is recognized as one of the classical languages of India, other than Tamil, Sanskrit, Telugu, Kannada, and Malayalam.
 
-Odisha has 485 kilometers (301 miles) of coastline along the Bay of Bengal, stretching from Balasore in the north to Ganjam in the south. Bhubaneswar, the state capital, is one of modern India’s first planned cities, alongside Jamshedpur and Chandigarh. Bhubaneswar itself has over a thousand temples, earning it the title of the “Temple City of India.” Odisha’s 30 districts are a blend of diverse lifestyles, dialects, and landscapes, giving the state its unique charm. It’s also one of India’s largest producers of electricity and steel.
+Odisha boasts its culture from an ancient glorious history of the “Utkala”. Yeah, it’s the same word that comes up in India’s national anthem. Utkala is one of the former names of Odisha, other popular ones being “Kalinga”, "Udra Desha". The etymology behind the name "Utkala" is as follows. 
 
-## A Culture Called "Odia"
+> The early medieval literature says "उत्कृष्ट कलायाः देशः यः सः उत्कलः ".  Means the land which has excellent opulence of artists and art is called Utkala (Kala=Art, Utkrishta=Excellent); land of Utkrishta Kala.
 
-Odisha is all about a vibrant culture called **"Odia."** And yes, don’t get confused—it’s simple! The language, the culture, and the people of Odisha are all lovingly referred to by the same word: **Odia**.
+Some live examples that one can witness to realize glory of this amazing land called Utkala, are like: Odissi Dance, Puri Jagannath Temple, Khandagiri-Udaygiri caves, Konark Sun Temple, Sambalpuri and Berhampuri Sarees, Pattachitra (paintings), Sand Art, The Folk music, The Classical music and so on. The list is countably infinite. There is an Odia proverb “bara mase tera parba”, which means thirteen festivities in the span of twelve months. Yes, there are thirteen major festivities that are celebrated across the state. Some select ones are, Rath Yatra (celebrating Jagannath’s magical visit to his aunt’s), Raja Sankranti (celebrating womanhood),  Odia Naba Barsha (new year celebrations according to the Sanatan Panjika), Manabasa Gurubara ( a whole month of festivities worshiping Maa Lakshmi). Among the tweleve months, a month named "Kartika" is considered to be the holiest month of the year. People participate in various holy events and most stop eating non-vegetarian food for that holy period. Within "Kartika", five days are denoted as "Panchuka" which are the holiest days of the year, during which even fully non-vegetarian fish eating birds like crane, spoonbill, egret are considered to be staying on fast for that period.
 
-## Utkala and Its Meaning
+The state being relatively underexposed to the industrial revolutions in the last few decades, succeeds in retaining the nature-life balances. However, it has been a victim of cyclones every other year thanks to the raising pollution across the country. Even after facing these frequent natural calamities, the state keeps moving ahead, the people and its culture are inherently strong and motivated in leading the life.
 
-Odisha carries forward its ancient and glorious history as **“Utkala.”** Sounds familiar, right? Yes, it’s the same word mentioned in India’s national anthem. Utkala is one of Odisha’s former names, along with “Kalinga” and “Udra Desha.”
+The food taste in Odisha is quite simple and sober. It has its own magic in it, thanks to the minimalistic approach. The spices are minimal and fully traditional, leading to healthier food. Rice being one of the prime constituents of the general meal, some popular cuisines include, "Dalama", "Santula", "Besara", "Ghanta tarakari" etc. "Jhal mudi" (spiced bhel) is one of the most popular snacks around the state. 
 
-### What’s the meaning of "Utkala"?
+> Some of the most delicious sweets include, the world famous “Rassogola” (originally originated from Odisha), “Chhena Poda”,” Arisa”, “Kakara” etc. 
 
-> "उत्कृष्ट कलायाः देशः यः सः उत्कलः"  
-> (The land that excels in art is called Utkala. "Kala" means art, and "Utkrishta" means excellent.)
+Some of the eminent personalities who are somehow related to Odisha includes, Subhas Ch. Bose (born in Cuttack), V.V. Giri (born in Brahmapur, 4th President of India),  Alan Turing (his parents were then living in Bihar-Odisha province and conceived him :P).
 
-Isn’t that beautiful? You can see this artistic excellence everywhere in Odisha—Odissi dance, Pattachitra paintings, Sambalpuri sarees, and even the famous sand art of Puri!
+Well, this was an attempt to put a light on what Odisha is and has been. I hope you had a great read. But, let me clearly state that this was just a curtain raiser. Film toh abhi baaki hai mere doost. I would put a sequel to this post in the near future, with details of some really magical stuff.
 
-## Festivals Galore
-
-There’s an Odia proverb, “bara mase tera parba,” which means "thirteen festivals in twelve months." This is so true for Odisha! Here are some highlights:
-
-- **Rath Yatra:** The iconic chariot festival of Lord Jagannath.
-- **Raja Sankranti:** A unique celebration of womanhood, full of fun and feasting.
-- **Kartika Month:** The holiest month of the year, during which many people go vegetarian.
-- **Manabasa Gurubara:** A month-long festivity dedicated to Maa Lakshmi.
-
-Even during "Kartika Panchuka" (the five holiest days), there’s a traditional belief that even birds like cranes and spoonbills fast. Fascinating, isn’t it?
-
-## Food in Odisha
-
-Food in Odisha? Oh, it’s simple yet magical! The minimal use of spices keeps it both tasty and healthy. Rice is the hero of most meals, accompanied by dishes like **Dalama**, **Santula**, **Besara**, and **Ghanta Tarkari**.  
-
-And who can forget the iconic **Jhal Mudi**—our spiced puffed rice that you’ll find everywhere from street corners to train stations?
-
-### Sweet Delights
-
-Odia sweets are pure bliss. Here are a few you can’t miss:
-
-- **Rasagola:** Yes, it originated here in Odisha!
-- **Chhena Poda:** A baked dessert made from fresh chhena (cottage cheese).
-- **Kakara:** Sweet fritters with coconut filling.
-- **Arisa:** A delightful rice flour pancake sweetened with jaggery.
-
-## Odisha’s Resilience
-
-Odisha is a land where nature and life coexist beautifully. Though the state often faces cyclones due to its geographic location, its people remain resilient. Their strength and determination shine through every challenge.
-
-## Notable Odias
-
-Odisha has given the world many remarkable personalities, including:
-
-- **Subhas Chandra Bose:** Born in Cuttack, he was one of India’s greatest freedom fighters.
-- **V.V. Giri:** The 4th President of India, born in Berhampur.
-- **Alan Turing:** Surprised? His parents were stationed in the Bihar-Odisha region when he was conceived!
-
-## Wrapping Up
-
-Well, this was just a curtain-raiser about Odisha. As they say, “Picture abhi baaki hai, mere dost!” I’ll come back with more magical stories about my state in a sequel post soon.
-
-Thank you for reading. Keep visiting!
+Thank you! Keep visiting! 
 
 ---
 
-### Visual Treats
+Here are some wonderful snaps that depict my text into reality, please do have a look!
 
-Here are some snaps showcasing the essence of Odisha:
+<img class="img-responsive" src="/images/posts/odisha/odisha1.jpg" alt="">
 
-![Odisha Snap 1](/images/posts/odisha/odisha1.jpg)  
-![Odisha Snap 2](/images/posts/odisha/odisha2.jpg)  
-![Odisha Snap 3](/images/posts/odisha/odisha3.jpg)  
-![Odisha Snap 4](/images/posts/odisha/odisha4.jpg)  
-![Odisha Snap 5](/images/posts/odisha/odisha5.jpg)
+<img class="img-responsive" src="/images/posts/odisha/odisha2.jpg" alt="">
+
+<img class="img-responsive" src="/images/posts/odisha/odisha3.jpg" alt="">
+
+<img class="img-responsive" src="/images/posts/odisha/odisha4.jpg" alt="">
+
+<img class="img-responsive" src="/images/posts/odisha/odisha5.jpg" alt="">
