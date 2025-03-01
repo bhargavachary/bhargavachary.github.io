@@ -13,9 +13,7 @@ tags:
   - Urban Mobility  
   - Sustainable Transport  
   - Last-Mile Connectivity  
-excerpt: "Bengaluru's infamous traffic jams test everyone's patience. But what if there's a way to bypass them altogether? This post explores why e-cycles are emerging as the ultimate commuting hack, beating cars, EVs, and even public transport."  
-author: "Bhargav Achary"  
-date: 2025-03-01  
+excerpt: "Bengaluru's infamous traffic jams test everyone's patience. But what if there's a way to bypass them altogether? This post explores why e-cycles are emerging as the ultimate commuting hack, beating cars, EVs, and even public transport."
 ---
 
 Bengaluru traffic is chaos, but an e-cycle changed my life.
@@ -126,6 +124,4 @@ So tell me—**why are you still stuck in traffic when you could be flying past 
 
 ## **Your Move**  
 
-Would you switch to an e-cycle? Or is the comfort of your car too hard to give up? Drop your thoughts below! 🚀🔥  
-
----
+Would you switch to an e-cycle? Or is the comfort of your car too hard to give up? Drop your thoughts below! 🚀🔥
