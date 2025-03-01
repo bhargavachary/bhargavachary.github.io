@@ -16,13 +16,14 @@ It’s 8:30 AM. The usual scene unfolds—honking, bumper-to-bumper traffic, fru
 
 > _"ETA: 1 hour 25 minutes."_  
 
-For just **7 km**.  
+For just **9 km**.  
 
 Another day of **wasted time, wasted fuel, wasted peace of mind**.  
 
 Then, I see it.  
 
-A guy on an **e-cycle**, weaving through traffic with zero effort. No stress. No frustration. Just effortless motion.  
+A guy on an **e-cycle**, weaving through traffic with zero effort.
+No stress. No frustration. Just effortless motion.  
 
 And it hits me—**am I doing this all wrong?**  
 
@@ -35,8 +36,8 @@ I’ve tried it all:
 🚗 **Car?** Expensive, slow, stuck.  
 🛵 **Scooter?** Slightly better, still traffic.  
 🚇 **Metro?** Great, but last-mile travel is painful.  
-🚍 **BMTC?** Cheap, but unreliable.  
-🚴 **Regular cycle?** Never again. Bengaluru’s heat is no joke.  
+🚍 **BMTC?** Cheap, but unreliable, and chaotic.  
+🚴 **Regular cycle?** Never again. Bengaluru’s heat is no joke, these days! 
 
 Then, I discovered **e-cycles**.  
 
