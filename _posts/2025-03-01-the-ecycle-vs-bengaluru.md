@@ -7,7 +7,8 @@ author: "Bhargav Achary"
 excerpt: "Bengaluru traffic is chaos, but an e-cycle changed my life. Here’s why it outperforms cars, scooters, and even public transport."
 ---
 
-# **Bengaluru Traffic Hack: Why My E-Cycle Beats Cars, EVs & Metro**  
+Bengaluru traffic is chaos, but an e-cycle changed my life.
+Here’s why it outperforms cars, scooters, and even public transport.
 
 ## **Act 1: The Daily Traffic Nightmare**  
 
