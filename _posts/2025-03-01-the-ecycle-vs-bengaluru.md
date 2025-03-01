@@ -1,10 +1,21 @@
 ---
-title: "Bengaluru Traffic Hack: Why E-Cycle Beats Cars, EVs & Metro?"
-date: 2025-03-01
-categories: ["Commuting", "Sustainability", "Technology"]
-tags: ["E-Cycles", "Bengaluru Traffic", "EVs", "Public Transport", "WeR EV"]
-author: "Bhargav Achary"
-excerpt: "Bengaluru traffic is chaos, but an e-cycle changed my life. Here’s why it outperforms cars, scooters, and even public transport."
+title: "Bengaluru Traffic Hack: Can E-Cycles Outrun Cars, EVs & Metro?"
+categories:  
+  - Commuting  
+  - Sustainability  
+  - Technology  
+tags:  
+  - E-Cycles  
+  - Bengaluru Traffic  
+  - EVs  
+  - Public Transport  
+  - WeR EV  
+  - Urban Mobility  
+  - Sustainable Transport  
+  - Last-Mile Connectivity  
+excerpt: "Bengaluru's infamous traffic jams test everyone's patience. But what if there's a way to bypass them altogether? This post explores why e-cycles are emerging as the ultimate commuting hack, beating cars, EVs, and even public transport."  
+author: "Bhargav Achary"  
+date: 2025-03-01  
 ---
 
 Bengaluru traffic is chaos, but an e-cycle changed my life.
