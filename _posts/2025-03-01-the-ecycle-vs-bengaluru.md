@@ -1,5 +1,5 @@
 ---
-title: "Bengaluru Traffic Hack: Why My E-Cycle Beats Cars, EVs & Metro"
+title: "Bengaluru Traffic Hack: Why E-Cycle Beats Cars, EVs & Metro?"
 date: 2025-03-01
 categories: ["Commuting", "Sustainability", "Technology"]
 tags: ["E-Cycles", "Bengaluru Traffic", "EVs", "Public Transport", "WeR EV"]
@@ -63,7 +63,7 @@ I had unlocked **Bengaluru’s ultimate commuting cheat code**.
 | **Factor**        | **E-Cycle (WeR EV)** | **Electric Scooter (Ola, Ather)** | **Electric Car (Nexon EV, MG ZS EV)** | **Metro/BMTC** |
 |-------------------|---------------------|---------------------------------|------------------------------|--------------|
 | **Traffic Bypass** | 🚀 **Yes** | ❌ **No** | ❌ **No** | 🚀 **Yes (Metro only)** |
-| **Speed**        | ⚡ 25 km/h | ⚡ 80 km/h | ⚡ 120 km/h | ⚡ 60 km/h (Metro) |
+| **Max Speed**        | ⚡ 25 km/h | ⚡ 80 km/h | ⚡ 120 km/h | ⚡ 60 km/h (Metro) |
 | **Cost per km**   | 💰 **₹0.10** | 💰 ₹0.60 | 💰 ₹1.50 | 💰 ₹0.50 |
 | **Parking Hassle** | 🚀 **None** | ❌ **Some** | ❌ **Major** | 🚀 **None** |
 | **Fitness Benefit** | 🚴 **Yes** | ❌ **No** | ❌ **No** | ❌ **No** |
