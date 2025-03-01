@@ -1,5 +1,5 @@
 ---
-title: "Bengaluru Traffic Hack: Can E-Cycles Outrun Cars, EVs & Metro?"
+title: "Traffic Hack: Can E-Cycles Outrun Cars, EVs & Metro?"
 categories:  
   - Commuting  
   - Sustainability  
