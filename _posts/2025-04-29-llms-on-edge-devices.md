@@ -181,12 +181,13 @@ There’s progress. Tools like `llama.cpp`, MLX, ONNX, and Core ML are improving
 
 And maybe, just maybe, the future of AI won’t live in cloud clusters — it’ll run right from your laptop bag.
 
+While we just focused on LLMs for this article, we need to appreciate the fact that DNN-inference especially relevant to image, video, speech processing have progressed significantly and we cannot discard their significance just because the hardware is still *"Not LLM ready".*
+
 ---
 
 ## **📣 Your Turn: Share Your Edge-AI Story**
 
 Have you tried running LLMs on your Mac, PC, or ARM laptop?
-While I just focused on LLMs for this article, we need to appreciate the fact that DNNs especially relevant to image, video, speech processing have progressed significantly and we cannot discard their significance just because the hardware is still not LLM ready.
 
 Drop your comments, exeriences, benchmarks, pain points, or clever hacks in the comments or tag [@bhargavachary](https://bhargavachary.in) — let’s build this road together.
 
