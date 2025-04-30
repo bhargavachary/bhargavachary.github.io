@@ -16,10 +16,9 @@ tags:
 excerpt: "Bengaluru's infamous traffic jams test everyone's patience. But what if there's a way to bypass them altogether? This post explores why e-cycles are emerging as the ultimate commuting hack, beating cars, EVs, and even public transport."
 ---
 
-# **Traffic Hack: Can E-Cycles Outrun Cars, EVs & Metro?**
+**Bengaluru traffic is chaos, but an e-cycle changed my life.**  I am no longer in the traffic anxiety, significantly confident of not getting a dent on my car, and yeah less likely to get into that random road rage.
 
-**Bengaluru traffic is chaos, but an e-cycle changed my life.**  
-Here’s why it quietly outperforms cars, scooters, and even the metro.
+Anyway, here’s why it quietly outperforms cars, scooters, and even the metro.
 
 ---
 

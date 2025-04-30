@@ -19,7 +19,7 @@ tags:
 excerpt: "M-series, Snapdragon X Elite, AMD Phoenix, Intel Meteor Lake — the most powerful SoCs ever made for consumers. But even they struggle with running large language models locally. Here's why edge AI inference hits roadblocks, and what the future holds."
 ---
 
-# **Edge AI Inference: Built Like a Rocket, Stuck in Bangalore Traffic**
+M-series, Snapdragon X Elite, AMD Phoenix, Intel Meteor Lake — the most powerful SoCs ever made for consumers. But even they struggle with running large language models locally. Here's why edge AI inference hits roadblocks, and what the future holds.
 
 **How Apple, AMD, Intel, and Qualcomm hit the limits of on-device AI — and what it really takes to run LLMs locally**
 
@@ -29,11 +29,11 @@ excerpt: "M-series, Snapdragon X Elite, AMD Phoenix, Intel Meteor Lake — the m
 
 It was a Bengaluru morning like any other — clouds hanging low, the comforting aroma of filter coffee, and Apple’s WWDC streaming in the background. The phrase *Apple Intelligence* lit up the screen — a perfect blend of marketing brilliance and technical aspiration. I’ll admit, I leaned forward.
 
-After a decade of debugging hardware bottlenecks and watching AI gradually seep from server racks into silicon, this felt like a moment. M-series chips. Unified memory. Local LLMs. It had finally arrived.
+After a decade of debugging system bottlenecks and watching AI gradually seep from server racks into silicon, this felt like a moment. M-series chips. Unified memory. Local LLMs. It had finally arrived.
 
 Or had it?
 
-Six months later, the rose-tinted optimism had dulled. Siri hadn’t become any wiser, and the local LLMs felt more like college interns trying to impersonate a CEO. As I wrote in ["The Apple Intelligence Saga"](https://bhargavachary.in/2024/12/12/the-apple-intellgence-saga.html), the dream was real, but the execution struggled.
+Few months later, the rose-tinted optimism had dulled. Siri hadn’t become any wiser, and the local LLMs felt more like college interns trying to impersonate a CEO. As I wrote in ["The Apple Intelligence Saga"](https://bhargavachary.in/2024/12/12/the-apple-intellgence-saga.html), the dream was real, but the execution struggled.
 
 And that’s what this blog unpacks: not just **how the edge is promising**, but also **why it’s still disappointing**.
 
