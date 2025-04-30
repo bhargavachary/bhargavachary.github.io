@@ -46,7 +46,7 @@ Modern SoCs like Apple M-series, Snapdragon X Elite, AMD Phoenix, and Intel Mete
 ### 🍏 Apple M-Series
 
 - **Strengths:** Unified memory, FP16 native, fast Metal backends  
-- **Weaknesses:** RAM capped at 24 GB, thermal throttling, inconsistent runtime support
+- **Weaknesses:** Potential thermal throttling, inconsistent runtime support
 
 ### ⚙️ Snapdragon X Elite
 
