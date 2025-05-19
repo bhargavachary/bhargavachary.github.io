@@ -177,5 +177,6 @@ It’s not about faster chips. It’s about smarter systems.
 
 ---
 
-Author: Bhargav Achary  
+Author: Bhargav Achary
+
 System engineer turned AI explorer. I write about computing architectures, machine learning, and the symphony of hardware and intelligence. Follow me for more stories that make silicon sing.
