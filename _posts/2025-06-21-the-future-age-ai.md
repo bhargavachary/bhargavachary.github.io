@@ -1,5 +1,5 @@
 ---
-title: "The Future of Life, Work, and Wealth in the Age of AI (2025–2050)"
+title: "The Future of Life, Work, and Wealth in the Age of AI"
 categories:  
   - Society  
   - Technology  
@@ -14,8 +14,6 @@ tags:
   - Ethics
 excerpt: "As artificial intelligence evolves from a niche discipline to a global force shaping every industry, community, and household, the next 25 years promise a profound transformation. From AI copilots in everyday life to brain-machine interfaces, quantum leaps in health and energy, and radical shifts in how we work and create value—this blog unpacks the milestones, mindsets, and dilemmas awaiting us between 2025 and 2050. Grounded in real stories, millennial sages, and India’s street-level wisdom, it offers both warning and hope: adapt, collaborate, and create—not just for survival, but for meaning."
 ---
-
-# The Future of Life, Work, and Wealth in the Age of AI
 
 ### Ceiling Fan, Masala Chai, aur Algorithm Wali Duniya
 
