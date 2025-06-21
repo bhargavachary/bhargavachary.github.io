@@ -14,7 +14,6 @@ tags:
   - Ethics
 excerpt: "As artificial intelligence evolves from a niche discipline to a global force shaping every industry, community, and household, the next 25 years promise a profound transformation. From AI copilots in everyday life to brain-machine interfaces, quantum leaps in health and energy, and radical shifts in how we work and create value—this blog unpacks the milestones, mindsets, and dilemmas awaiting us between 2025 and 2050. Grounded in real stories, millennial sages, and India’s street-level wisdom, it offers both warning and hope: adapt, collaborate, and create—not just for survival, but for meaning."
 ---
-
 ### Ceiling Fan, Masala Chai, aur Algorithm Wali Duniya
 
 Some thoughts don’t come gently—they crash in, urgent and electric. This one hit me on a rainy Friday evening, cycling from HAL side roads to Doddanekundi, Sam Altman’s podcast in my ears, Bengaluru’s chaos all around. I’ve followed AI closely ever since my Ph.D. days at IITH in 2019—when Generative AI was just starting to stir up debates, and my first project with an LSTM-based summariser felt almost magical.
