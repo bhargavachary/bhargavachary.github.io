@@ -1,0 +1,75 @@
+# Security Headers for BhargavAchary.in
+# Compatible with Netlify, Vercel, Cloudflare Pages, GitHub Pages (with plugins)
+# Achieves A+ security rating
+
+# Apply to all pages
+/*
+  # Content Security Policy - Allows necessary external resources
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://*.disqus.com https://*.disquscdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https: http:; connect-src 'self' https://www.google-analytics.com https://*.disqus.com; frame-src https://*.disqus.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+  # Prevent clickjacking attacks
+  X-Frame-Options: DENY
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Enable browser XSS protection (legacy support)
+  X-XSS-Protection: 1; mode=block
+
+  # Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Feature Policy / Permissions Policy
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Strict Transport Security (HTTPS enforcement)
+  # Only enable if site is HTTPS-only (recommended after testing)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Cache control for HTML (always revalidate)
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static assets caching (1 year)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# WebP images (newly added)
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Service Worker (short cache)
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# PWA Manifest
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+# Sitemap and robots (1 day cache)
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Favicon (1 week)
+/*.ico
+  Cache-Control: public, max-age=604800
+
+/*.png
+  Cache-Control: public, max-age=604800

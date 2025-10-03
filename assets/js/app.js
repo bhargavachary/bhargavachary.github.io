@@ -64,7 +64,6 @@
             document.removeEventListener(listener.type, listener.handler, listener.options);
         });
         themeToggleListeners = [];
-        console.log('Theme toggle initialization reset for cached page');
     }
 
     // Sync theme button state with actual DOM theme
@@ -83,13 +82,11 @@
             // Force icon visibility update via CSS classes
             html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
             
-            console.log('Theme button state synced:', currentTheme);
         }
     }
 
     // Toggle theme function
     function toggleTheme(e) {
-        console.log('toggleTheme called via delegation!', e);
 
         if (e) {
             e.preventDefault();
@@ -99,7 +96,6 @@
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-        console.log('Manual theme toggle from', currentTheme, 'to', newTheme);
 
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
@@ -128,7 +124,6 @@
             });
         }
 
-        console.log('Theme toggle complete');
         return false;
     }
 
@@ -136,16 +131,13 @@
     function initThemeToggleWithDelegation() {
         // CRITICAL: Always reset for cached pages
         if (performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
-            console.log('Detected cached page load (back/forward), forcing reset');
             resetInitialization();
         }
         
         if (isInitialized) {
-            console.log('Theme toggle already initialized, skipping');
             return;
         }
 
-        console.log('Initializing theme toggle with event delegation');
 
         // Click handler with delegation - HIGHEST PRIORITY
         const clickHandler = function(e) {
@@ -154,7 +146,6 @@
                           e.target.closest('[data-theme-toggle]') ||
                           e.target.closest('.theme-toggle-item');
             if (toggle) {
-                console.log('Theme toggle click captured!');
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
@@ -173,7 +164,6 @@
                           e.target.closest('[data-theme-toggle]') ||
                           e.target.closest('.theme-toggle-item');
             if (toggle && (e.key === 'Enter' || e.key === ' ')) {
-                console.log('Theme toggle keyboard captured!');
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
@@ -192,7 +182,6 @@
                           e.target.closest('[data-theme-toggle]') ||
                           e.target.closest('.theme-toggle-item');
             if (toggle) {
-                console.log('Theme toggle touch captured!');
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
@@ -205,7 +194,6 @@
         themeToggleListeners.push({ type: 'touchend', handler: touchHandler, options: { capture: true, passive: false } });
 
         isInitialized = true;
-        console.log('Theme toggle initialized successfully with delegation');
         
         // CRITICAL: Sync theme button state immediately after initialization
         syncThemeButtonState();
@@ -223,7 +211,6 @@
     // pageshow event fires for cached pages (back/forward navigation)
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
-            console.log('Page restored from cache (pageshow), reinitializing theme toggle');
             resetInitialization();
             initThemeToggleWithDelegation();
         }
@@ -232,21 +219,18 @@
     
     // pagehide event to clean up before caching
     window.addEventListener('pagehide', function() {
-        console.log('Page being cached, cleaning up theme toggle');
         // Don't reset here, just log for debugging
     });
 
     // Sync button state on page visibility change (handles navigation scenarios)
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
-            console.log('Page became visible, syncing theme state');
             
             // Sync theme from localStorage if it changed externally
             const savedTheme = localStorage.getItem('theme') || 'dark';
             const currentTheme = html.getAttribute('data-theme');
             
             if (savedTheme !== currentTheme) {
-                console.log('Theme out of sync, correcting:', currentTheme, '->', savedTheme);
                 html.setAttribute('data-theme', savedTheme);
             }
             
@@ -258,7 +242,6 @@
     // Additional fallback: force re-init on focus (for cached pages)
     window.addEventListener('focus', function() {
         if (!isInitialized) {
-            console.log('Window focused and theme toggle not initialized, forcing init');
             initThemeToggleWithDelegation();
         }
         syncThemeButtonState();
@@ -271,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-        console.log('Theme toggle button present on page');
     } else {
         console.warn('Theme toggle button not found on this page layout');
     }
@@ -324,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const entries = entryList.getEntries();
                     const lastEntry = entries[entries.length - 1];
                     this.metrics.lcp = lastEntry.startTime;
-                    console.log('LCP:', lastEntry.startTime);
                     
                     // Send to analytics if available
                     if (typeof gtag !== 'undefined') {
@@ -342,7 +323,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     entries.forEach(entry => {
                         const fid = entry.processingStart - entry.startTime;
                         this.metrics.fid = fid;
-                        console.log('FID:', fid);
                         
                         if (typeof gtag !== 'undefined') {
                             gtag('event', 'web_vitals', {
@@ -363,7 +343,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     this.metrics.cls = clsValue;
-                    console.log('CLS:', clsValue);
                     
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'web_vitals', {
@@ -382,21 +361,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.performance && window.performance.timing) {
                 const ttfb = window.performance.timing.responseStart - window.performance.timing.requestStart;
                 this.metrics.ttfb = ttfb;
-                console.log('TTFB:', ttfb);
             }
             
             // DOM content loaded time
             window.addEventListener('DOMContentLoaded', () => {
                 const domTime = performance.now();
                 this.metrics.domContentLoaded = domTime;
-                console.log('DOM Content Loaded:', domTime);
             });
             
             // Window load time
             window.addEventListener('load', () => {
                 const loadTime = performance.now();
                 this.metrics.windowLoad = loadTime;
-                console.log('Window Load:', loadTime);
             });
         }
     };
@@ -419,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         const imageLoader = new Image();
                         imageLoader.onload = () => {
                             const loadTime = performance.now() - startTime;
-                            console.log(`Image loaded in ${loadTime}ms:`, img.dataset.src);
                             
                             img.src = img.dataset.src;
                             img.classList.add('loaded');
@@ -484,7 +459,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = e.target.href;
         link.onload = () => {
             const prefetchTime = performance.now() - startTime;
-            console.log(`Link prefetched in ${prefetchTime}ms:`, e.target.href);
         };
         document.head.appendChild(link);
     }
@@ -683,10 +657,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
                 // Swiped up
-                console.log('Swipe up detected');
             } else {
                 // Swiped down
-                console.log('Swipe down detected');
 
                 // Pull to refresh effect (when at top of page)
                 if (window.scrollY === 0) {
@@ -759,14 +731,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if ('connection' in navigator) {
         const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
         if (connection) {
-            console.log('Connection type:', connection.effectiveType);
-            console.log('Downlink speed:', connection.downlink, 'Mbps');
             
             // Adapt loading strategy based on connection
             if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
                 // Disable some animations for slow connections
                 document.documentElement.style.setProperty('--animation-duration', '0s');
-                console.log('Animations disabled for slow connection');
             }
         }
     }
@@ -812,7 +781,6 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('SW registered:', registration);
                 
                 // Track SW registration success
                 if (typeof gtag !== 'undefined') {
@@ -823,7 +791,6 @@ if ('serviceWorker' in navigator) {
                 }
             })
             .catch(error => {
-                console.log('SW registration failed:', error);
                 
                 // Track SW registration failure
                 if (typeof gtag !== 'undefined') {
@@ -864,13 +831,11 @@ if ('serviceWorker' in navigator) {
 
         // CRITICAL: Skip theme toggle button to prevent interference
         if (link && link.id === 'theme-toggle') {
-            console.log('Page transition handler: skipping theme toggle');
             return;
         }
 
         // ALSO: Skip any element with theme-toggle class
         if (link && (link.classList.contains('theme-toggle') || link.classList.contains('theme-toggle-item'))) {
-            console.log('Page transition handler: skipping theme toggle item');
             return;
         }
 
@@ -896,7 +861,6 @@ if ('serviceWorker' in navigator) {
                 }
             } catch (err) {
                 // If URL parsing fails, just let the link work normally
-                console.log('Link navigation error:', err);
             }
         }
     });

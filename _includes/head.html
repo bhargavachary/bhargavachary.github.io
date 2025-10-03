@@ -117,20 +117,39 @@
         >
     </noscript>
     
-    <!-- Optimized social styles loading -->
+    <!-- Optimized social styles loading with SRI -->
     {% unless site.hide_share_buttons %}
-        <link 
-            rel="preload" 
-            href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" 
-            as="style" 
+        <link
+            rel="preload"
+            href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css"
+            as="style"
             onload="this.onload=null;this.rel='stylesheet'"
+            integrity="sha384-uc9IcxwCxQT25D+QDU203FBzFbCQkzV+ao18iaPTxMnSjN7Nm37xEwCVLmC1jEzw"
+            crossorigin="anonymous"
         >
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css"></noscript>
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css"
+                integrity="sha384-uc9IcxwCxQT25D+QDU203FBzFbCQkzV+ao18iaPTxMnSjN7Nm37xEwCVLmC1jEzw"
+                crossorigin="anonymous"
+            >
+        </noscript>
     {% endunless %}
     
-    <!-- Defer non-critical JavaScript -->
-    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- Defer non-critical JavaScript with SRI -->
+    <script
+        defer
+        src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"
+        integrity="sha384-YLn2fD95BjQzmdi4Q0fYJ9Bq/lH5dKYdBi6Gc6a2YLzzNPlkPGp/QulFey8/xwqy"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
+        integrity="sha384-/vxhYfM1LENRhdpZ8dwEsQn/X4VhpbEZSiU4m/FwR+PVpzar4fkEOw8FP9Y+OfQN"
+        crossorigin="anonymous"
+    ></script>
     
     {% seo %}
     {% include enhanced-meta.html %}

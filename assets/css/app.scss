@@ -169,12 +169,12 @@ html[data-theme="dark"] .navbar {
 
   /* Navbar brand items - consistent styling with menu items */
   .navbar-brand .navbar-item {
-    color: var(--text-primary) !important;
+    color: var(--text-primary);
     background: rgba(255, 255, 255, 0.03) !important;
 
     &:hover {
       background: rgba(45, 212, 191, 0.15) !important;
-      color: var(--primary-color) !important;
+      color: var(--primary-color);
       /* Same squircle glow as other items */
       box-shadow:
         inset 0 0 0 0.5px rgba(45, 212, 191, 0.3),
@@ -185,12 +185,12 @@ html[data-theme="dark"] .navbar {
 
   /* All navbar items */
   .navbar-item {
-    color: var(--text-primary) !important;
+    color: var(--text-primary);
     background: rgba(255, 255, 255, 0.03) !important;
 
     &:hover {
       background: rgba(45, 212, 191, 0.15) !important;
-      color: var(--primary-color) !important;
+      color: var(--primary-color);
       /* Squircle-shaped teal glow in dark mode */
       box-shadow:
         inset 0 0 0 0.5px rgba(45, 212, 191, 0.3),
@@ -200,7 +200,7 @@ html[data-theme="dark"] .navbar {
 
     &.is-active {
       background: rgba(45, 212, 191, 0.2) !important;
-      color: var(--primary-light) !important;
+      color: var(--primary-light);
       /* Squircle-shaped teal glow for active in dark mode */
       box-shadow:
         inset 0 0 0 1.5px rgba(45, 212, 191, 0.4),
@@ -541,8 +541,8 @@ html {
 
   /* Subtle hover state - simple centered zoom */
   &:hover {
-    transform: scale(1.02) !important;
-    box-shadow: var(--shadow-lg) !important;
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
 
     .card-image img,
     .card-image picture img {
@@ -620,7 +620,7 @@ html {
   }
 
   &:hover {
-    transform: scale(1.02) !important;
+    transform: scale(1.02);
     box-shadow: var(--shadow-lg) !important;
 
     .compact-card-image img,
@@ -811,7 +811,7 @@ picture img {
         0 0 16px rgba(255, 255, 255, 0.6),
         0 0 24px rgba(255, 254, 245, 0.4),
         0 1px 4px rgba(0, 0, 0, 0.3);
-      transform: scale(1.02) translateY(-1px) !important;
+      transform: scale(1.02) translateY(-1px);
     }
   }
 
@@ -876,7 +876,7 @@ picture img {
         0 0 16px rgba(255, 255, 255, 0.6),
         0 0 24px rgba(255, 254, 245, 0.4),
         0 1px 4px rgba(0, 0, 0, 0.3);
-      transform: scale(1.02) translateY(-1px) !important;
+      transform: scale(1.02) translateY(-1px);
     }
 
     /* iOS-style click */
@@ -1591,7 +1591,7 @@ a:not(.button):not(.navbar-item) {
 
   .scroll-reveal {
     opacity: 1 !important;
-    transform: none !important;
+    transform: none;
   }
 }
 
@@ -1728,7 +1728,7 @@ nav[class*="navbar"].is-primary a:active {
     transform: scale(1);
 
     &:hover {
-      transform: scale(1.02) !important;
+      transform: scale(1.02);
       background-color: rgba(255, 255, 255, 0.1);
     }
 
@@ -2138,17 +2138,17 @@ html[data-theme="dark"] {
   .pagination-next,
   .pagination-link {
     background-color: var(--bg-elevated);
-    border-color: var(--primary-color) !important;
-    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 
     &:hover {
-      background-color: rgba(45, 212, 191, 0.15) !important;
-      border-color: var(--primary-hover) !important;
+      background-color: rgba(45, 212, 191, 0.15);
+      border-color: var(--primary-hover);
     }
 
     &.is-current {
-      background-color: var(--primary-color) !important;
-      color: #000000 !important;
+      background-color: var(--primary-color);
+      color: #000000;
     }
   }
 
@@ -2323,10 +2323,10 @@ html[data-theme="dark"] {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 
     .navbar-item {
-      color: var(--text-primary) !important;
+      color: var(--text-primary);
 
       &:hover {
-        background-color: var(--bg-secondary) !important;
+        background-color: var(--bg-secondary);
       }
     }
   }

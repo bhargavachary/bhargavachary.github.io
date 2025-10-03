@@ -1,0 +1,53 @@
+{% comment %}
+  Responsive Image Helper with WebP Support
+
+  Usage:
+  {% include responsive-image.html
+     src="images/posts/example.jpg"
+     alt="Description of image"
+     class="custom-class"
+     sizes="(max-width: 768px) 100vw, 50vw"
+  %}
+
+  Automatically generates:
+  - WebP sources with fallback to JPG/PNG
+  - Responsive srcset (if multiple sizes exist)
+  - Proper alt text for accessibility
+  - Lazy loading attributes
+{% endcomment %}
+
+{% assign image_path = include.src %}
+{% assign image_alt = include.alt | default: "" %}
+{% assign image_class = include.class | default: "" %}
+{% assign image_sizes = include.sizes | default: "100vw" %}
+
+{% comment %} Remove file extension to build WebP path {% endcomment %}
+{% assign path_parts = image_path | split: "." %}
+{% assign extension = path_parts | last %}
+{% assign path_without_ext = image_path | replace: extension, "" | remove: "." %}
+{% assign webp_path = path_without_ext | append: ".webp" %}
+
+<picture class="{{ image_class }}">
+  {% comment %} WebP source (modern browsers) {% endcomment %}
+  <source
+    type="image/webp"
+    srcset="{{ site.baseurl }}/{{ webp_path }}"
+    sizes="{{ image_sizes }}"
+  >
+
+  {% comment %} Fallback to original format {% endcomment %}
+  <source
+    type="image/{{ extension }}"
+    srcset="{{ site.baseurl }}/{{ image_path }}"
+    sizes="{{ image_sizes }}"
+  >
+
+  {% comment %} Fallback img element {% endcomment %}
+  <img
+    src="{{ site.baseurl }}/{{ image_path }}"
+    alt="{{ image_alt }}"
+    loading="lazy"
+    decoding="async"
+    class="{{ image_class }}"
+  >
+</picture>
