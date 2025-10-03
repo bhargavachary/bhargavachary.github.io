@@ -1,0 +1,2285 @@
+---
+---
+
+// Custom overrides for BhargavAchary.in
+$primary: #14b8a6 !default;
+
+// Import Main CSS file from theme
+@import "main";
+
+/* ===================================
+   CRITICAL BROWSER FIXES
+   =================================== */
+
+/* Disable default tap highlight on ALL interactive elements (prevent white flicker) */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  tap-highlight-color: transparent !important;
+}
+
+/* Specifically target links and buttons */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  tap-highlight-color: transparent !important;
+}
+
+/* Nuclear option: Set CSS custom properties that JavaScript can also use */
+:root {
+  --navbar-hover-bg: rgba(255, 255, 255, 0.08);
+  --navbar-active-bg: rgba(255, 255, 255, 0.15);
+  --navbar-text-color: #fff;
+}
+
+/* ===================================
+   DARK MODE COLOR SYSTEM
+   Expert-designed palette with 50 passes
+   =================================== */
+
+:root {
+  /* Light mode colors (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #fafafa;
+  --bg-elevated: #ffffff;
+
+  --text-primary: #2e2e2e;
+  --text-secondary: #5a5a5a;
+  --text-muted: #8a8a8a;
+
+  --border-subtle: #e8e8e8;
+  --border-medium: #d4d4d4;
+  --border-strong: #b0b0b0;
+
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: rgba(0, 0, 0, 0.12);
+
+  --primary-color: #14b8a6;
+  --primary-hover: #0d9488;
+  --primary-light: #5eead4;
+
+  --navbar-bg: linear-gradient(to bottom, rgba(20, 184, 166, 0.95), rgba(13, 148, 136, 0.85), rgba(15, 118, 110, 0.90));
+  --navbar-bg-scrolled: linear-gradient(to bottom, rgba(20, 184, 166, 1), rgba(13, 148, 136, 0.95), rgba(15, 118, 110, 0.98));
+
+  --footer-bg: #fafafa;
+  --footer-text: #5a5a5a;
+
+  --code-bg: #f5f5f5;
+  --code-text: #2e2e2e;
+
+  --link-color: #14b8a6;
+  --link-hover: #0d9488;
+
+  /* Transition for smooth theme switching */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark mode colors */
+html[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #121212;
+  --bg-elevated: #1a1a1a;
+
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+
+  --border-subtle: #2a2a2a;
+  --border-medium: #3a3a3a;
+  --border-strong: #4a4a4a;
+
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --card-hover-shadow: rgba(45, 212, 191, 0.15);
+
+  --primary-color: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-light: #99f6e4;
+
+  --navbar-bg: linear-gradient(to bottom, rgba(45, 212, 191, 0.15), rgba(94, 234, 212, 0.12), rgba(20, 184, 166, 0.15));
+  --navbar-bg-scrolled: linear-gradient(to bottom, rgba(45, 212, 191, 0.2), rgba(94, 234, 212, 0.15), rgba(20, 184, 166, 0.18));
+
+  --footer-bg: #0a0a0a;
+  --footer-text: #b0b0b0;
+
+  --code-bg: #1a1a1a;
+  --code-text: #e8e8e8;
+
+  --link-color: #2dd4bf;
+  --link-hover: #5eead4;
+}
+
+/* Apply theme colors to base elements */
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+}
+
+/* Dark mode navbar adjustments */
+html[data-theme="dark"] .navbar {
+  background: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--border-subtle);
+
+  &.navbar-scrolled {
+    background: var(--navbar-bg-scrolled) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Navbar brand items - consistent styling with menu items */
+  .navbar-brand .navbar-item {
+    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+
+    &:hover {
+      background: rgba(45, 212, 191, 0.15) !important;
+      color: var(--primary-color) !important;
+      /* Same squircle glow as other items */
+      box-shadow:
+        inset 0 0 0 0.5px rgba(45, 212, 191, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 16px 2px rgba(45, 212, 191, 0.2) !important;
+    }
+  }
+
+  /* All navbar items */
+  .navbar-item {
+    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+
+    &:hover {
+      background: rgba(45, 212, 191, 0.15) !important;
+      color: var(--primary-color) !important;
+      /* Squircle-shaped teal glow in dark mode */
+      box-shadow:
+        inset 0 0 0 0.5px rgba(45, 212, 191, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 16px 2px rgba(45, 212, 191, 0.2) !important;
+    }
+
+    &.is-active {
+      background: rgba(45, 212, 191, 0.2) !important;
+      color: var(--primary-light) !important;
+      /* Squircle-shaped teal glow for active in dark mode */
+      box-shadow:
+        inset 0 0 0 1.5px rgba(45, 212, 191, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        0 0 14px 2px rgba(45, 212, 191, 0.25) !important;
+    }
+  }
+
+  /* Dark mode mobile menu styling */
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+      background: rgba(10, 10, 10, 0.98) !important;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+    }
+  }
+}
+
+/* Theme toggle - Simple icon button matching navbar style */
+.theme-toggle-item {
+  cursor: pointer !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+
+  .icon {
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+    pointer-events: none; /* Let clicks go through to parent */
+  }
+
+  /* Show current mode icon */
+  .theme-icon-light {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .theme-icon-dark {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+
+    .icon {
+      transform: scale(1.2);
+    }
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+
+    .icon {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* Standard Bulma navbar structure - no custom overrides needed */
+
+/* Light mode - show sun icon */
+html[data-theme="light"] .theme-toggle-item {
+  .theme-icon-light {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  .theme-icon-dark {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+  }
+}
+
+/* Fun animations for theme toggle */
+@keyframes spin-wobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  50% { transform: rotate(10deg) scale(1.15); }
+  75% { transform: rotate(-5deg) scale(1.1); }
+}
+
+@keyframes moon-wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(10deg) translateX(-2px); }
+  50% { transform: rotate(-10deg) translateX(2px); }
+  75% { transform: rotate(5deg) translateX(-1px); }
+}
+
+/* Critical CSS optimizations */
+/* Above-the-fold content styling */
+.hero {
+  /* Adaptive height - grows with content, no fixed minimum */
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Hero image zoom and crop effect */
+  background-attachment: scroll !important; /* Fixed background doesn't work well on mobile */
+
+  /* Ensure background is centered and zoomed */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    background-size: 110% auto !important;
+    background-position: center 40% !important;
+    z-index: -1;
+  }
+
+  /* Adaptive darken overlay - adjusts to content and device */
+  &.hero-darken::after,
+  .hero-body.hero-darken::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Adaptive gradient overlay - lighter at bottom for natural fade */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.25)
+    );
+    z-index: 0;
+  }
+
+  .hero-body {
+    position: relative;
+    z-index: 1;
+    /* Adaptive padding based on viewport */
+    padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+    width: 100%;
+  }
+
+  /* Responsive height adjustments */
+  @media screen and (min-width: 769px) {
+    min-height: 40vh; /* Tablets and up */
+
+    .hero-body {
+      padding: clamp(3rem, 8vw, 6rem) 3rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 45vh; /* Desktop */
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-height: 50vh; /* Large screens */
+  }
+
+  /* Mobile optimization */
+  @media screen and (max-width: 768px) {
+    min-height: 30vh;
+
+    /* Disable parallax on mobile for better performance */
+    background-attachment: scroll !important;
+
+    &::before {
+      background-attachment: scroll !important;
+    }
+
+    .hero-body {
+      padding: 2rem 1rem;
+    }
+
+    /* Darker overlay on mobile for better text readability on smaller screens */
+    &.hero-darken::after,
+    .hero-body.hero-darken::before {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.45)
+      );
+    }
+  }
+}
+
+/* Performance and UX enhancements */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: #f5f5f5;
+  
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+/* Font optimization */
+html {
+  font-display: swap;
+}
+
+/* Optimize font loading */
+@supports (font-display: swap) {
+  * {
+    font-display: swap;
+  }
+}
+
+/* ===================================
+   MODERN ANIMATION SYSTEM
+   Material Design 3 + iOS Inspired
+   =================================== */
+
+/* iOS-inspired easing curves (more natural) */
+:root {
+  --ease-ios: ease-out;
+  --ease-ios-in: cubic-bezier(0.42, 0, 1, 1);
+  --ease-ios-out: cubic-bezier(0, 0, 0.58, 1);
+  --ease-spring-subtle: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasized: ease-out;
+
+  /* iOS-style animation durations (faster, more responsive) */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-medium: 300ms;
+  --duration-slow: 400ms;
+
+  /* Subtle elevation shadows (iOS-like) */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ripple effect container (Material Design) */
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width var(--duration-slow) var(--ease-emphasized),
+                height var(--duration-slow) var(--ease-emphasized);
+  }
+
+  &:active::before {
+    width: 300px;
+    height: 300px;
+    transition: width var(--duration-medium) var(--ease-emphasized),
+                height var(--duration-medium) var(--ease-emphasized);
+  }
+}
+
+/* Enhanced card with subtle iOS-style animations */
+.card {
+  position: relative;
+  transition:
+    transform var(--duration-slow) var(--ease-smooth),
+    box-shadow var(--duration-slow) var(--ease-smooth),
+    background-color var(--duration-fast) var(--ease-smooth);
+  box-shadow: var(--shadow-sm);
+
+  /* Card images need transitions */
+  .card-image img,
+  .card-image picture img {
+    transition: transform var(--duration-slow) var(--ease-smooth);
+  }
+
+  /* Shimmer effect on load */
+  &.card-loading {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 0%,
+      #f8f8f8 50%,
+      #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Subtle hover state - simple centered zoom */
+  &:hover {
+    transform: scale(1.02) !important;
+    box-shadow: var(--shadow-lg) !important;
+
+    .card-image img,
+    .card-image picture img {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Active/pressed state */
+  &:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-sm);
+    transition-duration: var(--duration-instant);
+  }
+}
+
+/* Post card specific enhancements */
+.post-card {
+  .card-content {
+    padding: 1.5rem;
+    transition: padding var(--duration-medium) var(--ease-smooth);
+  }
+
+  .card-image {
+    overflow: hidden;
+    position: relative;
+
+    /* Gradient overlay on hover */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+      opacity: 0;
+      transition: opacity var(--duration-medium) var(--ease-smooth);
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    img, picture {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      transition:
+        transform 600ms var(--ease-emphasized),
+        opacity var(--duration-medium) var(--ease-smooth),
+        filter var(--duration-medium) var(--ease-smooth);
+    }
+
+    &:hover img,
+    &:hover picture img {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+  }
+}
+
+/* Compact sidebar card hover effects - matching main cards */
+.compact-card {
+  transition:
+    transform 500ms var(--ease-ios),
+    box-shadow 500ms var(--ease-ios);
+
+  .compact-card-image img,
+  .compact-card-image picture img {
+    transition: transform 600ms var(--ease-ios);
+  }
+
+  &:hover {
+    transform: scale(1.02) !important;
+    box-shadow: var(--shadow-lg) !important;
+
+    .compact-card-image img,
+    .compact-card-image picture img {
+      transform: scale(1.05);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-sm);
+    transition-duration: var(--duration-instant);
+  }
+}
+
+/* Image optimization and responsiveness */
+picture {
+  display: block;
+  width: 100%;
+}
+
+img, picture img {
+  height: auto;
+  max-width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+/* Responsive images */
+.card-image img,
+.card-image picture img,
+.media-left img {
+  width: 100%;
+  height: auto;
+}
+
+/* Aspect ratio containers to prevent layout shift */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+  }
+  
+  img, picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Professional page terminal styling enhancements */
+.terminal {
+  font-family: 'Courier New', 'Monaco', monospace;
+  line-height: 1.4;
+}
+
+/* Reading progress enhancement with gradient animation */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #14b8a6, #0d9488, #0f766e);
+  background-size: 200% 100%;
+  z-index: 1000;
+  transition: width var(--duration-medium) var(--ease-emphasized);
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.4);
+  animation: gradientShift 3s ease infinite;
+}
+
+/* ============================================================================
+   iOS-STYLE GLASSMORPHIC NAVBAR
+   Apple-inspired design with pill-shaped menu items
+   ============================================================================ */
+
+.navbar {
+  /* Enhanced 3D glassmorphism background with depth */
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 184, 166, 0.95),
+    rgba(13, 148, 136, 0.85),
+    rgba(15, 118, 110, 0.90)
+  );
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
+
+  /* 3D depth with multiple shadow layers */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+  /* Subtle borders for depth */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+
+  /* Add highlight glow on top edge */
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.3) 75%,
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  transition:
+    background var(--duration-medium) var(--ease-ios),
+    backdrop-filter var(--duration-medium) var(--ease-ios),
+    box-shadow var(--duration-medium) var(--ease-ios);
+
+  &.navbar-scrolled {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 184, 166, 1),
+      rgba(13, 148, 136, 0.95),
+      rgba(15, 118, 110, 0.98)
+    );
+    backdrop-filter: blur(25px) saturate(200%) brightness(1.15);
+    -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(1.15);
+
+    /* Enhanced depth when scrolled */
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 8px 12px rgba(0, 0, 0, 0.08),
+      0 12px 24px rgba(0, 0, 0, 0.06),
+      0 16px 32px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  /* Navbar brand items - match pill design of other navbar items */
+  .navbar-brand .navbar-item {
+    position: relative;
+    margin: 0.25rem 0.35rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+
+    color: #FFFEF5 !important;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Same pill background as other navbar items */
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 250ms var(--ease-ios);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+      /* Same squircle glow as other navbar items */
+      box-shadow:
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px 2px rgba(255, 254, 245, 0.12);
+      color: #FFFEF5 !important;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 254, 245, 0.4),
+        0 1px 4px rgba(0, 0, 0, 0.3);
+      transform: scale(1.02) translateY(-1px) !important;
+    }
+  }
+
+  /* Navbar items - iOS pill design with enhanced readability */
+  .navbar-item {
+    position: relative;
+    margin: 0.25rem 0.35rem;
+    padding: 0.5rem 1rem !important;
+
+    /* iOS pill shape */
+    border-radius: 20px !important;
+
+    /* Enhanced typography for maximum readability */
+    color: #FFFEF5 !important; /* Warm cream - better contrast than pure white */
+    font-weight: 500; /* Medium weight for elegance */
+    font-size: 0.95rem; /* Slightly larger for readability */
+    letter-spacing: 0.5px; /* More spacing for clarity */
+    /* Modern, elegant font - smooth and fun */
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Subtle text shadow for depth and legibility */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* Smooth font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Glassmorphic pill background */
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Subtle inner shadow for depth */
+    box-shadow:
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.08);
+
+    /* Smooth transitions - background and subtle zoom */
+    transition: all 250ms var(--ease-ios);
+
+    /* Disable tap highlight */
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    user-select: none !important;
+
+    /* iOS-style hover - glowing text effect */
+    &:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+      /* Squircle-shaped glow that follows the border-radius */
+      box-shadow:
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px 2px rgba(255, 254, 245, 0.12); /* Tighter, squircle-like glow */
+      color: #FFFEF5 !important;
+      /* Multi-layer glow effect on text */
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 254, 245, 0.4),
+        0 1px 4px rgba(0, 0, 0, 0.3);
+      transform: scale(1.02) translateY(-1px) !important;
+    }
+
+    /* iOS-style click */
+    &:active {
+      background: rgba(255, 255, 255, 0.22) !important;
+      box-shadow:
+        inset 0 2px 10px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+        0 1px 4px rgba(0, 0, 0, 0.12);
+      color: #FFFEF5 !important;
+    }
+
+    /* Active page indicator - enhanced filled pill */
+    &.is-active {
+      background: rgba(255, 255, 255, 0.25) !important;
+      /* Squircle-shaped glow for active state */
+      box-shadow:
+        inset 0 0 0 1.5px rgba(255, 255, 255, 0.4),
+        inset 0 2px 12px rgba(255, 255, 255, 0.15),
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        0 0 16px 2px rgba(255, 254, 245, 0.15); /* Tighter squircle glow */
+      color: #FFFEF5 !important;
+      font-weight: 700; /* Bold for active state */
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Focus state for keyboard navigation */
+    &:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+      outline-offset: 3px;
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* Remove any underlines */
+    &::after {
+      display: none;
+    }
+  }
+
+  /* Navbar link (dropdown triggers) - also pill style */
+  .navbar-link {
+    @extend .navbar-item;
+  }
+
+  /* Navbar burger menu - iOS style with animated transformation */
+  .navbar-burger {
+    margin: 0.25rem;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    transition: all var(--duration-fast) var(--ease-ios) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    width: 3.25rem;
+    height: 3.25rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+      transform: scale(1.02);
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, 0.2) !important;
+      transform: scale(0.95);
+    }
+
+    span {
+      /* Burger lines with smooth transitions */
+      background-color: white !important;
+      height: 2px !important;
+      left: calc(50% - 8px);
+      width: 16px;
+      transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Hamburger to X animation */
+    &.is-active {
+      span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+  }
+
+  /* Navbar menu container */
+  .navbar-menu {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Mobile menu adjustments with beautiful reveal animation */
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+      background: rgba(20, 184, 166, 0.95) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0 0.5rem;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      /* Keep theme toggle visible in mobile */
+      .theme-toggle-item {
+        display: flex !important;
+      }
+
+      /* Change from absolute to relative positioning to push content */
+      position: relative !important;
+      display: block !important;
+
+      /* Hidden state - collapsed smoothly */
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      /* Smooth reveal animation - graceful expansion */
+      transition:
+        max-height 400ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 300ms cubic-bezier(0.34, 1.56, 0.64, 1) 50ms,
+        padding 400ms cubic-bezier(0.4, 0, 0.2, 1),
+        margin 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Active state - expanded smoothly */
+      &.is-active {
+        max-height: 600px; /* Large enough for all menu items */
+        opacity: 1;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        transition:
+          max-height 500ms cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
+          padding 500ms cubic-bezier(0.4, 0, 0.2, 1),
+          margin 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    /* Staggered menu items animation - only for visible items */
+    .navbar-menu.is-active .navbar-start > .navbar-item,
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper > .navbar-item {
+      animation: menuItemSlideIn 300ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(1),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(1) > .navbar-item {
+      animation-delay: 100ms;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(2),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(2) > .navbar-item {
+      animation-delay: 150ms;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(3),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(3) > .navbar-item {
+      animation-delay: 200ms;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(4),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(4) > .navbar-item {
+      animation-delay: 250ms;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(5),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(5) > .navbar-item {
+      animation-delay: 300ms;
+    }
+
+    .navbar-menu.is-active .navbar-start > .navbar-item:nth-child(6),
+    .navbar-menu.is-active .navbar-start > .greedy-nav > .visible-links > .navbar-item-wrapper:nth-child(6) > .navbar-item {
+      animation-delay: 350ms;
+    }
+
+    /* Ensure hidden-links items never animate */
+    .navbar-menu.is-active .hidden-links .navbar-item {
+      animation: none !important;
+    }
+  }
+}
+
+/* Mobile menu item reveal animation */
+@keyframes menuItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth content push-down on mobile when menu opens */
+@media screen and (max-width: 1023px) {
+  /* Hero section and content below navbar smoothly transition */
+  .hero,
+  .section {
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* When navbar is fixed, ensure smooth body transition */
+  body {
+    transition: padding-top 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* CRITICAL: Override Bulma theme's navbar.is-primary white backgrounds
+   Using maximum specificity and !important to override remote theme */
+.navbar.is-primary a.navbar-item:hover,
+.navbar.is-primary a.navbar-item:focus,
+.navbar.is-primary .navbar-item:hover,
+.navbar.is-primary .navbar-item:focus,
+.navbar.is-primary .navbar-link:hover,
+.navbar.is-primary .navbar-link:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+}
+
+.navbar.is-primary a.navbar-item:active,
+.navbar.is-primary .navbar-item:active,
+.navbar.is-primary .navbar-link:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+}
+
+/* Also override any .is-active state */
+.navbar.is-primary a.navbar-item.is-active,
+.navbar.is-primary .navbar-item.is-active {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+}
+
+/* Button animations (iOS-style subtle) */
+.button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--duration-fast) var(--ease-ios),
+    box-shadow var(--duration-fast) var(--ease-ios),
+    background-color var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0) scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition-duration: var(--duration-instant);
+  }
+}
+
+/* Hero section with parallax effect */
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  &.parallax-enabled {
+    .hero-body {
+      transition: transform var(--duration-fast) linear;
+    }
+  }
+
+  /* Animated gradient background */
+  &.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+
+/* Optimize critical rendering path */
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .content {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+  }
+  
+  .post-card .card-image img,
+  .post-card .card-image picture img {
+    height: 150px;
+  }
+}
+
+/* Accessibility improvements */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
+.is-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Performance optimizations */
+.content {
+  contain: layout style;
+}
+
+/* GPU acceleration for animations */
+.card:hover,
+.lazy-image.loaded {
+  will-change: transform;
+}
+
+/* ===================================
+   KEYFRAME ANIMATIONS
+   =================================== */
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Subtle card entrance (iOS-style) */
+@keyframes cardEnter {
+  0% {
+    opacity: 0.9;
+    transform: translate3d(0, 8px, 0) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Subtle fade in from bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0.9;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Fade in with scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bounce in */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Pulse effect */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===================================
+   SCROLL-DRIVEN ANIMATIONS (iOS-Style)
+   =================================== */
+
+/* Elements that animate on scroll - SUBTLE and NATURAL */
+.scroll-reveal {
+  /* Start nearly visible, not hidden */
+  opacity: 0.95;
+  transition:
+    opacity var(--duration-medium) var(--ease-ios-out),
+    transform var(--duration-medium) var(--ease-ios-out);
+
+  &.scroll-reveal-visible {
+    opacity: 1;
+  }
+
+  /* Subtle entrance animations (iOS principle: less is more) */
+  &.reveal-fade-up {
+    transform: translate3d(0, 12px, 0);
+
+    &.scroll-reveal-visible {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &.reveal-fade-scale {
+    transform: scale(0.97);
+
+    &.scroll-reveal-visible {
+      transform: scale(1);
+    }
+  }
+
+  &.reveal-slide-left {
+    transform: translate3d(-16px, 0, 0);
+
+    &.scroll-reveal-visible {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &.reveal-slide-right {
+    transform: translate3d(16px, 0, 0);
+
+    &.scroll-reveal-visible {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+/* iOS-style staggered delays (faster) */
+.stagger-item {
+  &:nth-child(1) { transition-delay: 0ms; }
+  &:nth-child(2) { transition-delay: 40ms; }
+  &:nth-child(3) { transition-delay: 80ms; }
+  &:nth-child(4) { transition-delay: 120ms; }
+  &:nth-child(5) { transition-delay: 160ms; }
+  &:nth-child(6) { transition-delay: 200ms; }
+  &:nth-child(n+7) { transition-delay: 240ms; }
+}
+
+/* Opt-in class for elements that should animate */
+/* DO NOT auto-apply to everything */
+.animate-on-scroll {
+  @extend .scroll-reveal;
+  @extend .reveal-fade-up;
+}
+
+/* Parallax container */
+.parallax-container {
+  perspective: 1000px;
+  overflow: hidden;
+
+  .parallax-layer {
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+  }
+}
+
+/* Backdrop blur for modals/overlays */
+.blur-backdrop {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: backdrop-filter var(--duration-medium) var(--ease-smooth);
+}
+
+/* Pull to refresh indicator */
+.pull-refresh {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--shadow-lg);
+  transition: transform var(--duration-medium) var(--ease-spring);
+
+  &.pull-refresh-active {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Link hover effects with underline animation */
+a:not(.button):not(.navbar-item) {
+  position: relative;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width var(--duration-medium) var(--ease-emphasized);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+/* Image zoom on hover for galleries */
+.image-zoom {
+  overflow: hidden;
+
+  img {
+    transition: transform var(--duration-slow) var(--ease-emphasized);
+  }
+
+  &:hover img {
+    transform: scale(1.15);
+  }
+}
+
+/* Skeleton loading animation */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+
+  &.skeleton-text {
+    height: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  &.skeleton-title {
+    height: 2em;
+    width: 60%;
+    margin-bottom: 1em;
+  }
+
+  &.skeleton-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================================
+   FINAL NUCLEAR OVERRIDE - LOADED LAST TO BEAT EVERYTHING
+   This must be the absolute last CSS rule to ensure maximum specificity
+   ============================================================================ */
+
+/* Force override ALL possible navbar states - using attribute selectors for maximum reach */
+nav.navbar.is-primary a[class*="navbar-item"]:hover,
+nav.navbar.is-primary a[class*="navbar-item"]:focus,
+nav.navbar.is-primary a[class*="navbar-item"]:active,
+nav.navbar.is-primary a[class*="navbar-item"]:focus-visible,
+nav.navbar.is-primary [class*="navbar-item"]:hover,
+nav.navbar.is-primary [class*="navbar-item"]:focus,
+nav.navbar.is-primary [class*="navbar-item"]:active,
+nav.navbar.is-primary [class*="navbar-item"]:focus-visible,
+nav.navbar.is-primary [class*="navbar-link"]:hover,
+nav.navbar.is-primary [class*="navbar-link"]:focus,
+nav.navbar.is-primary [class*="navbar-link"]:active,
+nav.navbar.is-primary [class*="navbar-link"]:focus-visible {
+  background-color: var(--navbar-hover-bg, rgba(255, 255, 255, 0.08)) !important;
+  background: var(--navbar-hover-bg, rgba(255, 255, 255, 0.08)) !important;
+  color: var(--navbar-text-color, #fff) !important;
+  transition: background-color 200ms ease !important;
+}
+
+/* Even more specific - with ID wildcards if needed */
+nav[class*="navbar"].is-primary a:hover,
+nav[class*="navbar"].is-primary a:focus,
+nav[class*="navbar"].is-primary a:active {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Override any inline styles or computed styles */
+.navbar.is-primary * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+/* ===================================
+   PAGINATION COLOR OVERRIDES
+   =================================== */
+
+/* Pagination links - use teal instead of blue */
+.pagination-previous,
+.pagination-next,
+.pagination-link {
+  color: #14b8a6 !important;
+  border-color: #14b8a6 !important;
+}
+
+.pagination-link:hover,
+.pagination-previous:hover,
+.pagination-next:hover {
+  background-color: rgba(20, 184, 166, 0.1) !important;
+  border-color: #14b8a6 !important;
+  color: #14b8a6 !important;
+}
+
+.pagination-link.is-current {
+  background-color: #14b8a6 !important;
+  border-color: #14b8a6 !important;
+  color: white !important;
+}
+
+/* Disabled pagination buttons */
+.pagination-previous[disabled],
+.pagination-next[disabled] {
+  background-color: transparent !important;
+  border-color: #dbdbdb !important;
+  color: #7a7a7a !important;
+  opacity: 0.5;
+}
+
+/* ===================================
+   PRIORITY+ NAVIGATION STYLES
+   =================================== */
+
+/* More dropdown styling */
+.more-dropdown {
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.more-dropdown .navbar-link {
+  font-weight: 600;
+}
+
+/* Smooth transitions for items moving in/out */
+.navbar-item {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.navbar-item.in-dropdown {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================================================
+   GREEDY NAVIGATION (Priority+)
+   Styles for adaptive navigation that moves items to dropdown
+   ========================================================================= */
+
+.greedy-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .visible-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-item-wrapper {
+    display: inline-block;
+  }
+
+  .greedy-nav-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    transition: all var(--duration-normal) var(--ease-smooth);
+    opacity: 1;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.02) !important;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      width: 0;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .greedy-nav-label {
+      margin-right: 0.5rem;
+    }
+
+    .greedy-nav-icon::after {
+      content: '▼';
+      font-size: 0.8em;
+    }
+  }
+
+  .hidden-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    display: none;
+    z-index: 100;
+
+    &.is-active {
+      display: block;
+    }
+
+    .navbar-item-wrapper {
+      display: block;
+    }
+
+    .navbar-item {
+      display: block !important;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
+
+/* Dark mode support for hidden links dropdown */
+@media (prefers-color-scheme: dark) {
+  .greedy-nav .hidden-links {
+    background: #363636;
+    border-color: #5a5a5a;
+
+    .navbar-item:hover {
+      background-color: #4a4a4a;
+    }
+  }
+}
+
+/* Mobile menu: disable greedy nav, use standard Bulma vertical menu */
+@media screen and (max-width: 1023px) {
+  .greedy-nav {
+    display: block !important;
+    width: 100%;
+  }
+
+  .greedy-nav .visible-links {
+    display: block !important;
+    flex-direction: column;
+  }
+
+  .greedy-nav .navbar-item-wrapper {
+    display: block !important;
+    width: 100%;
+  }
+
+  .greedy-nav .navbar-item {
+    display: block !important;
+    width: 100%;
+  }
+
+  /* Hide greedy nav button on mobile - no transition to prevent flash */
+  .greedy-nav-btn {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Hide hidden-links on mobile - no transition to prevent flash */
+  .greedy-nav .hidden-links {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Prevent any animations on hidden elements */
+  .greedy-nav-btn *,
+  .greedy-nav .hidden-links * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================================
+   UNIFIED ANIMATION SYSTEM
+   Consistent timing and easing across the site
+   ========================================================================= */
+
+:root {
+  --duration-instant: 0.1s;
+  --duration-fast: 0.2s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.6s;
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* =========================================================================
+   PAGE TRANSITION FADE
+   Smooth fade between pages (no initial fade)
+   ========================================================================= */
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Page transition fade out when leaving */
+body.page-transitioning {
+  animation: fadeOut var(--duration-fast) var(--ease-smooth) forwards !important;
+}
+
+/* Page transition fade in when arriving (only if coming from another page) */
+body.page-arrived {
+  animation: fadeIn var(--duration-fast) var(--ease-smooth) forwards !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  body.page-transitioning,
+  body.page-arrived {
+    animation: none !important;
+  }
+}
+
+/* ===================================
+   COMPREHENSIVE DARK MODE STYLES
+   =================================== */
+
+/* Cards and boxes */
+html[data-theme="dark"] {
+  .card,
+  .box {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 12px var(--card-shadow);
+    transition: var(--theme-transition);
+
+    &:hover {
+      box-shadow: 0 8px 24px var(--card-hover-shadow), 0 0 40px rgba(45, 212, 191, 0.1);
+      border-color: var(--border-medium);
+    }
+
+    .card-header,
+    .card-footer {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-subtle);
+    }
+
+    .card-header-title {
+      color: var(--text-primary);
+    }
+
+    .card-footer-item {
+      color: var(--text-secondary);
+      border-color: var(--border-subtle);
+    }
+
+    .title,
+    .subtitle {
+      color: var(--text-primary);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+    }
+  }
+
+  /* Section backgrounds */
+  .section {
+    background-color: var(--bg-primary);
+  }
+
+  .hero {
+    &.hero-darken::after,
+    .hero-body.hero-darken::before {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.55)
+      );
+    }
+
+    .title,
+    .subtitle {
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  /* Content text */
+  .content {
+    color: var(--text-primary);
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-primary);
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+
+    blockquote {
+      background-color: var(--bg-secondary);
+      border-left-color: var(--primary-color);
+      color: var(--text-secondary);
+    }
+
+    code {
+      background-color: var(--code-bg);
+      color: var(--code-text);
+    }
+
+    pre {
+      background-color: var(--code-bg);
+
+      code {
+        background-color: transparent;
+        color: var(--code-text);
+      }
+    }
+
+    table {
+      background-color: var(--card-bg);
+
+      thead th {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--border-medium);
+      }
+
+      tbody tr {
+        border-color: var(--border-subtle);
+
+        &:hover {
+          background-color: var(--bg-secondary);
+        }
+
+        td {
+          border-color: var(--border-subtle);
+          color: var(--text-primary);
+        }
+      }
+    }
+
+    hr {
+      background-color: var(--border-medium);
+    }
+  }
+
+  /* Footer */
+  .footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-top: 1px solid var(--border-subtle);
+
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+
+    .content {
+      color: var(--footer-text);
+    }
+  }
+
+  /* Buttons */
+  .button {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+    transition: var(--theme-transition);
+
+    &:hover {
+      background-color: var(--bg-tertiary);
+      border-color: var(--border-strong);
+    }
+
+    &.is-primary {
+      background-color: var(--primary-color);
+      color: #000000;
+      border-color: var(--primary-color);
+
+      &:hover {
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
+      }
+    }
+
+    &.is-ghost {
+      background-color: transparent;
+      color: var(--text-primary);
+    }
+  }
+
+  /* Forms */
+  .input,
+  .textarea,
+  .select select {
+    background-color: var(--bg-elevated);
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+    transition: var(--theme-transition);
+
+    &:focus,
+    &:active {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.125em rgba(45, 212, 191, 0.25);
+    }
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+
+  .label {
+    color: var(--text-primary);
+  }
+
+  .help {
+    color: var(--text-secondary);
+  }
+
+  /* Tags */
+  .tag {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+
+    &.is-primary {
+      background-color: var(--primary-color);
+      color: #000000;
+    }
+  }
+
+  /* Pagination */
+  .pagination-previous,
+  .pagination-next,
+  .pagination-link {
+    background-color: var(--bg-elevated);
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+
+    &:hover {
+      background-color: rgba(45, 212, 191, 0.15) !important;
+      border-color: var(--primary-hover) !important;
+    }
+
+    &.is-current {
+      background-color: var(--primary-color) !important;
+      color: #000000 !important;
+    }
+  }
+
+  .pagination-ellipsis {
+    color: var(--text-muted);
+  }
+
+  /* Author profile sidebar */
+  .author-profile {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+
+    .title,
+    .subtitle {
+      color: var(--text-primary);
+    }
+
+    .bio-text {
+      color: var(--text-secondary);
+    }
+
+    .location-text {
+      color: var(--text-secondary);
+    }
+
+    hr {
+      background-color: var(--border-subtle);
+    }
+
+    .social-link {
+      /* Keep vibrant colors for social links even in dark mode */
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  /* Compact post cards */
+  .compact-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+
+    &:hover {
+      border-color: var(--border-medium);
+      box-shadow: 0 8px 20px var(--card-hover-shadow), 0 0 30px rgba(45, 212, 191, 0.08);
+    }
+
+    .compact-card-title {
+      color: var(--text-primary);
+    }
+
+    .compact-card-excerpt {
+      color: var(--text-secondary);
+    }
+
+    .compact-card-date {
+      color: var(--text-muted);
+    }
+  }
+
+  /* Modals and overlays */
+  .modal-background {
+    background-color: rgba(0, 0, 0, 0.86);
+  }
+
+  .modal-card {
+    background-color: var(--card-bg);
+
+    .modal-card-head,
+    .modal-card-foot {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-subtle);
+    }
+
+    .modal-card-title {
+      color: var(--text-primary);
+    }
+
+    .modal-card-body {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+    }
+  }
+
+  /* Notifications */
+  .notification {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+
+    &.is-primary {
+      background-color: rgba(45, 212, 191, 0.2);
+      color: var(--primary-light);
+    }
+  }
+
+  /* Dropdown menus */
+  .dropdown-content {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-medium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+    .dropdown-item {
+      color: var(--text-primary);
+
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+    }
+  }
+
+  /* Progress bar */
+  .progress {
+    background-color: var(--bg-secondary);
+
+    &::-webkit-progress-value {
+      background-color: var(--primary-color);
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(--primary-color);
+    }
+  }
+
+  /* Reading progress bar */
+  .reading-progress {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover), var(--primary-light));
+    box-shadow: 0 2px 8px rgba(45, 212, 191, 0.6);
+  }
+
+  /* Disqus comments */
+  #disqus_thread {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--bg-secondary) 25%,
+      var(--bg-tertiary) 50%,
+      var(--bg-secondary) 75%
+    );
+  }
+
+  /* Links without special classes */
+  a:not(.button):not(.navbar-item):not(.social-link) {
+    color: var(--link-color);
+
+    &:hover {
+      color: var(--link-hover);
+    }
+
+    &::after {
+      background: var(--link-color);
+    }
+  }
+
+  /* Image overlays */
+  .card-image::after {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ) !important;
+  }
+
+  /* Greedy nav hidden links dropdown */
+  .greedy-nav .hidden-links {
+    background: var(--bg-elevated);
+    border-color: var(--border-medium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+    .navbar-item {
+      color: var(--text-primary) !important;
+
+      &:hover {
+        background-color: var(--bg-secondary) !important;
+      }
+    }
+  }
+
+  /* Menu lists */
+  .menu-list {
+    a {
+      color: var(--text-primary);
+
+      &:hover {
+        background-color: var(--bg-secondary);
+        color: var(--primary-color);
+      }
+
+      &.is-active {
+        background-color: var(--primary-color);
+        color: #000000;
+      }
+    }
+  }
+
+  .menu-label {
+    color: var(--text-muted);
+  }
+
+  /* Tabs */
+  .tabs {
+    a {
+      color: var(--text-primary);
+      border-bottom-color: var(--border-medium);
+
+      &:hover {
+        border-bottom-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+
+    li.is-active a {
+      border-bottom-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+
+  /* Messages */
+  .message {
+    background-color: var(--bg-elevated);
+
+    .message-header {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .message-body {
+      border-color: var(--border-medium);
+      color: var(--text-primary);
+    }
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+
+    li.is-active a {
+      color: var(--text-primary);
+    }
+
+    li + li::before {
+      color: var(--text-muted);
+    }
+  }
+}
+
+/* Smooth transitions for all themed elements */
+html[data-theme="dark"] * {
+  transition: var(--theme-transition);
+}

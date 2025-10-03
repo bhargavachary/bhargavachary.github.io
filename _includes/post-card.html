@@ -1,0 +1,102 @@
+<div class="card clickable-card">
+    {% if post.image %}
+        <div class="card-image">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="card-main-link" style="display: block; overflow: hidden;">
+                <picture>
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                </picture>
+            </a>
+        </div>
+    {% else %}
+        <header class="card-header">
+            <a class="card-header-title card-main-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </header>
+    {% endif %}
+    <div class="card-content">
+        <div class="content">
+            {% if post.image %}
+                <a class="title is-4 card-main-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            {% endif %}
+            {% if post.summary %}
+                {{ post.summary | markdownify }}
+            {% else %}
+                <p>{{ post.excerpt }}</p>
+            {% endif %}
+        </div>
+        <div class="has-text-centered">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="button is-primary card-main-link"
+                >Read more <span class="is-sr-only"> about {{ post.title }}</span></a
+            >
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Published: {{ post.date | date: '%b %-d, %Y' }}</p>
+    </footer>
+</div>
+
+<style>
+.clickable-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.clickable-card .card-main-link {
+    position: relative;
+    z-index: 1;
+}
+
+/* Create invisible overlay that covers entire card */
+.clickable-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/* Make all text content clickable by creating a clickable layer */
+.clickable-card .card-content {
+    position: relative;
+}
+
+.clickable-card .card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/* Ensure buttons and links stay on top */
+.clickable-card .button,
+.clickable-card a {
+    position: relative;
+    z-index: 2;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.clickable-card').forEach(function(card) {
+        // Find the main link (first one in the card)
+        var mainLink = card.querySelector('.card-main-link');
+        if (mainLink) {
+            var url = mainLink.getAttribute('href');
+
+            // Make entire card clickable (except when clicking on links/buttons)
+            card.addEventListener('click', function(e) {
+                // Only navigate if we didn't click on a link or button directly
+                if (!e.target.closest('a') && !e.target.closest('button')) {
+                    window.location.href = url;
+                }
+            });
+        }
+    });
+});
+</script>

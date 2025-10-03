@@ -1,0 +1,36 @@
+categories: 
+
+  - Technology
+  - Society
+  - Nature
+  - Personal
+  - Motivation
+  - Education
+  - Photography
+  - Experience
+  - Travel
+
+tags:
+
+  - update
+  - jekyll
+  - odisha
+  - andhrapradesh
+  - telangana
+  - ganjam
+  - gajapati
+  - cyclone
+  - biker
+  - google
+  - engineering
+  - research
+  - festival
+  - opensource
+  - apple
+  - energy
+  - life
+  - sustainability
+  - kolkata
+  - bangalore
+  - hyderabad
+  - berhampur

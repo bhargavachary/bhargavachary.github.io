@@ -1,0 +1,32 @@
+{% comment %}
+    Prefer explicit hero_image; if absent, fall back to page.image (commonly set on posts)
+{% endcomment %}
+{% assign bg_image = nil %}
+{% if page.hero_image %}
+    {% assign bg_image = page.hero_image %}
+{% elsif page.image %}
+    {% assign bg_image = page.image %}
+{% else %}
+    {% assign bg_image = '/images/posts/default-hero.jpg' %}
+{% endif %}
+
+<section
+        class="hero {% if page.hero_height %} {{ page.hero_height }} {% else %} is-medium {% endif %} is-bold is-primary"
+        {% if bg_image %}
+                style="background: url('{{ bg_image | relative_url }}') no-repeat center center; background-size: cover; background-position: center 40%;"
+        {% endif %}
+>
+    <div class="hero-body {% if page.hero_darken %} hero-darken {% endif %}">
+        <div class="container">
+            <h1 class="title is-2">{{ page.title }}</h1>
+            <p class="subtitle is-3">{{ page.subtitle }}</p>
+            {% if page.hero_link %}
+                <div class="my-4">
+                    <a href="{{ page.hero_link | relative_url }}" class="button is-info is-large">
+                        {{- page.hero_link_text -}}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

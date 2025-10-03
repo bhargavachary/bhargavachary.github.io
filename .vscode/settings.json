@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "*.html": "liquid"
+    },
+    "[liquid]": {
+        "editor.defaultFormatter": "Shopify.theme-check-vscode",
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true,
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": true
+    },
+    "chat.renderRelatedFiles": true,
+    "inlineChat.enableV2": true,
+    "inlineChat.notebookAgent": true,
+    "chat.todoListTool.writeOnly": true
+}

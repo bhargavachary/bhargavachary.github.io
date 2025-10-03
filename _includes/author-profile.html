@@ -1,0 +1,198 @@
+<div class="box author-profile">
+    <div class="has-text-centered">
+        <figure class="image is-160x160" style="margin: 0 auto 1rem;">
+            <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="squircle-avatar">
+        </figure>
+        <h3 class="title is-4">{{ site.author.name }}</h3>
+        <p class="subtitle is-6 bio-text">{{ site.author.bio }}</p>
+        <p class="has-text-grey location-text">
+            <span class="icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </span>
+            {{ site.author.location }}
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="social-links">
+        <h4 class="title is-6">Follow Me</h4>
+
+        {% if site.social.twitter %}
+        <a href="{{ site.social.twitter }}" target="_blank" class="social-link is-twitter">
+            <span class="icon">
+                <i class="fab fa-x-twitter"></i>
+            </span>
+            <span>@bhargav_achary</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.facebook %}
+        <a href="{{ site.social.facebook }}" target="_blank" class="social-link is-facebook">
+            <span class="icon">
+                <i class="fab fa-facebook"></i>
+            </span>
+            <span>BhargavAchary.github.io</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.linkedin %}
+        <a href="{{ site.social.linkedin }}" target="_blank" class="social-link is-linkedin">
+            <span class="icon">
+                <i class="fab fa-linkedin"></i>
+            </span>
+            <span>bhargavachary</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.instagram %}
+        <a href="{{ site.social.instagram }}" target="_blank" class="social-link is-instagram">
+            <span class="icon">
+                <i class="fab fa-instagram"></i>
+            </span>
+            <span>@bhargav_achary</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.youtube %}
+        <a href="{{ site.social.youtube }}" target="_blank" class="social-link is-youtube">
+            <span class="icon">
+                <i class="fab fa-youtube"></i>
+            </span>
+            <span>bhargavachary</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.soundcloud %}
+        <a href="{{ site.social.soundcloud }}" target="_blank" class="social-link is-soundcloud">
+            <span class="icon">
+                <i class="fab fa-soundcloud"></i>
+            </span>
+            <span>bhargav-achary</span>
+        </a>
+        {% endif %}
+
+        {% if site.social.flickr %}
+        <a href="{{ site.social.flickr }}" target="_blank" class="social-link is-flickr">
+            <span class="icon">
+                <i class="fab fa-flickr"></i>
+            </span>
+            <span>bhargav_achary</span>
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.author-profile {
+    position: sticky;
+    top: 20px;
+}
+
+.author-profile .squircle-avatar {
+    border-radius: 20%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.author-profile .squircle-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.author-profile .bio-text {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.5rem;
+}
+
+.author-profile .location-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.author-profile .social-links {
+    margin-top: 1rem;
+}
+
+.author-profile .social-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: all var(--duration-slow) var(--ease-smooth);
+    font-size: 0.9rem;
+}
+
+.author-profile .social-link .icon {
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+}
+
+.author-profile .social-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Social link colors - desaturated */
+.social-link.is-twitter {
+    background-color: rgba(29, 161, 242, 0.7);
+}
+
+.social-link.is-twitter:hover {
+    background-color: rgba(29, 161, 242, 0.9);
+}
+
+.social-link.is-facebook {
+    background-color: rgba(24, 119, 242, 0.7);
+}
+
+.social-link.is-facebook:hover {
+    background-color: rgba(24, 119, 242, 0.9);
+}
+
+.social-link.is-linkedin {
+    background-color: rgba(10, 102, 194, 0.7);
+}
+
+.social-link.is-linkedin:hover {
+    background-color: rgba(10, 102, 194, 0.9);
+}
+
+.social-link.is-instagram {
+    background: linear-gradient(90deg, rgba(240, 148, 51, 0.7) 0%, rgba(230, 104, 60, 0.7) 25%, rgba(220, 39, 67, 0.7) 50%, rgba(204, 35, 102, 0.7) 75%, rgba(188, 24, 136, 0.7) 100%);
+}
+
+.social-link.is-instagram:hover {
+    background: linear-gradient(90deg, rgba(240, 148, 51, 0.9) 0%, rgba(230, 104, 60, 0.9) 25%, rgba(220, 39, 67, 0.9) 50%, rgba(204, 35, 102, 0.9) 75%, rgba(188, 24, 136, 0.9) 100%);
+}
+
+.social-link.is-youtube {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.social-link.is-youtube:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+.social-link.is-soundcloud {
+    background-color: rgba(255, 85, 0, 0.7);
+}
+
+.social-link.is-soundcloud:hover {
+    background-color: rgba(255, 85, 0, 0.9);
+}
+
+.social-link.is-flickr {
+    background-color: rgba(0, 99, 220, 0.7);
+}
+
+.social-link.is-flickr:hover {
+    background-color: rgba(0, 99, 220, 0.9);
+}
+</style>

@@ -1,0 +1,29 @@
+<p class="title is-4">More Posts</p>
+
+{% comment %}
+  If we're on a paginated blog page, show posts NOT on current page
+  If on individual post page, exclude the current post
+  Otherwise, show latest posts
+{% endcomment %}
+{% if paginator %}
+  {% assign shown_urls = paginator.posts | map: "url" %}
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% unless shown_urls contains post.url %}
+      {% if count < 5 %}
+        {% include compact-post-card.html %}
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% else %}
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% unless post.url == page.url %}
+      {% if count < 5 %}
+        {% include compact-post-card.html %}
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}

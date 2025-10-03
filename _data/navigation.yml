@@ -1,0 +1,10 @@
+- name: Blog
+  link: /
+- name: init.d
+  link: /professional/
+- name: Categories
+  link: /categories/
+- name: Tags
+  link: /tags/
+- name: Policy
+  link: /terms/

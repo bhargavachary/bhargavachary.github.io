@@ -1,0 +1,87 @@
+{
+  "name": "BhargavAchary.in - Engineer, Creator, Artist",
+  "short_name": "BhargavAchary",
+  "description": "The personal website and blog of D K Bhargav Achary - Just another not so ordinary engineer, creator, artist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3273dc",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["blog", "technology", "engineering", "art"],
+  "icons": [
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-desktop.jpg",
+      "type": "image/jpeg",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "BhargavAchary.in desktop view"
+    },
+    {
+      "src": "/images/screenshot-mobile.jpg",
+      "type": "image/jpeg", 
+      "sizes": "390x844",
+      "form_factor": "narrow",
+      "label": "BhargavAchary.in mobile view"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Latest Posts",
+      "short_name": "Posts",
+      "description": "View the latest blog posts",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/images/avatar.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn more about Bhargav",
+      "url": "/about/",
+      "icons": [
+        {
+          "src": "/images/avatar.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Professional",
+      "short_name": "Work",
+      "description": "Professional experience and portfolio",
+      "url": "/professional/",
+      "icons": [
+        {
+          "src": "/images/avatar.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

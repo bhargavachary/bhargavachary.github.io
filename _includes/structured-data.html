@@ -1,0 +1,103 @@
+{% comment %}
+  Structured Data (JSON-LD) for enhanced SEO and rich snippets
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "publisher": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      },
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": "{{ site.url }}{{ site.baseurl }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": "{{ site.author.name }}",
+      "description": "{{ site.author.bio }}",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      {% if site.author.avatar %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.baseurl }}{{ site.author.avatar }}"
+      },
+      {% endif %}
+      "jobTitle": "Engineer, Creator, Artist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "BhargavAchary.in"
+      },
+      "sameAs": [
+        {% if site.social.linkedin %}"{{ site.social.linkedin }}",{% endif %}
+        {% if site.social.twitter %}"{{ site.social.twitter }}",{% endif %}
+        {% if site.social.instagram %}"{{ site.social.instagram }}",{% endif %}
+        {% if site.social.youtube %}"{{ site.social.youtube }}",{% endif %}
+        {% if site.social.facebook %}"{{ site.social.facebook }}"{% endif %}
+      ]
+    }
+    {% if page.layout == 'post' %},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#blogpost",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "headline": "{{ page.title }}",
+      "description": "{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date: '%Y-%m-%d' }}{% else %}{{ page.date | date: '%Y-%m-%d' }}{% endif %}",
+      "author": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      },
+      "publisher": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      },
+      {% if page.image %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",
+        "width": 1200,
+        "height": 630
+      },
+      {% endif %}
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      },
+      "articleSection": "{% if page.categories %}{{ page.categories | first }}{% else %}Blog{% endif %}",
+      {% if page.tags %}
+      "keywords": [
+        {% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      ],
+      {% endif %}
+      "wordCount": {{ content | number_of_words }},
+      "timeRequired": "PT{{ content | number_of_words | divided_by: 200 }}M"
+    }
+    {% elsif page.layout == 'blog' %},
+    {
+      "@type": "Blog",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#blog",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "name": "{{ page.title }}",
+      "description": "{{ page.subtitle | default: site.description }}",
+      "publisher": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>

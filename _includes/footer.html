@@ -1,0 +1,27 @@
+<footer class="footer">
+    <div class="container">
+        {% if site.footer_menu %}
+            <div class="columns is-multiline">
+                {% for item in site.data[site.footer_menu] %}
+                    <div class="column has-text-centered">
+                        <div>
+                            <a href="{{ item.link | relative_url }}" class="link">{{ item.name }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="content is-small has-text-centered">
+            <p class="">
+                <span style="opacity: 0.7;">Crafted with</span>
+                <a href="https://jekyllrb.com" target="_blank" style="font-weight: 600;">Jekyll</a>
+                <span style="opacity: 0.7;">• Purified by</span>
+                <a href="https://github.com/bhargavachary" target="_blank" style="font-weight: 600;">Bhargav</a>
+                <span style="opacity: 0.7;">using</span>
+                <a href="https://claude.ai/code" target="_blank" style="font-weight: 600;">Claude Code</a>
+                <span style="opacity: 0.7;">✨</span>
+            </p>
+        </div>
+    </div>
+</footer>

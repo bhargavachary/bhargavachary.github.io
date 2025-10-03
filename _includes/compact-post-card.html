@@ -1,0 +1,29 @@
+{% comment %}
+  Compact post card for sidebars - bigger square blocks with image (40%) and content (60%)
+{% endcomment %}
+<div class="box mb-4 compact-card" style="padding: 0;">
+  <a href="{{ site.baseurl }}{{ post.url }}" style="display: block; text-decoration: none; color: inherit;">
+    {% if post.image %}
+    <div class="compact-card-image" style="width: 100%; height: 140px; overflow: hidden;">
+      <picture>
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" style="width: 100%; height: 140px; object-fit: cover; display: block;">
+      </picture>
+    </div>
+    {% endif %}
+    <div style="padding: 1rem;">
+      <h4 class="title is-6 compact-card-title" style="margin-bottom: 0.5rem; line-height: 1.3;">
+        {{ post.title }}
+      </h4>
+      <p class="is-size-7 compact-card-excerpt" style="margin-bottom: 0.5rem; line-height: 1.4;">
+        {% if post.summary %}
+          {{ post.summary | strip_html | truncatewords: 25 }}
+        {% else %}
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
+        {% endif %}
+      </p>
+      <p class="is-size-7 compact-card-date">
+        {{ post.date | date: '%b %-d, %Y' }}
+      </p>
+    </div>
+  </a>
+</div>

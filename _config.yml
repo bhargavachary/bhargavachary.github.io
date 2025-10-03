@@ -1,0 +1,97 @@
+# Site Settings
+lang: en
+title: BhargavAchary.in
+tagline: Just another not so ordinary engineer, creator, artist.
+email:
+description: >
+  The personal website and blog of D K Bhargav Achary.
+baseurl: ""
+url: "https://bhargavachary.in"
+permalink: /:year/:month/:day/:title.html
+favicon: /images/avatar.jpg
+
+paginate: 3
+paginate_path: /page:num/
+
+# Disqus Comments
+disqus:
+  shortname: bhargavacharyin
+
+# Analytics
+google_analytics: G-445636200
+
+# Theme - GitHub Pages compatible version
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-remote-theme
+
+exclude:
+  - Gemfile
+  - clean-theme.gemspec
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE.txt
+  - CHANGELOG.md
+  - MIGRATION_README.md
+  - old-site
+  - products.md
+  - _products
+  - docs/products
+
+# Sass configuration handled by remote theme
+
+# Sass processing configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
+markdown: kramdown
+highlighter: rouge
+timezone: Asia/Calcutta
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+      show_sidebar: false
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "Bhargav Achary"
+      layout: post
+      show_sidebar: true
+      comments: true
+
+# Author information
+author:
+  name: Bhargav Achary
+  avatar: /images/avatar.jpg
+  bio: "Code, Create, Contemplate ✨"
+  location: "The Garden City, Bengaluru"
+
+# Social links
+social:
+  facebook: https://facebook.com/BhargavAchary.github.io
+  instagram: https://www.instagram.com/bhargav_achary
+  twitter: https://twitter.com/bhargav_achary
+  linkedin: https://www.linkedin.com/in/bhargavachary
+  youtube: https://www.youtube.com/bhargavachary
+  flickr: https://www.flickr.com/people/bhargav_achary
+  soundcloud: https://soundcloud.com/bhargav-achary
