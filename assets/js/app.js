@@ -55,6 +55,26 @@
     const html = document.documentElement;
     let isInitialized = false;
 
+    // Sync theme button state with actual DOM theme
+    function syncThemeButtonState() {
+        const currentTheme = html.getAttribute('data-theme');
+        const toggle = document.getElementById('theme-toggle');
+        
+        if (toggle) {
+            // Update ARIA label for accessibility
+            toggle.setAttribute('aria-label', 
+                currentTheme === 'dark' 
+                    ? 'Switch to light theme' 
+                    : 'Switch to dark theme'
+            );
+            
+            // Force icon visibility update via CSS classes
+            html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
+            
+            console.log('Theme button state synced:', currentTheme);
+        }
+    }
+
     // Toggle theme function
     function toggleTheme(e) {
         console.log('toggleTheme called via delegation!', e);
@@ -77,6 +97,9 @@
         if (metaThemeColor) {
             metaThemeColor.setAttribute('content', newTheme === 'dark' ? '#000000' : '#ffffff');
         }
+
+        // Sync button state immediately after toggle
+        syncThemeButtonState();
 
         // Track theme change
         if (typeof gtag !== 'undefined') {
@@ -149,6 +172,9 @@
 
         isInitialized = true;
         console.log('Theme toggle initialized successfully with delegation');
+        
+        // CRITICAL: Sync theme button state immediately after initialization
+        syncThemeButtonState();
     }
 
     // Initialize immediately if DOM is ready, otherwise wait
@@ -158,18 +184,28 @@
         initThemeToggleWithDelegation();
     }
 
-    // Also re-initialize on any page visibility change (handles all navigation scenarios)
+    // Sync button state on page visibility change (handles navigation scenarios)
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
-            console.log('Page became visible, ensuring theme toggle works');
-            // Just verify button exists, delegation handles the rest
-            const toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-                console.log('Theme toggle button found');
-            } else {
-                console.warn('Theme toggle button not found on this page');
+            console.log('Page became visible, syncing theme state');
+            
+            // Sync theme from localStorage if it changed externally
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (savedTheme !== currentTheme) {
+                console.log('Theme out of sync, correcting:', currentTheme, '->', savedTheme);
+                html.setAttribute('data-theme', savedTheme);
             }
+            
+            // Always sync button state
+            syncThemeButtonState();
         }
+    });
+    
+    // Sync button state on page load (handles all navigation scenarios)
+    window.addEventListener('pageshow', function() {
+        syncThemeButtonState();
     });
 })();
 

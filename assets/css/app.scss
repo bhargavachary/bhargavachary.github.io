@@ -78,6 +78,17 @@ select {
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Fallback CSS classes for instant theme styling (prevent FOUC) */
+.theme-dark {
+  background-color: #000000 !important;
+  color: #e8e8e8 !important;
+}
+
+.theme-light {
+  background-color: #ffffff !important;
+  color: #2e2e2e !important;
+}
+
 /* Dark mode colors */
 html[data-theme="dark"] {
   --bg-primary: #000000;
@@ -238,8 +249,9 @@ html[data-theme="dark"] .navbar {
 
 /* Standard Bulma navbar structure - no custom overrides needed */
 
-/* Light mode - show sun icon */
-html[data-theme="light"] .theme-toggle-item {
+/* Light mode - show sun icon (multiple selectors for reliability) */
+html[data-theme="light"] .theme-toggle-item,
+.theme-light .theme-toggle-item {
   .theme-icon-light {
     opacity: 1;
     transform: scale(1) rotate(0deg);
@@ -248,6 +260,19 @@ html[data-theme="light"] .theme-toggle-item {
   .theme-icon-dark {
     opacity: 0;
     transform: scale(0) rotate(-90deg);
+  }
+}
+
+/* Dark mode - show moon icon (fallback class support) */
+.theme-dark .theme-toggle-item {
+  .theme-icon-light {
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+  }
+
+  .theme-icon-dark {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
   }
 }
 

@@ -1,13 +1,22 @@
 <head>
-    <!-- CRITICAL: Load theme immediately to prevent flash -->
+    <!-- CRITICAL: Initialize theme IMMEDIATELY - must be first thing in head -->
     <script>
         (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark mode
-            document.documentElement.setAttribute('data-theme', savedTheme);
-
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const html = document.documentElement;
+            
+            // Set theme attribute immediately
+            html.setAttribute('data-theme', savedTheme);
+            
+            // Add CSS fallback classes for instant styling
+            html.className = savedTheme === 'dark' ? 'theme-dark' : 'theme-light';
+            
             // Update meta theme-color immediately
             const themeColor = savedTheme === 'dark' ? '#000000' : '#ffffff';
-            document.documentElement.style.setProperty('--meta-theme-color', themeColor);
+            html.style.setProperty('--meta-theme-color', themeColor);
+            
+            // Store initial theme for later sync
+            window._initialTheme = savedTheme;
         })();
     </script>
 
