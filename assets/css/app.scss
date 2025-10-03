@@ -2427,32 +2427,34 @@ html[data-theme="dark"] * {
 
 /* Visitor Counter Styles */
 .visitor-counter {
-  --background-secondary: #f8f9fa;
-  --background-secondary-dark: #1f2937;
-  --background-hover: #f1f3f4;
-  --background-hover-dark: #252f3f;
-  --border-color: #e5e7eb;
-  --border-color-dark: #374151;
+  --visitor-bg: #f8f9fa;
+  --visitor-border: #e5e7eb;
+  --visitor-text-color: #7c7c7c;
+  --visitor-icon-color: #7c7c7c;
+  --visitor-hover-bg: #f1f3f4;
 
-  background: var(--background-secondary);
-  border: 1px solid var(--border-color);
+  background: var(--visitor-bg);
+  border: 1px solid var(--visitor-border);
   border-radius: 8px;
   transition: all 0.2s ease;
+  color: var(--visitor-text-color);
 }
 
 [data-theme="dark"] .visitor-counter {
-  background: var(--background-secondary-dark);
-  border-color: var(--border-color-dark);
+  --visitor-bg: #1f2937;
+  --visitor-border: #374151;
+  --visitor-text-color: #9ca3af;
+  --visitor-icon-color: #9ca3af;
+  --visitor-hover-bg: #252f3f;
 }
 
 .visitor-counter:hover {
-  background: var(--background-hover);
+  background: var(--visitor-hover-bg);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .visitor-counter:hover {
-  background: var(--background-hover-dark);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
