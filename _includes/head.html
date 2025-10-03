@@ -2,21 +2,48 @@
     <!-- CRITICAL: Initialize theme IMMEDIATELY - must be first thing in head -->
     <script>
         (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            // Function to detect system theme preference
+            function getSystemTheme() {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    return 'light';
+                }
+                return 'dark'; // Default fallback
+            }
+            
+            // Get saved theme or detect from system
+            let savedTheme = localStorage.getItem('theme');
+            let currentTheme;
+            
+            if (savedTheme) {
+                // User has explicitly set a preference
+                currentTheme = savedTheme;
+                console.log('Using saved theme preference:', currentTheme);
+            } else {
+                // First visit - detect from system
+                currentTheme = getSystemTheme();
+                console.log('First visit - detected system theme:', currentTheme);
+                
+                // Save the detected theme as user preference
+                localStorage.setItem('theme', currentTheme);
+                localStorage.setItem('theme-source', 'system-detected');
+            }
+            
             const html = document.documentElement;
             
             // Set theme attribute immediately
-            html.setAttribute('data-theme', savedTheme);
+            html.setAttribute('data-theme', currentTheme);
             
             // Add CSS fallback classes for instant styling
-            html.className = savedTheme === 'dark' ? 'theme-dark' : 'theme-light';
+            html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
             
             // Update meta theme-color immediately
-            const themeColor = savedTheme === 'dark' ? '#000000' : '#ffffff';
+            const themeColor = currentTheme === 'dark' ? '#000000' : '#ffffff';
             html.style.setProperty('--meta-theme-color', themeColor);
             
             // Store initial theme for later sync
-            window._initialTheme = savedTheme;
+            window._initialTheme = currentTheme;
             
             // CRITICAL: Mark if this is a cached page load
             window._isCachedPageLoad = (performance.navigation?.type === 2) || 

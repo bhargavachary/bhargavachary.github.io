@@ -99,10 +99,14 @@
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-        console.log('Switching from', currentTheme, 'to', newTheme);
+        console.log('Manual theme toggle from', currentTheme, 'to', newTheme);
 
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        
+        // Mark as manual change to prevent auto-override from system
+        localStorage.setItem('theme-source', 'manual');
+        localStorage.setItem('last-manual-theme-change', Date.now().toString());
 
         // Update meta theme-color
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
@@ -117,7 +121,10 @@
         if (typeof gtag !== 'undefined') {
             gtag('event', 'theme_change', {
                 'event_category': 'UI',
-                'event_label': newTheme
+                'event_label': newTheme,
+                'custom_parameters': {
+                    'source': 'manual'
+                }
             });
         }
 
