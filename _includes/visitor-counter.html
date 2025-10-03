@@ -1,0 +1,109 @@
+<!-- 
+Simple Visitor Counter
+Privacy-friendly visitor counting using localStorage and a simple counter service
+Shows unique visitors for the current session/device
+-->
+
+<div class="visitor-counter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background: var(--background-secondary, #f8f9fa); border-radius: 8px; border: 1px solid var(--border-color, #e5e7eb); margin: 1rem 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7; color: var(--text-muted, #6b7280);">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="4"></circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+  
+  <span style="font-size: 0.875rem; color: var(--text-muted, #6b7280);">
+    <span id="visitor-count">---</span> visitors this month
+  </span>
+</div>
+
+<script>
+(function() {
+    // Privacy-friendly visitor counter
+    const COUNTER_KEY = 'bhargav_blog_visitors';
+    const LAST_VISIT_KEY = 'bhargav_blog_last_visit';
+    const VISITOR_ID_KEY = 'bhargav_blog_visitor_id';
+    
+    // Check if this is a unique visit (new visitor or returning after 24 hours)
+    const now = new Date().getTime();
+    const lastVisit = localStorage.getItem(LAST_VISIT_KEY);
+    const visitorId = localStorage.getItem(VISITOR_ID_KEY);
+    
+    // Generate unique visitor ID if doesn't exist
+    if (!visitorId) {
+        const newVisitorId = 'visitor_' + Math.random().toString(36).substr(2, 9) + '_' + now;
+        localStorage.setItem(VISITOR_ID_KEY, newVisitorId);
+    }
+    
+    // Check if this counts as a new visit (first time or after 24 hours)
+    const isNewVisit = !lastVisit || (now - parseInt(lastVisit)) > (24 * 60 * 60 * 1000);
+    
+    if (isNewVisit) {
+        // Increment visitor count
+        let count = parseInt(localStorage.getItem(COUNTER_KEY) || '0');
+        count += 1;
+        localStorage.setItem(COUNTER_KEY, count.toString());
+        localStorage.setItem(LAST_VISIT_KEY, now.toString());
+    }
+    
+    // Display current count
+    const currentCount = parseInt(localStorage.getItem(COUNTER_KEY) || '0');
+    const counterElement = document.getElementById('visitor-count');
+    
+    if (counterElement) {
+        // Add some visual flair to the number
+        counterElement.textContent = currentCount.toLocaleString();
+        
+        // Add a subtle animation for new visits
+        if (isNewVisit && currentCount > 1) {
+            counterElement.style.transition = 'all 0.5s ease';
+            counterElement.style.transform = 'scale(1.1)';
+            counterElement.style.fontWeight = 'bold';
+            
+            setTimeout(() => {
+                counterElement.style.transform = 'scale(1)';
+                counterElement.style.fontWeight = 'normal';
+            }, 500);
+        }
+    }
+    
+    // Optional: Add visitor milestone celebrations
+    if (isNewVisit && currentCount > 0) {
+        const milestones = [100, 500, 1000, 2500, 5000, 10000];
+        if (milestones.includes(currentCount)) {
+            console.log(`🎉 Milestone reached: ${currentCount} visitors!`);
+            // Could add confetti or notification here
+        }
+    }
+})();
+</script>
+
+<style>
+.visitor-counter {
+  background: var(--background-secondary, #f8f9fa);
+  border: 1px solid var(--border-color, #e5e7eb);
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .visitor-counter {
+  background: var(--background-secondary-dark, #1f2937);
+  border-color: var(--border-color-dark, #374151);
+}
+
+.visitor-counter:hover {
+  background: var(--background-hover, #f1f3f4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .visitor-counter:hover {
+  background: var(--background-hover-dark, #252f3f);
+}
+
+@media (max-width: 768px) {
+  .visitor-counter {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+</style>

@@ -1,0 +1,51 @@
+{% comment %}
+Reading Time Calculator
+Calculates estimated reading time based on average reading speed of 200 words per minute
+Displays with clean styling and appropriate icons
+{% endcomment %}
+
+{% assign words = content | strip_html | number_of_words %}
+{% assign reading_time = words | divided_by: 200.0 %}
+{% assign reading_minutes = reading_time | ceil %}
+
+<div class="reading-time" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7;">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12,6 12,12 16,14"></polyline>
+  </svg>
+  
+  {% if reading_minutes == 1 %}
+    <span>{{ reading_minutes }} min read</span>
+  {% elsif reading_minutes < 1 %}
+    <span>< 1 min read</span>
+  {% else %}
+    <span>{{ reading_minutes }} min read</span>
+  {% endif %}
+  
+  <span style="opacity: 0.6;">•</span>
+  <span style="opacity: 0.8;">{{ words }} words</span>
+</div>
+
+{% comment %}
+Dark mode styles - automatically handled by CSS custom properties
+{% endcomment %}
+<style>
+.reading-time {
+  color: var(--text-muted, #6b7280);
+  transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .reading-time {
+  color: var(--text-muted-dark, #9ca3af);
+}
+
+.reading-time svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .reading-time {
+    font-size: 0.8rem;
+  }
+}
+</style>

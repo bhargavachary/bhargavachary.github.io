@@ -2,7 +2,12 @@
 layout: default
 ---
 <div class="content">
-    <p>Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}</p>
+    <div class="post-meta" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color, #e5e7eb);">
+        <p style="margin-bottom: 0.5rem; color: var(--text-muted, #6b7280); font-size: 0.875rem;">
+            Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}
+        </p>
+        {% include reading-time.html %}
+    </div>
 
     {{ content }}
 </div>
