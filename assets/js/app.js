@@ -54,6 +54,18 @@
 
     const html = document.documentElement;
     let isInitialized = false;
+    let themeToggleListeners = [];
+
+    // Force reset initialization flag for cached pages
+    function resetInitialization() {
+        isInitialized = false;
+        // Clear any existing theme toggle listeners
+        themeToggleListeners.forEach(listener => {
+            document.removeEventListener(listener.type, listener.handler, listener.options);
+        });
+        themeToggleListeners = [];
+        console.log('Theme toggle initialization reset for cached page');
+    }
 
     // Sync theme button state with actual DOM theme
     function syncThemeButtonState() {
@@ -115,15 +127,21 @@
 
     // Use event delegation at document level - this ALWAYS works regardless of DOM changes
     function initThemeToggleWithDelegation() {
+        // CRITICAL: Always reset for cached pages
+        if (performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
+            console.log('Detected cached page load (back/forward), forcing reset');
+            resetInitialization();
+        }
+        
         if (isInitialized) {
-            console.log('Theme toggle already initialized via delegation');
+            console.log('Theme toggle already initialized, skipping');
             return;
         }
 
         console.log('Initializing theme toggle with event delegation');
 
         // Click handler with delegation - HIGHEST PRIORITY
-        document.addEventListener('click', function(e) {
+        const clickHandler = function(e) {
             // Multiple ways to identify theme toggle for maximum reliability
             const toggle = e.target.closest('#theme-toggle') ||
                           e.target.closest('[data-theme-toggle]') ||
@@ -136,10 +154,13 @@
                 toggleTheme(e);
                 return false;
             }
-        }, true); // Use capture phase - fires BEFORE bubble phase
+        };
+        
+        document.addEventListener('click', clickHandler, true);
+        themeToggleListeners.push({ type: 'click', handler: clickHandler, options: true });
 
         // Keyboard handler with delegation - HIGHEST PRIORITY
-        document.addEventListener('keydown', function(e) {
+        const keyHandler = function(e) {
             // Multiple ways to identify theme toggle for maximum reliability
             const toggle = e.target.closest('#theme-toggle') ||
                           e.target.closest('[data-theme-toggle]') ||
@@ -152,10 +173,13 @@
                 toggleTheme(e);
                 return false;
             }
-        }, true); // Capture phase
+        };
+        
+        document.addEventListener('keydown', keyHandler, true);
+        themeToggleListeners.push({ type: 'keydown', handler: keyHandler, options: true });
 
         // Touch handler with delegation - HIGHEST PRIORITY
-        document.addEventListener('touchend', function(e) {
+        const touchHandler = function(e) {
             // Multiple ways to identify theme toggle for maximum reliability
             const toggle = e.target.closest('#theme-toggle') ||
                           e.target.closest('[data-theme-toggle]') ||
@@ -168,7 +192,10 @@
                 toggleTheme(e);
                 return false;
             }
-        }, { capture: true, passive: false }); // Capture phase, not passive
+        };
+        
+        document.addEventListener('touchend', touchHandler, { capture: true, passive: false });
+        themeToggleListeners.push({ type: 'touchend', handler: touchHandler, options: { capture: true, passive: false } });
 
         isInitialized = true;
         console.log('Theme toggle initialized successfully with delegation');
@@ -183,6 +210,24 @@
     } else {
         initThemeToggleWithDelegation();
     }
+
+    // CRITICAL: Handle cached page scenarios with multiple events
+    
+    // pageshow event fires for cached pages (back/forward navigation)
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            console.log('Page restored from cache (pageshow), reinitializing theme toggle');
+            resetInitialization();
+            initThemeToggleWithDelegation();
+        }
+        syncThemeButtonState();
+    });
+    
+    // pagehide event to clean up before caching
+    window.addEventListener('pagehide', function() {
+        console.log('Page being cached, cleaning up theme toggle');
+        // Don't reset here, just log for debugging
+    });
 
     // Sync button state on page visibility change (handles navigation scenarios)
     document.addEventListener('visibilitychange', function() {
@@ -203,8 +248,12 @@
         }
     });
     
-    // Sync button state on page load (handles all navigation scenarios)
-    window.addEventListener('pageshow', function() {
+    // Additional fallback: force re-init on focus (for cached pages)
+    window.addEventListener('focus', function() {
+        if (!isInitialized) {
+            console.log('Window focused and theme toggle not initialized, forcing init');
+            initThemeToggleWithDelegation();
+        }
         syncThemeButtonState();
     });
 })();
