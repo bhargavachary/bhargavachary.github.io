@@ -14,11 +14,11 @@ tags:
   - Empathy
 ---
 
-The tragic death of Atul Subhash—a Bengaluru-based professional who succumbed to the pressures of alleged harassment, legal battles, and chronic stress—forces us to confront uncomfortable truths about our society, legal systems, and mental health awareness. His story is not just a singular tragedy; it is emblematic of the struggles faced by countless individuals across the country. It reminds us of the need for a collective reckoning—a shift in how we view mental health, equity, and the essence of living a purposeful life.
+The tragic death of Atul Subhash - a Bengaluru-based professional who succumbed to the pressures of alleged harassment, legal battles, and chronic stress - forces us to confront uncomfortable truths about our society, legal systems, and mental health awareness. His story is not just a singular tragedy; it is emblematic of the struggles faced by countless individuals across the country. It reminds us of the need for a collective reckoning - a shift in how we view mental health, equity, and the essence of living a purposeful life.
 
 ## **The Story of Atul Subhash: A Life Unraveled**
 
-Atul Subhash, a Deputy General Manager at an automobile firm in Bengaluru, was by all accounts a successful professional. However, behind the facade of achievement lay years of silent suffering. His ordeal began in 2020 when his wife filed multiple legal cases against him, including under Section 498A of the Indian Penal Code—a law designed to protect women from cruelty.
+Atul Subhash, a Deputy General Manager at an automobile firm in Bengaluru, was by all accounts a successful professional. However, behind the facade of achievement lay years of silent suffering. His ordeal began in 2020 when his wife filed multiple legal cases against him, including under Section 498A of the Indian Penal Code - a law designed to protect women from cruelty.
 
 Over the next four years, Atul made nearly 40 trips to courts in Jaunpur, Uttar Pradesh, traveling thousands of kilometers while juggling work and personal obligations. His 24-page suicide note and 80-minute video detail the harassment he endured, including allegations of extortion by his in-laws, who demanded ₹3 crore to withdraw cases and ₹30 lakh for visitation rights to his son.
 
@@ -44,20 +44,20 @@ Atul’s tragedy is not an isolated incident. It is part of a larger tapestry of
 
 ## **Radical Alternatives to Despair**
 
-For those facing unbearable circumstances, the concept of *agyaatvas*—retreating from one’s current life to find renewal—offers a unique cultural solution. Inspired by Indian epics, agyaatvas is not about escapism but about stepping away to rediscover purpose and peace.
+For those facing unbearable circumstances, the concept of *agyaatvas* - retreating from one’s current life to find renewal - offers a unique cultural solution. Inspired by Indian epics, agyaatvas is not about escapism but about stepping away to rediscover purpose and peace.
 
 ### **How Agyaatvas Could Help:**
 - **Rebuild in Solitude:** Leaving toxic environments behind allows individuals to reflect and heal. Whether it’s a remote village in Arunachal Pradesh or a new community, the change in scenery can be transformative.
 - **Purposeful Living:** Engaging in meaningful work, such as teaching or serving marginalized communities, shifts focus from personal pain to societal contribution.
 
-While agyaatvas may not be practical for everyone, the underlying principle of finding purpose and disconnecting from toxicity remains powerful. For others, purposeful living in familiar settings—like volunteering at an orphanage or engaging in local community projects—can provide similar relief.
+While agyaatvas may not be practical for everyone, the underlying principle of finding purpose and disconnecting from toxicity remains powerful. For others, purposeful living in familiar settings - like volunteering at an orphanage or engaging in local community projects - can provide similar relief.
 
 ## **Living Purposefully: A Call to Action**
 
 Atul’s story calls for us to consider alternatives to despair, emphasizing that life’s purpose extends beyond personal struggles. Some potential pathways include:
 - **Teaching Values to Future Generations:** Working with children, especially in underserved areas, to impart skills and values can bring deep fulfillment.
 - **Volunteering for Causes:** Serving communities in need, whether through disaster relief, healthcare, or education, provides a sense of contribution and self-worth.
-- **Rejecting Toxicity:** Moving away from harmful relationships and situations is not cowardice—it is self-preservation.
+- **Rejecting Toxicity:** Moving away from harmful relationships and situations is not cowardice - it is self-preservation.
 
 <img class="img-responsive" src="/images/posts/mental-health/society.png" alt="">
 

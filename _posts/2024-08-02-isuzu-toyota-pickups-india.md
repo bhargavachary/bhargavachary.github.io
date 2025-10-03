@@ -115,7 +115,7 @@ Pickup trucks' customization potential encourages innovation, attracting those w
 
 ### Sustainability and Eco-Friendly Innovations
 
-As environmental concerns grow, there's a push towards eco-friendly vehicle innovations. Future pickup models might incorporate hybrid or electric options, providing environmentally conscious consumers with powerful yet sustainable vehicles. Imagine cruising through the streets of Bengaluru in a zero-emission Hilux, effortlessly combining rugged capability with green credentials—a perfect harmony of power and responsibility.
+As environmental concerns grow, there's a push towards eco-friendly vehicle innovations. Future pickup models might incorporate hybrid or electric options, providing environmentally conscious consumers with powerful yet sustainable vehicles. Imagine cruising through the streets of Bengaluru in a zero-emission Hilux, effortlessly combining rugged capability with green credentials - a perfect harmony of power and responsibility.
 
 This shift toward sustainability is more than just a trend; it's a necessity in today’s world. With India setting ambitious goals for reducing carbon emissions and increasing green energy usage, pickups equipped with hybrid or electric drivetrains are on the horizon. These vehicles promise to deliver the same rugged performance while minimizing their environmental impact. For a country like India, where every drop of petrol saved counts, this evolution is crucial.
 
@@ -129,7 +129,7 @@ Picture setting up your mobile office on a scenic hillside, the back of your pic
 
 ### Resurgence in the Rental Market
 
-The rental market is witnessing a surge in demand for pickup trucks, driven by consumers who need a robust vehicle for short-term projects or weekend adventures. Rental companies are beginning to stock pickups to cater to a growing segment of customers eager to experience the versatility of these vehicles without long-term commitments. This trend highlights a shift in consumer behavior, emphasizing experiences over ownership—a notion that resonates deeply with the millennial and Gen Z audiences.
+The rental market is witnessing a surge in demand for pickup trucks, driven by consumers who need a robust vehicle for short-term projects or weekend adventures. Rental companies are beginning to stock pickups to cater to a growing segment of customers eager to experience the versatility of these vehicles without long-term commitments. This trend highlights a shift in consumer behavior, emphasizing experiences over ownership - a notion that resonates deeply with the millennial and Gen Z audiences.
 
 Whether it’s a quick getaway to the hills or a weekend of moving furniture for a friend, the availability of pickups in the rental market means more people can enjoy the benefits of these vehicles without the commitment of ownership. This flexibility aligns perfectly with modern lifestyle trends, where adaptability and resourcefulness are key.
 

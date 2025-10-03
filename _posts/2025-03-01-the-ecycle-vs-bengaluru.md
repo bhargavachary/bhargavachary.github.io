@@ -31,7 +31,7 @@ For a commute that’s just **9 km**.
 
 Outside, the scene is familiar: honking horns, drivers gripping their steering wheels in frustration, autos inching forward, and two-wheelers zigzagging like they’re playing Temple Run.
 
-It’s not just traffic. It’s **time lost, fuel burned, patience tested**, and peace eroded — every single day.
+It’s not just traffic. It’s **time lost, fuel burned, patience tested**, and peace eroded - every single day.
 
 Then I spot it.  
 
@@ -52,7 +52,7 @@ I’ve done the full commuter circus:
 - 🚍 **BMTC?** Budget-friendly, but unpredictable.  
 - 🚴 **Cycle?** Good intentions, bad sweat patches.
 
-Then I tried something new — a **rugged e-cycle from WeR EV**, a Haryana-based startup designing India-ready bikes.
+Then I tried something new - a **rugged e-cycle from WeR EV**, a Haryana-based startup designing India-ready bikes.
 
 Day 1 felt like I’d unlocked a secret cheat code.  
 
@@ -61,7 +61,7 @@ Day 1 felt like I’d unlocked a secret cheat code.
 - 🅿️ **Parking?** Irrelevant.  
 - 🔋 **Range anxiety?** Not even close.  
 
-And I wasn’t drenched in sweat like I would’ve been on a regular cycle. This was different — **sustainable commuting with style and ease.**
+And I wasn’t drenched in sweat like I would’ve been on a regular cycle. This was different - **sustainable commuting with style and ease.**
 
 ![e-cycle in Bengaluru](/images/posts/life/ecycle.jpg)
 
@@ -87,15 +87,15 @@ Let’s break it down.
 - **EV car:** Comfortable, but not commute-efficient. More car, more cost.
 - **Metro:** Great for long stretches, but first/last-mile remains a hurdle.
 
-> _The e-cycle doesn’t just compete — it dominates daily commutes where traffic, cost, and time intersect._
+> _The e-cycle doesn’t just compete - it dominates daily commutes where traffic, cost, and time intersect._
 
 ---
 
 ## **Act 4: Do I Still Drive?**
 
-Yes. There are days I still take the car — daycare drops, grocery hauls, or long-distance errands. And that’s fine.
+Yes. There are days I still take the car - daycare drops, grocery hauls, or long-distance errands. And that’s fine.
 
-But for 80% of my trips — meetings, errands, coffee runs, and gym sessions?
+But for 80% of my trips - meetings, errands, coffee runs, and gym sessions?
 
 🚴 **My e-cycle is my go-to.**
 
@@ -103,13 +103,13 @@ But for 80% of my trips — meetings, errands, coffee runs, and gym sessions?
 - ✅ **No stress, no noise**
 - ✅ **Zero fuel or parking bills**
 - ✅ **Light exercise, without exhaustion**
-- ✅ **And let’s face it — it’s just fun**
+- ✅ **And let’s face it - it’s just fun**
 
 ---
 
 ## **Act 5: The Bigger Picture – Why This Matters**
 
-Bengaluru doesn’t just have a traffic problem — it has an **urban mobility crisis**.
+Bengaluru doesn’t just have a traffic problem - it has an **urban mobility crisis**.
 
 More cars ≠ better commute.  
 Wider roads ≠ smoother traffic.  
@@ -126,16 +126,16 @@ Every e-cycle ride means:
 
 And the best part? **You’re no longer a hostage to traffic.**
 
-WeR EV isn’t alone. E-cycle choices are exploding — foldables from Doodle, utility bikes from EMotorad, or even converted kits for your old MTB.
+WeR EV isn’t alone. E-cycle choices are exploding - foldables from Doodle, utility bikes from EMotorad, or even converted kits for your old MTB.
 
-The ecosystem is growing. And maybe, the next traffic-free revolution begins not with a Tesla — but with an e-cycle.
+The ecosystem is growing. And maybe, the next traffic-free revolution begins not with a Tesla - but with an e-cycle.
 
 ---
 
 ## **Your Move**  
 
 Would you try an e-cycle for your daily commute?  
-What’s stopping you — infrastructure, comfort, or habit?
+What’s stopping you - infrastructure, comfort, or habit?
 
 **Drop your thoughts below or tag me on social media.**  
 Let’s swap stories, trade hacks, and ride toward a smarter, cleaner Bengaluru. 🚴‍♂️💡

@@ -812,7 +812,7 @@ if ('serviceWorker' in navigator) {
 
 /* =========================================================================
    GREEDY NAVIGATION (Priority+)
-   Based on working implementation from bhargavachary.github.io
+   Based on working implementation from dkbachary.github.io
    Intelligently moves menu items to overflow dropdown based on space
    ========================================================================= */
 

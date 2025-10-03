@@ -2,7 +2,7 @@
 title: "Favorites"
 layout: page
 permalink: /favorites/
-subtitle: "Here is an invitation to dive into my all-time favorite posts—each one a journey worth taking. Explore and discover; you won't be disappointed!"
+subtitle: "Here is an invitation to dive into my all-time favorite posts - each one a journey worth taking. Explore and discover; you won't be disappointed!"
 hero_image: /images/hero/india-culture.jpg
 hero_darken: true
 favorite_posts:

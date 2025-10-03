@@ -33,7 +33,7 @@ Growth is the ultimate reward of our professional endeavors. It is a gradual, of
 
 #### 5. The Human Element: The Heart of Our Professional Lives
 
-At the core of our professional journeys lies the human element—the relationships we build, the empathy we share, and the impact we have on each other’s lives. This human connection gives meaning to our work, infuses our experiences with purpose, and sustains us through the highs and lows of our careers. Embracing the human element means recognizing that our professional lives are not just about achieving goals or climbing the corporate ladder, but about growing as compassionate, thoughtful, and interconnected beings.
+At the core of our professional journeys lies the human element - the relationships we build, the empathy we share, and the impact we have on each other’s lives. This human connection gives meaning to our work, infuses our experiences with purpose, and sustains us through the highs and lows of our careers. Embracing the human element means recognizing that our professional lives are not just about achieving goals or climbing the corporate ladder, but about growing as compassionate, thoughtful, and interconnected beings.
 
 In the end, our professional journeys are not defined by the titles we hold or the accolades we receive, but by the relationships we nurture and the person we become. As we navigate the ever-changing landscape of our careers, let us remember to honor the human element within us all, for it is this that truly makes our journeys worthwhile.
 
