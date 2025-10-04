@@ -234,14 +234,14 @@
     submitBtn.disabled = true;
     
     // Prepare form data for Google Forms submission
-    // To find your entry IDs:
-    // 1. Open your Google Form in edit mode
-    // 2. Right-click on each field and select "Inspect"
-    // 3. Look for the "name" attribute that starts with "entry."
-    // 4. Replace the entry IDs below with your actual ones
+    // REPLACE THESE PLACEHOLDER ENTRY IDs WITH YOUR ACTUAL ONES:
+    // 1. Open your Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd3m8QFkglw2aNQIvLtNmgsJi9fjqGuyztCCms_vud1vyJj5A/viewform
+    // 2. Right-click on the Name field → Inspect → Find name="entry.XXXXXXXXXX"
+    // 3. Right-click on the Email field → Inspect → Find name="entry.YYYYYYYYYY"
+    // 4. Replace the entry IDs below
     const formData = new FormData();
-    formData.append('entry.1234567890', name); // Replace with actual Name field entry ID
-    formData.append('entry.0987654321', email); // Replace with actual Email field entry ID
+    formData.append('entry.1234567890', name); // ← REPLACE: Your Name field entry ID
+    formData.append('entry.0987654321', email); // ← REPLACE: Your Email field entry ID
     
     // Submit to Google Forms
     fetch('https://docs.google.com/forms/d/e/1FAIpQLSd3m8QFkglw2aNQIvLtNmgsJi9fjqGuyztCCms_vud1vyJj5A/formResponse', {
