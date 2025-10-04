@@ -39,26 +39,24 @@
         </div>
       </div>
 
-      {% comment %} Formspree Form - Replace YOUR_FORM_ID with your actual Formspree form ID {% endcomment %}
+      {% comment %} Google Forms - Replace YOUR_GOOGLE_FORM_ACTION_URL with your actual Google Form action URL {% endcomment %}
       <form
         id="newsletter-form"
         class="newsletter-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
+        action="YOUR_GOOGLE_FORM_ACTION_URL"
         method="POST"
         target="_blank"
       >
         <div class="newsletter-input-group">
           <input
             type="email"
-            name="email"
+            name="emailAddress"
             id="newsletter-email"
             class="newsletter-input"
             placeholder="Enter your email"
             required
             aria-label="Email address"
           />
-          <input type="hidden" name="_subject" value="Newsletter Subscription" />
-          <input type="hidden" name="_next" value="{{ site.url }}/thank-you" />
           <button type="submit" class="newsletter-submit">
             <span class="submit-text">Subscribe</span>
             <span class="submit-icon">
