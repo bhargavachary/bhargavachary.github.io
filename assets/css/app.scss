@@ -3199,7 +3199,7 @@ html[data-theme="dark"] {
   position: relative;
   width: 90%;
   max-width: 700px;
-  max-height: 70vh;
+  max-height: min(70vh, calc(100vh - 120px));
   background: var(--bg-elevated);
   border-radius: 16px;
   box-shadow: var(--shadow-xl);
@@ -3325,10 +3325,41 @@ html[data-theme="dark"] {
 
 /* Search Results */
 .search-results {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0; /* CRITICAL: Allows flex child to shrink below content size */
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 1.5rem;
   padding-top: 0;
+
+  /* Custom scrollbar styling */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--primary-color);
+    }
+  }
+
+  /* Scroll shadow indicators (visual cue) */
+  background:
+    linear-gradient(var(--bg-elevated) 30%, rgba(255,255,255,0)),
+    linear-gradient(rgba(255,255,255,0), var(--bg-elevated) 70%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, rgba(0,0,0,0.1), rgba(0,0,0,0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.1), rgba(0,0,0,0)) 0 100%;
+  background-repeat: no-repeat;
+  background-color: var(--bg-elevated);
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
 }
 
 .search-state {
@@ -3824,8 +3855,13 @@ html[data-theme="dark"] {
 
   .search-modal-container {
     width: 95%;
-    max-height: 80vh;
-    padding-top: 5vh;
+    max-height: min(85vh, calc(100vh - 80px));
+    margin-top: 5vh;
+  }
+
+  .search-results {
+    /* Ensure proper scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
   }
 
   .search-result-image {
@@ -3859,5 +3895,18 @@ html[data-theme="dark"] {
   .search-modal-overlay,
   .newsletter-overlay {
     background: rgba(0, 0, 0, 0.8);
+  }
+
+  .search-results {
+    /* Dark mode scroll shadows */
+    background:
+      linear-gradient(var(--bg-elevated) 30%, rgba(0,0,0,0)),
+      linear-gradient(rgba(0,0,0,0), var(--bg-elevated) 70%) 0 100%,
+      radial-gradient(farthest-side at 50% 0, rgba(255,255,255,0.1), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 50% 100%, rgba(255,255,255,0.1), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: var(--bg-elevated);
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
   }
 }
