@@ -16,6 +16,14 @@ layout: default
         </div>
 
         {{ content }}
+
+        {% if site.disqus.shortname %}
+        <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--border-color, #e5e7eb);">
+        <div class="content">
+            <h4 class="title is-4">Comments</h4>
+            {% include disqus.html %}
+        </div>
+        {% endif %}
     </div>
 
     {% if page.tags %}
@@ -36,12 +44,8 @@ layout: default
         {% include post-navigation.html %}
     </div>
 
-    {% if site.disqus.shortname %}
-    <div class="content mt-6">
-        <h4 class="title is-4">Comments</h4>
-        {% include disqus.html %}
-    </div>
-    {% endif %}
+    {% comment %} Disqus Comments - moved to end if needed for some reason {% endcomment %}
+
 </article>
 
 {% comment %} Back to Top Button {% endcomment %}
