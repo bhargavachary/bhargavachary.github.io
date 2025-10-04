@@ -1,0 +1,92 @@
+{% comment %}
+  Back to Top Button
+  iOS-style floating button with smooth scroll
+  Appears after 300px scroll, dark mode compatible
+{% endcomment %}
+
+<button
+  id="back-to-top"
+  class="back-to-top-btn"
+  onclick="scrollToTop()"
+  aria-label="Scroll to top"
+  title="Back to top"
+>
+  <span class="icon">
+    <i class="fas fa-arrow-up"></i>
+  </span>
+</button>
+
+<script>
+// Back to Top functionality
+(function() {
+  'use strict';
+
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  if (!backToTopBtn) return;
+
+  // Show/hide button based on scroll position
+  let isVisible = false;
+
+  function updateBackToTopVisibility() {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 300 && !isVisible) {
+      backToTopBtn.classList.add('visible');
+      isVisible = true;
+    } else if (scrollY <= 300 && isVisible) {
+      backToTopBtn.classList.remove('visible');
+      isVisible = false;
+    }
+  }
+
+  // Throttled scroll listener
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateBackToTopVisibility();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Scroll to top function
+  window.scrollToTop = function() {
+    // Track event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'back_to_top', {
+        'event_category': 'Navigation',
+        'event_label': 'Scroll to Top',
+        'value': Math.round(window.scrollY)
+      });
+    }
+
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    // Add subtle animation feedback
+    backToTopBtn.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      backToTopBtn.style.transform = '';
+    }, 150);
+  };
+
+  // Keyboard shortcut: Home key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Home' && !e.ctrlKey && !e.metaKey) {
+      // Only if not in input/textarea
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      e.preventDefault();
+      window.scrollToTop();
+    }
+  });
+})();
+</script>

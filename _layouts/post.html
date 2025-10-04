@@ -1,28 +1,48 @@
 ---
 layout: default
 ---
-<div class="content">
-    <div class="post-meta" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color, #e5e7eb);">
-        <p style="margin-bottom: 0.5rem; color: var(--text-muted, #6b7280); font-size: 0.875rem;">
-            Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}
-        </p>
-        {% include reading-time.html %}
+<article class="post-article">
+    <div class="content">
+        <div class="post-meta" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color, #e5e7eb); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div>
+                <p style="margin-bottom: 0.5rem; color: var(--text-muted, #6b7280); font-size: 0.875rem;">
+                    Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}
+                </p>
+                {% include reading-time.html %}
+            </div>
+            <div class="post-actions" style="display: flex; gap: 0.5rem;">
+                {% include bookmark-button.html %}
+            </div>
+        </div>
+
+        {{ content }}
     </div>
 
-    {{ content }}
-</div>
+    {% if page.tags %}
+    <div class="tags my-4">
+        {% for tag in page.tags %}
+            <span class="tag is-primary">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
 
-{% if page.tags %}
-<div class="tags my-4">
-    {% for tag in page.tags %}
-        <span class="tag is-primary">{{ tag }}</span>
-    {% endfor %}
-</div>
-{% endif %}
+    {% comment %} Social Sharing Component {% endcomment %}
+    <div class="mt-6 mb-6">
+        {% include social-share.html %}
+    </div>
 
-{% if site.disqus.shortname %}
-<div class="content mt-6">
-    <h4 class="title is-4">Comments</h4>
-    {% include disqus.html %}
-</div>
-{% endif %}
+    {% comment %} Post Navigation (Previous/Next & Related Posts) {% endcomment %}
+    <div class="mt-6 mb-6">
+        {% include post-navigation.html %}
+    </div>
+
+    {% if site.disqus.shortname %}
+    <div class="content mt-6">
+        <h4 class="title is-4">Comments</h4>
+        {% include disqus.html %}
+    </div>
+    {% endif %}
+</article>
+
+{% comment %} Back to Top Button {% endcomment %}
+{% include back-to-top.html %}

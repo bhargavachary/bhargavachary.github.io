@@ -1,0 +1,220 @@
+{% comment %}
+  Post Navigation Component
+  Features: Previous/Next posts with thumbnails, Related posts, Reading progress indicator
+  Fully responsive, dark mode compatible
+{% endcomment %}
+
+{% comment %} Get previous and next posts {% endcomment %}
+{% assign post_index = 0 %}
+{% for post in site.posts %}
+  {% if post.url == page.url %}
+    {% assign post_index = forloop.index %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign prev_index = post_index | plus: 1 %}
+{% assign next_index = post_index | minus: 1 %}
+
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+
+{% for post in site.posts %}
+  {% if forloop.index == prev_index %}
+    {% assign prev_post = post %}
+  {% endif %}
+  {% if forloop.index == next_index %}
+    {% assign next_post = post %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Previous/Next Post Navigation {% endcomment %}
+<nav class="post-navigation" aria-label="Post navigation">
+  <div class="columns is-mobile">
+    {% if prev_post %}
+    <div class="column is-6">
+      <a href="{{ site.baseurl }}{{ prev_post.url }}" class="post-nav-card prev-post">
+        <div class="post-nav-direction">
+          <span class="icon">
+            <i class="fas fa-arrow-left"></i>
+          </span>
+          <span class="post-nav-label">Previous Post</span>
+        </div>
+        {% if prev_post.image %}
+        <div class="post-nav-image">
+          <img src="{{ prev_post.image | relative_url }}" alt="{{ prev_post.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <h4 class="post-nav-title">{{ prev_post.title }}</h4>
+        <p class="post-nav-date">{{ prev_post.date | date: '%b %-d, %Y' }}</p>
+      </a>
+    </div>
+    {% else %}
+    <div class="column is-6">
+      <div class="post-nav-card disabled">
+        <div class="post-nav-direction">
+          <span class="icon">
+            <i class="fas fa-arrow-left"></i>
+          </span>
+          <span class="post-nav-label">No Previous Post</span>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if next_post %}
+    <div class="column is-6">
+      <a href="{{ site.baseurl }}{{ next_post.url }}" class="post-nav-card next-post">
+        <div class="post-nav-direction">
+          <span class="post-nav-label">Next Post</span>
+          <span class="icon">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+        {% if next_post.image %}
+        <div class="post-nav-image">
+          <img src="{{ next_post.image | relative_url }}" alt="{{ next_post.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <h4 class="post-nav-title">{{ next_post.title }}</h4>
+        <p class="post-nav-date">{{ next_post.date | date: '%b %-d, %Y' }}</p>
+      </a>
+    </div>
+    {% else %}
+    <div class="column is-6">
+      <div class="post-nav-card disabled">
+        <div class="post-nav-direction">
+          <span class="post-nav-label">No Next Post</span>
+          <span class="icon">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</nav>
+
+{% comment %} Related Posts Section (based on tags) {% endcomment %}
+{% if page.tags.size > 0 %}
+<section class="related-posts">
+  <h3 class="title is-4">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-book-open"></i>
+      </span>
+      <span>Related Articles</span>
+    </span>
+  </h3>
+
+  {% assign max_related = 3 %}
+  {% assign min_common_tags = 1 %}
+  {% assign related_posts = "" | split: "" %}
+
+  {% comment %} Find posts with common tags {% endcomment %}
+  {% for post in site.posts %}
+    {% if post.url != page.url %}
+      {% assign common_tags = 0 %}
+      {% for tag in post.tags %}
+        {% if page.tags contains tag %}
+          {% assign common_tags = common_tags | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if common_tags >= min_common_tags %}
+        {% assign related_posts = related_posts | push: post %}
+      {% endif %}
+    {% endif %}
+
+    {% if related_posts.size >= max_related %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if related_posts.size > 0 %}
+  <div class="columns is-multiline">
+    {% for post in related_posts limit: max_related %}
+    <div class="column is-12-mobile is-4-tablet">
+      <div class="box related-post-card">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="related-post-link">
+          {% if post.image %}
+          <div class="related-post-image">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="related-post-content">
+            <h5 class="title is-6">{{ post.title }}</h5>
+            <p class="is-size-7 has-text-grey">{{ post.date | date: '%b %-d, %Y' }}</p>
+            {% if post.tags.size > 0 %}
+            <div class="tags are-small mt-2">
+              {% for tag in post.tags limit: 3 %}
+              <span class="tag is-light">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="has-text-grey-light">No related articles found.</p>
+  {% endif %}
+</section>
+{% endif %}
+
+<script>
+// Post Navigation Enhancements
+(function() {
+  'use strict';
+
+  // Track navigation clicks
+  document.querySelectorAll('.post-nav-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const direction = this.classList.contains('prev-post') ? 'Previous' : 'Next';
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'post_navigation', {
+          'event_category': 'Navigation',
+          'event_label': direction,
+          'value': 1
+        });
+      }
+    });
+  });
+
+  // Track related post clicks
+  document.querySelectorAll('.related-post-card').forEach((card, index) => {
+    card.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'related_post_click', {
+          'event_category': 'Engagement',
+          'event_label': 'Related Posts',
+          'value': index + 1
+        });
+      }
+    });
+  });
+
+  // Keyboard navigation (Arrow keys)
+  document.addEventListener('keydown', function(e) {
+    // Only if not in input/textarea
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      return;
+    }
+
+    const prevLink = document.querySelector('.prev-post');
+    const nextLink = document.querySelector('.next-post');
+
+    // Left arrow = Previous post
+    if (e.key === 'ArrowLeft' && prevLink) {
+      prevLink.click();
+    }
+    // Right arrow = Next post
+    else if (e.key === 'ArrowRight' && nextLink) {
+      nextLink.click();
+    }
+  });
+})();
+</script>

@@ -1,10 +1,37 @@
-<div class="card clickable-card">
+<div class="card clickable-card post-card" data-post-url="{{ post.url }}">
+    {% comment %} Quick Actions Overlay {% endcomment %}
+    <div class="card-quick-actions">
+        <button
+            class="card-action-btn bookmark-mini-btn"
+            onclick="event.stopPropagation(); toggleBookmark('{{ post.url }}', '{{ post.title | escape }}');"
+            aria-label="Bookmark this post"
+            title="Bookmark"
+            data-post-url="{{ post.url }}"
+        >
+            <span class="icon is-small">
+                <i class="far fa-bookmark"></i>
+            </span>
+        </button>
+        <button
+            class="card-action-btn share-mini-btn"
+            onclick="event.stopPropagation(); nativeShare('{{ post.title | escape }}', '{{ post.url | absolute_url }}');"
+            aria-label="Share this post"
+            title="Share"
+        >
+            <span class="icon is-small">
+                <i class="fas fa-share-nodes"></i>
+            </span>
+        </button>
+    </div>
+
     {% if post.image %}
         <div class="card-image">
-            <a href="{{ site.baseurl }}{{ post.url }}" class="card-main-link" style="display: block; overflow: hidden;">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="card-main-link" style="display: block; overflow: hidden; position: relative;">
                 <picture>
                     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                 </picture>
+                {% comment %} Gradient overlay on hover {% endcomment %}
+                <div class="card-image-overlay"></div>
             </a>
         </div>
     {% else %}
@@ -12,6 +39,7 @@
             <a class="card-header-title card-main-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </header>
     {% endif %}
+
     <div class="card-content">
         <div class="content">
             {% if post.image %}
@@ -23,14 +51,42 @@
                 <p>{{ post.excerpt }}</p>
             {% endif %}
         </div>
+
+        {% comment %} Tags (shown on hover) {% endcomment %}
+        {% if post.tags.size > 0 %}
+        <div class="card-tags">
+            {% for tag in post.tags limit: 4 %}
+            <span class="tag is-primary is-light is-small">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
         <div class="has-text-centered">
             <a href="{{ site.baseurl }}{{ post.url }}" class="button is-primary card-main-link"
                 >Read more <span class="is-sr-only"> about {{ post.title }}</span></a
             >
         </div>
     </div>
+
     <footer class="card-footer">
-        <p class="card-footer-item">Published: {{ post.date | date: '%b %-d, %Y' }}</p>
+        <p class="card-footer-item">
+            <span class="icon-text">
+                <span class="icon is-small">
+                    <i class="far fa-calendar"></i>
+                </span>
+                <span>{{ post.date | date: '%b %-d, %Y' }}</span>
+            </span>
+        </p>
+        {% if post.content %}
+        <p class="card-footer-item">
+            <span class="icon-text">
+                <span class="icon is-small">
+                    <i class="far fa-clock"></i>
+                </span>
+                <span>{% include reading-time.html content=post.content %}</span>
+            </span>
+        </p>
+        {% endif %}
     </footer>
 </div>
 

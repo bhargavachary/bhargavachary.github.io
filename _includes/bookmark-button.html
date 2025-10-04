@@ -1,0 +1,182 @@
+{% comment %}
+  Bookmark Button Component
+  Standalone bookmarking system using localStorage
+  Can be used inline or as floating button
+{% endcomment %}
+
+<button
+  class="button bookmark-btn"
+  onclick="toggleBookmark('{{ page.url }}', '{{ page.title | escape }}')"
+  data-post-url="{{ page.url }}"
+  id="bookmark-btn"
+  aria-label="Bookmark this article"
+  title="Bookmark this article"
+>
+  <span class="icon bookmark-icon">
+    <i class="far fa-bookmark"></i>
+  </span>
+  <span class="bookmark-text">Bookmark</span>
+</button>
+
+<script>
+// Bookmark System (localStorage-based)
+(function() {
+  'use strict';
+
+  // Toggle bookmark
+  window.toggleBookmark = function(postUrl, postTitle) {
+    const bookmarks = getBookmarks();
+    const existingIndex = bookmarks.findIndex(b => b.url === postUrl);
+
+    if (existingIndex !== -1) {
+      // Remove bookmark
+      bookmarks.splice(existingIndex, 1);
+      updateBookmarkUI(postUrl, false);
+      showToast('Bookmark removed', 'info');
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'bookmark_remove', {
+          'event_category': 'Engagement',
+          'event_label': postTitle,
+          'value': 0
+        });
+      }
+    } else {
+      // Add bookmark
+      bookmarks.push({
+        url: postUrl,
+        title: postTitle,
+        date: new Date().toISOString(),
+        timestamp: Date.now()
+      });
+      updateBookmarkUI(postUrl, true);
+      showToast('Article bookmarked!', 'success');
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'bookmark_add', {
+          'event_category': 'Engagement',
+          'event_label': postTitle,
+          'value': 1
+        });
+      }
+    }
+
+    // Save to localStorage
+    saveBookmarks(bookmarks);
+  };
+
+  // Get bookmarks from localStorage
+  function getBookmarks() {
+    try {
+      const stored = localStorage.getItem('bhargav-blog-bookmarks');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.error('Error reading bookmarks:', e);
+      return [];
+    }
+  }
+
+  // Save bookmarks to localStorage
+  function saveBookmarks(bookmarks) {
+    try {
+      localStorage.setItem('bhargav-blog-bookmarks', JSON.stringify(bookmarks));
+    } catch (e) {
+      console.error('Error saving bookmarks:', e);
+      showToast('Failed to save bookmark', 'error');
+    }
+  }
+
+  // Update bookmark button UI
+  function updateBookmarkUI(postUrl, isBookmarked) {
+    const buttons = document.querySelectorAll('[data-post-url="' + postUrl + '"]');
+
+    buttons.forEach(btn => {
+      const icon = btn.querySelector('.bookmark-icon i');
+      const text = btn.querySelector('.bookmark-text');
+
+      if (icon) {
+        if (isBookmarked) {
+          icon.classList.remove('far');
+          icon.classList.add('fas');
+          btn.classList.add('is-bookmarked');
+        } else {
+          icon.classList.remove('fas');
+          icon.classList.add('far');
+          btn.classList.remove('is-bookmarked');
+        }
+      }
+
+      if (text) {
+        text.textContent = isBookmarked ? 'Bookmarked' : 'Bookmark';
+      }
+    });
+
+    // Update floating button if exists
+    const floatingBtn = document.getElementById('floating-bookmark-btn');
+    if (floatingBtn) {
+      const floatingIcon = floatingBtn.querySelector('.icon i');
+      if (floatingIcon) {
+        if (isBookmarked) {
+          floatingIcon.classList.remove('far');
+          floatingIcon.classList.add('fas');
+        } else {
+          floatingIcon.classList.remove('fas');
+          floatingIcon.classList.add('far');
+        }
+      }
+    }
+  }
+
+  // Check if current page is bookmarked on load
+  function initBookmarkState() {
+    const currentUrl = '{{ page.url }}';
+    const bookmarks = getBookmarks();
+    const isBookmarked = bookmarks.some(b => b.url === currentUrl);
+
+    if (isBookmarked) {
+      updateBookmarkUI(currentUrl, true);
+    }
+  }
+
+  // Show toast notification (reuse from social-share)
+  function showToast(message, type = 'success') {
+    let toast = document.getElementById('bookmark-toast');
+
+    // Create toast if doesn't exist
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'bookmark-toast';
+      toast.className = 'toast-notification';
+      document.body.appendChild(toast);
+    }
+
+    const iconClass = type === 'success' ? 'fa-check-circle' :
+                     type === 'info' ? 'fa-info-circle' :
+                     type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle';
+
+    toast.innerHTML = `
+      <span class="icon">
+        <i class="fas ${iconClass}"></i>
+      </span>
+      <span>${message}</span>
+    `;
+
+    toast.classList.add('show');
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBookmarkState);
+  } else {
+    initBookmarkState();
+  }
+
+  // Export bookmarks function (for bookmarks page)
+  window.getBookmarks = getBookmarks;
+  window.saveBookmarks = saveBookmarks;
+})();
+</script>
