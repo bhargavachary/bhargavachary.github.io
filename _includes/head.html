@@ -19,11 +19,9 @@
             if (savedTheme) {
                 // User has explicitly set a preference
                 currentTheme = savedTheme;
-                console.log('Using saved theme preference:', currentTheme);
             } else {
                 // First visit - detect from system
                 currentTheme = getSystemTheme();
-                console.log('First visit - detected system theme:', currentTheme);
                 
                 // Save the detected theme as user preference
                 localStorage.setItem('theme', currentTheme);
@@ -41,17 +39,6 @@
             // Update meta theme-color immediately
             const themeColor = currentTheme === 'dark' ? '#000000' : '#ffffff';
             html.style.setProperty('--meta-theme-color', themeColor);
-            
-            // Store initial theme for later sync
-            window._initialTheme = currentTheme;
-            
-            // CRITICAL: Mark if this is a cached page load
-            window._isCachedPageLoad = (performance.navigation?.type === 2) || 
-                                     (performance.getEntriesByType?.('navigation')?.[0]?.type === 'back_forward');
-            
-            if (window._isCachedPageLoad) {
-                console.log('Detected cached page load, will force theme toggle reinit');
-            }
         })();
     </script>
 
