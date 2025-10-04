@@ -47,24 +47,12 @@
     html.setAttribute('data-theme', savedTheme);
 })();
 
-// Function to initialize theme toggle - can be called multiple times safely
+// Function to initialize theme toggle - simplified and more robust
 // This uses event delegation on the document to ensure it always works
 (function() {
     'use strict';
 
     const html = document.documentElement;
-    let isInitialized = false;
-    let themeToggleListeners = [];
-
-    // Force reset initialization flag for cached pages
-    function resetInitialization() {
-        isInitialized = false;
-        // Clear any existing theme toggle listeners
-        themeToggleListeners.forEach(listener => {
-            document.removeEventListener(listener.type, listener.handler, listener.options);
-        });
-        themeToggleListeners = [];
-    }
 
     // Sync theme button state with actual DOM theme
     function syncThemeButtonState() {
@@ -81,13 +69,11 @@
             
             // Force icon visibility update via CSS classes
             html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
-            
         }
     }
 
     // Toggle theme function
     function toggleTheme(e) {
-
         if (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -95,7 +81,6 @@
 
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
 
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
@@ -127,124 +112,66 @@
         return false;
     }
 
-    // Use event delegation at document level - this ALWAYS works regardless of DOM changes
-    function initThemeToggleWithDelegation() {
-        // CRITICAL: Always reset for cached pages
-        if (performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
-            resetInitialization();
-        }
+    // Single unified event handler - handles click, touch, and keyboard
+    function handleThemeToggle(e) {
+        // Identify theme toggle button
+        const toggle = e.target.closest('#theme-toggle') ||
+                      e.target.closest('[data-theme-toggle]') ||
+                      e.target.closest('.theme-toggle-item');
         
-        if (isInitialized) {
+        if (!toggle) return;
+
+        // For keyboard events, only trigger on Enter or Space
+        if (e.type === 'keydown' && !(e.key === 'Enter' || e.key === ' ')) {
             return;
         }
 
-
-        // Click handler with delegation - HIGHEST PRIORITY
-        const clickHandler = function(e) {
-            // Multiple ways to identify theme toggle for maximum reliability
-            const toggle = e.target.closest('#theme-toggle') ||
-                          e.target.closest('[data-theme-toggle]') ||
-                          e.target.closest('.theme-toggle-item');
-            if (toggle) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
-                toggleTheme(e);
-                return false;
-            }
-        };
-        
-        document.addEventListener('click', clickHandler, true);
-        themeToggleListeners.push({ type: 'click', handler: clickHandler, options: true });
-
-        // Keyboard handler with delegation - HIGHEST PRIORITY
-        const keyHandler = function(e) {
-            // Multiple ways to identify theme toggle for maximum reliability
-            const toggle = e.target.closest('#theme-toggle') ||
-                          e.target.closest('[data-theme-toggle]') ||
-                          e.target.closest('.theme-toggle-item');
-            if (toggle && (e.key === 'Enter' || e.key === ' ')) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
-                toggleTheme(e);
-                return false;
-            }
-        };
-        
-        document.addEventListener('keydown', keyHandler, true);
-        themeToggleListeners.push({ type: 'keydown', handler: keyHandler, options: true });
-
-        // Touch handler with delegation - HIGHEST PRIORITY
-        const touchHandler = function(e) {
-            // Multiple ways to identify theme toggle for maximum reliability
-            const toggle = e.target.closest('#theme-toggle') ||
-                          e.target.closest('[data-theme-toggle]') ||
-                          e.target.closest('.theme-toggle-item');
-            if (toggle) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation(); // CRITICAL: Stop ALL other listeners
-                toggleTheme(e);
-                return false;
-            }
-        };
-        
-        document.addEventListener('touchend', touchHandler, { capture: true, passive: false });
-        themeToggleListeners.push({ type: 'touchend', handler: touchHandler, options: { capture: true, passive: false } });
-
-        isInitialized = true;
-        
-        // CRITICAL: Sync theme button state immediately after initialization
-        syncThemeButtonState();
+        e.preventDefault();
+        e.stopPropagation();
+        toggleTheme(e);
     }
 
-    // Initialize immediately if DOM is ready, otherwise wait
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initThemeToggleWithDelegation);
-    } else {
-        initThemeToggleWithDelegation();
-    }
+    // Use event delegation with capture phase for maximum reliability
+    document.addEventListener('click', handleThemeToggle, true);
+    document.addEventListener('keydown', handleThemeToggle, true);
 
-    // CRITICAL: Handle cached page scenarios with multiple events
-    
-    // pageshow event fires for cached pages (back/forward navigation)
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            resetInitialization();
-            initThemeToggleWithDelegation();
+    // Force sync theme from localStorage on every page load/show
+    function syncThemeFromStorage() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const currentTheme = html.getAttribute('data-theme');
+        
+        if (savedTheme !== currentTheme) {
+            html.setAttribute('data-theme', savedTheme);
+            html.className = savedTheme === 'dark' ? 'theme-dark' : 'theme-light';
         }
+        
         syncThemeButtonState();
-    });
-    
-    // pagehide event to clean up before caching
-    window.addEventListener('pagehide', function() {
-        // Don't reset here, just log for debugging
+    }
+
+    // Sync immediately
+    syncThemeFromStorage();
+
+    // Sync on DOMContentLoaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncThemeFromStorage);
+    }
+
+    // CRITICAL: Handle cached pages (back/forward navigation)
+    window.addEventListener('pageshow', function(event) {
+        // Always sync, especially for cached pages
+        syncThemeFromStorage();
     });
 
-    // Sync button state on page visibility change (handles navigation scenarios)
+    // Sync when page becomes visible (tab switching, etc.)
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
-            
-            // Sync theme from localStorage if it changed externally
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            const currentTheme = html.getAttribute('data-theme');
-            
-            if (savedTheme !== currentTheme) {
-                html.setAttribute('data-theme', savedTheme);
-            }
-            
-            // Always sync button state
-            syncThemeButtonState();
+            syncThemeFromStorage();
         }
     });
-    
-    // Additional fallback: force re-init on focus (for cached pages)
+
+    // Additional safety: sync on window focus
     window.addEventListener('focus', function() {
-        if (!isInitialized) {
-            initThemeToggleWithDelegation();
-        }
-        syncThemeButtonState();
+        syncThemeFromStorage();
     });
 })();
 
