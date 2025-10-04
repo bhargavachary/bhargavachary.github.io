@@ -3221,21 +3221,6 @@ html[data-theme="dark"] {
   }
 }
 
-  /* Responsive width breakpoints */
-  @media (min-width: 1440px) {
-    width: 60%; /* Large desktop: 60% width */
-  }
-
-  @media (min-width: 1024px) and (max-width: 1439px) {
-    width: 70%; /* Desktop: 70% width */
-  }
-
-  @media (min-width: 769px) and (max-width: 1023px) {
-    width: 80%; /* Tablet: 80% width */
-    max-width: 850px;
-  }
-}
-
 /* Search Header */
 .search-modal-header {
   display: flex;
