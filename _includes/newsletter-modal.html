@@ -1,0 +1,250 @@
+{% comment %}
+  Newsletter Signup Modal with Exit Intent
+  Privacy-focused, GDPR compliant, smart display logic
+{% endcomment %}
+
+<div class="newsletter-modal" id="newsletter-modal" role="dialog" aria-labelledby="newsletter-title" aria-modal="true">
+  <div class="newsletter-overlay" onclick="closeNewsletterModal()"></div>
+
+  <div class="newsletter-container">
+    <button class="newsletter-close" onclick="closeNewsletterModal()" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="newsletter-content">
+      <div class="newsletter-icon">
+        <i class="fas fa-envelope-open-text"></i>
+      </div>
+
+      <h2 id="newsletter-title" class="newsletter-title">
+        Stay Updated! ✨
+      </h2>
+
+      <p class="newsletter-description">
+        Get the latest articles, tutorials, and insights delivered straight to your inbox.
+        Join <strong id="subscriber-count">500+</strong> readers who never miss an update.
+      </p>
+
+      <div class="newsletter-benefits">
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Weekly curated content</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Exclusive tutorials</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>No spam, unsubscribe anytime</span>
+        </div>
+      </div>
+
+      {% comment %} Mailchimp Embedded Form {% endcomment %}
+      <form
+        id="newsletter-form"
+        class="newsletter-form"
+        action="https://bhargavachary.us14.list-manage.com/subscribe/post?u=YOUR_USER_ID&id=YOUR_LIST_ID"
+        method="post"
+        target="_blank"
+        novalidate
+      >
+        <div class="newsletter-input-group">
+          <input
+            type="email"
+            name="EMAIL"
+            id="newsletter-email"
+            class="newsletter-input"
+            placeholder="Enter your email"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit" class="newsletter-submit">
+            <span class="submit-text">Subscribe</span>
+            <span class="submit-icon">
+              <i class="fas fa-paper-plane"></i>
+            </span>
+          </button>
+        </div>
+
+        {% comment %} Honeypot for spam prevention {% endcomment %}
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_YOUR_USER_ID_YOUR_LIST_ID" tabindex="-1" value="">
+        </div>
+      </form>
+
+      <p class="newsletter-privacy">
+        <i class="fas fa-lock"></i>
+        We respect your privacy. Read our
+        <a href="/privacy/" target="_blank">Privacy Policy</a>
+      </p>
+
+      <button class="newsletter-dismiss" onclick="dismissNewsletterForever()">
+        <i class="fas fa-times-circle"></i>
+        Don't show this again
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Newsletter Modal with Exit Intent
+(function() {
+  'use strict';
+
+  const config = {
+    exitIntentSensitivity: 20,
+    exitIntentDelay: 500,
+    minTimeOnPage: 10000, // 10 seconds
+    sessionKey: 'newsletter-shown-session',
+    permanentKey: 'newsletter-dismissed-forever',
+    subscribedKey: 'newsletter-subscribed'
+  };
+
+  let shown = false;
+  let pageLoadTime = Date.now();
+
+  function initNewsletter() {
+    // Check if already dismissed forever
+    if (localStorage.getItem(config.permanentKey) === 'true') {
+      return;
+    }
+
+    // Check if already subscribed
+    if (localStorage.getItem(config.subscribedKey) === 'true') {
+      return;
+    }
+
+    // Check if shown in this session
+    if (sessionStorage.getItem(config.sessionKey) === 'true') {
+      return;
+    }
+
+    // Desktop: Exit intent detection
+    if (window.innerWidth > 768) {
+      document.addEventListener('mouseout', handleExitIntent);
+    }
+    // Mobile: Scroll-based trigger
+    else {
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Fast upward scroll (trying to leave)
+        if (lastScrollTop - scrollTop > 100) {
+          checkAndShow();
+        }
+
+        lastScrollTop = scrollTop;
+      }, { passive: true });
+    }
+
+    // Form submission tracking
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', handleSubscribe);
+    }
+  }
+
+  function handleExitIntent(e) {
+    const shouldShow = e.clientY < config.exitIntentSensitivity;
+
+    if (shouldShow) {
+      checkAndShow();
+    }
+  }
+
+  function checkAndShow() {
+    // Ensure minimum time on page
+    if (Date.now() - pageLoadTime < config.minTimeOnPage) {
+      return;
+    }
+
+    if (!shown) {
+      showNewsletterModal();
+      shown = true;
+    }
+  }
+
+  window.showNewsletterModal = function() {
+    const modal = document.getElementById('newsletter-modal');
+    if (!modal) return;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Mark as shown in session
+    sessionStorage.setItem(config.sessionKey, 'true');
+
+    // Track in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_modal_shown', {
+        'event_category': 'Newsletter',
+        'event_label': 'Modal Shown'
+      });
+    }
+  };
+
+  window.closeNewsletterModal = function() {
+    const modal = document.getElementById('newsletter-modal');
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+
+    // Track dismissal
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_modal_closed', {
+        'event_category': 'Newsletter',
+        'event_label': 'Modal Closed'
+      });
+    }
+  };
+
+  window.dismissNewsletterForever = function() {
+    localStorage.setItem(config.permanentKey, 'true');
+    closeNewsletterModal();
+
+    // Track permanent dismissal
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_dismissed_forever', {
+        'event_category': 'Newsletter',
+        'event_label': 'Dismissed Forever'
+      });
+    }
+  };
+
+  function handleSubscribe(e) {
+    // Mark as subscribed
+    localStorage.setItem(config.subscribedKey, 'true');
+
+    // Track subscription
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_subscribe', {
+        'event_category': 'Newsletter',
+        'event_label': 'Subscribed'
+      });
+    }
+
+    // Close modal after short delay
+    setTimeout(closeNewsletterModal, 1000);
+  }
+
+  // ESC key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('newsletter-modal');
+      if (modal && modal.classList.contains('active')) {
+        closeNewsletterModal();
+      }
+    }
+  });
+
+  // Initialize
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNewsletter);
+  } else {
+    initNewsletter();
+  }
+})();
+</script>

@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /search.json
+---
+{
+  "posts": [
+    {% for post in site.posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncatewords: 50 | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "dateDisplay": {{ post.date | date: "%b %-d, %Y" | jsonify }},
+      "author": {{ post.author | default: site.author.name | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "categories": {{ post.categories | jsonify }},
+      "image": {{ post.image | default: post.hero_image | relative_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "metadata": {
+    "totalPosts": {{ site.posts.size }},
+    "generatedAt": "{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}",
+    "siteTitle": {{ site.title | jsonify }},
+    "siteUrl": {{ site.url | jsonify }}
+  }
+}
