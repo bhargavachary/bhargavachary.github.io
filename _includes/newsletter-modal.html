@@ -39,30 +39,35 @@
         </div>
       </div>
 
-      {% comment %} Google Forms - Newsletter subscription {% endcomment %}
-      <form
-        id="newsletter-form"
-        class="newsletter-form"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSd3m8QFkglw2aNQIvLtNmgsJi9fjqGuyztCCms_vud1vyJj5A/formResponse"
-        method="POST"
-        target="_blank"
-      >
-        <div class="newsletter-input-group">
+      {% comment %} Newsletter Form with Name and Email fields {% endcomment %}
+      <form id="newsletter-form" class="newsletter-form">
+        <div class="newsletter-input-group" style="flex-direction: column; gap: 1rem;">
           <input
-            type="email"
-            name="emailAddress"
-            id="newsletter-email"
+            type="text"
+            name="name"
+            id="newsletter-name"
             class="newsletter-input"
-            placeholder="Enter your email"
-            required
-            aria-label="Email address"
+            placeholder="Your name (optional)"
+            aria-label="Name"
           />
-          <button type="submit" class="newsletter-submit">
-            <span class="submit-text">Subscribe</span>
-            <span class="submit-icon">
-              <i class="fas fa-paper-plane"></i>
-            </span>
-          </button>
+          <div style="display: flex; gap: 0.5rem;">
+            <input
+              type="email"
+              name="email"
+              id="newsletter-email"
+              class="newsletter-input"
+              placeholder="Enter your email"
+              required
+              aria-label="Email address"
+              style="flex: 1;"
+            />
+            <button type="submit" class="newsletter-submit" id="newsletter-submit-btn">
+              <span class="submit-text">Subscribe</span>
+              <span class="submit-icon">
+                <i class="fas fa-paper-plane"></i>
+              </span>
+            </button>
+          </div>
         </div>
       </form>
 
@@ -132,7 +137,7 @@
       }, { passive: true });
     }
 
-    // Form submission tracking
+    // Form submission handling
     const form = document.getElementById('newsletter-form');
     if (form) {
       form.addEventListener('submit', handleSubscribe);
@@ -208,19 +213,98 @@
   };
 
   function handleSubscribe(e) {
-    // Mark as subscribed
-    localStorage.setItem(config.subscribedKey, 'true');
-
-    // Track subscription
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'newsletter_subscribe', {
-        'event_category': 'Newsletter',
-        'event_label': 'Subscribed'
-      });
+    e.preventDefault(); // Prevent default form submission
+    
+    const form = e.target;
+    const submitBtn = document.getElementById('newsletter-submit-btn');
+    const originalText = submitBtn.innerHTML;
+    
+    // Get form data
+    const name = document.getElementById('newsletter-name').value.trim();
+    const email = document.getElementById('newsletter-email').value.trim();
+    
+    // Validate email
+    if (!email) {
+      alert('Please enter your email address.');
+      return;
     }
-
-    // Close modal after short delay
-    setTimeout(closeNewsletterModal, 1000);
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    
+    // Prepare form data for Google Forms submission
+    // To find your entry IDs:
+    // 1. Open your Google Form in edit mode
+    // 2. Right-click on each field and select "Inspect"
+    // 3. Look for the "name" attribute that starts with "entry."
+    // 4. Replace the entry IDs below with your actual ones
+    const formData = new FormData();
+    formData.append('entry.1234567890', name); // Replace with actual Name field entry ID
+    formData.append('entry.0987654321', email); // Replace with actual Email field entry ID
+    
+    // Submit to Google Forms
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSd3m8QFkglw2aNQIvLtNmgsJi9fjqGuyztCCms_vud1vyJj5A/formResponse', {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors' // Required for cross-origin requests to Google Forms
+    })
+    .then(response => {
+      // Google Forms doesn't return proper CORS headers, so we assume success
+      // Mark as subscribed
+      localStorage.setItem(config.subscribedKey, 'true');
+      
+      // Track subscription
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'newsletter_subscribe', {
+          'event_category': 'Newsletter',
+          'event_label': 'Subscribed'
+        });
+      }
+      
+      // Show success message
+      showSuccessMessage();
+      
+      // Reset form
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Subscription error:', error);
+      alert('There was an error subscribing. Please try again or contact us directly.');
+      
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+  }
+  
+  function showSuccessMessage() {
+    const modal = document.getElementById('newsletter-modal');
+    const modalContent = modal.querySelector('.newsletter-content');
+    
+    // Replace content with success message
+    modalContent.innerHTML = `
+      <div class="newsletter-icon" style="color: #10b981;">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      
+      <h2 class="newsletter-title" style="color: #10b981;">
+        Thank You! 🎉
+      </h2>
+      
+      <p class="newsletter-description">
+        You've successfully subscribed to our newsletter! We'll keep you updated with new content and insights.
+      </p>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="newsletter-submit" onclick="closeNewsletterModal()" style="background: #10b981; border-color: #10b981;">
+          <span class="submit-text">Continue Reading</span>
+        </button>
+      </div>
+    `;
+    
+    // Auto-close after 5 seconds
+    setTimeout(closeNewsletterModal, 5000);
   }
 
   // ESC key to close
