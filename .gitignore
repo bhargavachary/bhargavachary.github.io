@@ -9,3 +9,4 @@ node_modules/*
 !node_modules/bulma
 !node_modules/bulma-block-list
 private/
+vendor/
