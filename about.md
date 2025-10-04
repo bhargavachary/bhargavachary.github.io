@@ -35,7 +35,7 @@ hero_darken: true
             <p class="has-text-centered" style="margin-top: 2rem;">
                 <strong>Looking for my professional portfolio?</strong><br>
                 <span style="opacity: 0.9;">More details about my work and projects at</span>
-                <a href="/init.d/" style="font-weight: 600; color: #00d1b2;">init.d</a> ✨
+                <a href="/professional/" style="font-weight: 600; color: #00d1b2;">init.d</a> ✨
             </p>
 
             <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
