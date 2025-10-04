@@ -1,7 +1,6 @@
 {% comment %}
-  Advanced Search Modal with Instant Results
+  Simple Search Modal - Search through blog posts
   Keyboard shortcut: Cmd/Ctrl + K
-  Features: Fuzzy search, filters, recent searches, keyboard navigation
 {% endcomment %}
 
 <div class="search-modal" id="search-modal" role="dialog" aria-labelledby="search-title" aria-modal="true">
@@ -18,7 +17,7 @@
           type="text"
           id="search-input"
           class="search-input"
-          placeholder="Search articles, tags, categories..."
+          placeholder="Search blog posts..."
           autocomplete="off"
           autocapitalize="off"
           spellcheck="false"
@@ -33,68 +32,8 @@
       </button>
     </div>
 
-    {% comment %} Search Filters {% endcomment %}
-    <div class="search-filters" id="search-filters">
-      <button class="filter-btn active" data-filter="all">
-        <i class="fas fa-list"></i> All
-      </button>
-      <button class="filter-btn" data-filter="posts">
-        <i class="fas fa-newspaper"></i> Posts
-      </button>
-      <button class="filter-btn" data-filter="tags">
-        <i class="fas fa-tags"></i> Tags
-      </button>
-      <button class="filter-btn" data-filter="categories">
-        <i class="fas fa-folder"></i> Categories
-      </button>
-    </div>
-
     {% comment %} Search Results {% endcomment %}
     <div class="search-results" id="search-results">
-      {% comment %} Initial State: Recent Searches or Popular {% endcomment %}
-      <div class="search-state" id="search-initial">
-        <div class="search-shortcuts">
-          <h3 class="search-section-title">
-            <i class="fas fa-keyboard"></i> Keyboard Shortcuts
-          </h3>
-          <div class="shortcuts-grid">
-            <div class="shortcut-item">
-              <kbd>↑</kbd><kbd>↓</kbd>
-              <span>Navigate</span>
-            </div>
-            <div class="shortcut-item">
-              <kbd>Enter</kbd>
-              <span>Select</span>
-            </div>
-            <div class="shortcut-item">
-              <kbd>ESC</kbd>
-              <span>Close</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="search-recent" id="search-recent-section" style="display: none;">
-          <h3 class="search-section-title">
-            <i class="fas fa-clock"></i> Recent Searches
-          </h3>
-          <div id="recent-searches-list"></div>
-        </div>
-
-        <div class="search-popular">
-          <h3 class="search-section-title">
-            <i class="fas fa-fire"></i> Popular Topics
-          </h3>
-          <div class="popular-tags">
-            {% for tag in site.tags limit: 8 %}
-            <button class="popular-tag" onclick="searchByTag('{{ tag[0] }}')">
-              {{ tag[0] }}
-              <span class="tag-count">{{ tag[1].size }}</span>
-            </button>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-
       {% comment %} Loading State {% endcomment %}
       <div class="search-state search-loading" id="search-loading" style="display: none;">
         <div class="loading-spinner"></div>
@@ -113,20 +52,18 @@
           <i class="fas fa-search"></i>
         </div>
         <h3>No results found</h3>
-        <p>Try different keywords or check your spelling</p>
+        <p>Try different keywords</p>
       </div>
-    </div>
 
-    {% comment %} Search Footer {% endcomment %}
-    <div class="search-modal-footer">
-      <div class="search-footer-info">
-        <span class="search-tip">
-          <i class="fas fa-lightbulb"></i>
-          Tip: Use quotes for exact match
-        </span>
-      </div>
-      <div class="search-footer-branding">
-        Powered by <strong>Fuse.js</strong>
+      {% comment %} Initial State {% endcomment %}
+      <div class="search-state" id="search-initial">
+        <div class="search-empty">
+          <div class="empty-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Search Blog Posts</h3>
+          <p>Start typing to find articles...</p>
+        </div>
       </div>
     </div>
   </div>

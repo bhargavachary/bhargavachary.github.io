@@ -1,5 +1,5 @@
-// Advanced Search System with Fuse.js
-// Features: Instant search, fuzzy matching, keyboard navigation, recent searches
+// Simple Search System with Fuse.js
+// Search through blog posts
 
 (function() {
   'use strict';
@@ -9,10 +9,7 @@
     index: null,
     fuse: null,
     searchData: null,
-    currentFilter: 'all',
-    selectedIndex: -1,
-    recentSearches: [],
-    maxRecent: 5
+    selectedIndex: -1
   };
 
   // DOM elements
@@ -20,8 +17,7 @@
     modal: null,
     input: null,
     results: null,
-    clearBtn: null,
-    filters: null
+    clearBtn: null
   };
 
   // Initialize search system
@@ -30,12 +26,8 @@
     elements.input = document.getElementById('search-input');
     elements.results = document.getElementById('results-container');
     elements.clearBtn = document.getElementById('search-clear');
-    elements.filters = document.querySelectorAll('.filter-btn');
 
     if (!elements.modal || !elements.input) return;
-
-    // Load recent searches
-    loadRecentSearches();
 
     // Event listeners
     setupEventListeners();
@@ -59,11 +51,6 @@
 
     // Clear button
     elements.clearBtn?.addEventListener('click', clearSearch);
-
-    // Filter buttons
-    elements.filters.forEach(btn => {
-      btn.addEventListener('click', () => handleFilterChange(btn));
-    });
 
     // Keyboard navigation in results
     elements.input.addEventListener('keydown', handleKeyboardNav);
@@ -147,25 +134,7 @@
 
     const results = searchState.fuse.search(query);
 
-    // Filter by current filter
-    let filteredResults = results;
-    if (searchState.currentFilter !== 'all') {
-      filteredResults = results.filter(result => {
-        const item = result.item;
-        if (searchState.currentFilter === 'tags') {
-          return item.tags && item.tags.length > 0;
-        }
-        if (searchState.currentFilter === 'categories') {
-          return item.categories && item.categories.length > 0;
-        }
-        return true;
-      });
-    }
-
-    displayResults(filteredResults, query);
-
-    // Save to recent searches
-    saveRecentSearch(query);
+    displayResults(results, query);
 
     // Track in analytics
     if (typeof gtag !== 'undefined') {
@@ -173,7 +142,7 @@
         'search_term': query,
         'event_category': 'Search',
         'event_label': query,
-        'value': filteredResults.length
+        'value': results.length
       });
     }
   }
@@ -251,22 +220,6 @@
     return text.replace(regex, '<mark>$1</mark>');
   }
 
-  // Handle filter change
-  function handleFilterChange(btn) {
-    // Update active state
-    elements.filters.forEach(f => f.classList.remove('active'));
-    btn.classList.add('active');
-
-    // Update filter
-    searchState.currentFilter = btn.dataset.filter;
-
-    // Re-run search if there's a query
-    const query = elements.input.value.trim();
-    if (query.length >= 2) {
-      performSearch(query);
-    }
-  }
-
   // Keyboard navigation
   function handleKeyboardNav(e) {
     const results = document.querySelectorAll('.search-result-item');
@@ -297,58 +250,6 @@
       }
     });
   }
-
-  // Recent searches
-  function saveRecentSearch(query) {
-    if (!query || searchState.recentSearches.includes(query)) return;
-
-    searchState.recentSearches.unshift(query);
-    searchState.recentSearches = searchState.recentSearches.slice(0, searchState.maxRecent);
-
-    localStorage.setItem('recent-searches', JSON.stringify(searchState.recentSearches));
-    updateRecentSearches();
-  }
-
-  function loadRecentSearches() {
-    try {
-      const stored = localStorage.getItem('recent-searches');
-      if (stored) {
-        searchState.recentSearches = JSON.parse(stored);
-        updateRecentSearches();
-      }
-    } catch (e) {
-      console.error('Failed to load recent searches:', e);
-    }
-  }
-
-  function updateRecentSearches() {
-    const section = document.getElementById('search-recent-section');
-    const list = document.getElementById('recent-searches-list');
-
-    if (searchState.recentSearches.length === 0) {
-      section.style.display = 'none';
-      return;
-    }
-
-    section.style.display = 'block';
-    list.innerHTML = searchState.recentSearches.map(query => `
-      <button class="recent-search-item" onclick="searchByQuery('${query}')">
-        <i class="fas fa-history"></i> ${query}
-      </button>
-    `).join('');
-  }
-
-  // Search by tag (from popular tags)
-  window.searchByTag = function(tag) {
-    elements.input.value = tag;
-    handleSearch({ target: elements.input });
-  };
-
-  // Search by query (from recent searches)
-  window.searchByQuery = function(query) {
-    elements.input.value = query;
-    handleSearch({ target: elements.input });
-  };
 
   // Clear search
   function clearSearch() {
