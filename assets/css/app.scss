@@ -3170,7 +3170,7 @@ html[data-theme="dark"] {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 10vh;
+  padding-top: 0; /* Removed - positioning handled by container */
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--duration-medium) var(--ease-emphasized);
@@ -3180,7 +3180,7 @@ html[data-theme="dark"] {
     pointer-events: auto;
 
     .search-modal-container {
-      transform: scale(1) translateY(0);
+      transform: translateX(-50%) scale(1) translateY(0);
     }
   }
 }
@@ -3196,9 +3196,12 @@ html[data-theme="dark"] {
 }
 
 .search-modal-container {
-  position: relative;
+  position: absolute;
+  top: 10vh; /* Simplified positioning - 10vh from top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%) scale(0.95) translateY(-20px); /* Perfect centering + animation */
   width: 90%;
-  max-width: 800px; /* Reduced from 1200px for better content organization */
+  max-width: 800px;
   max-height: min(75vh, calc(100vh - 100px));
   background: var(--bg-elevated);
   border-radius: 16px;
@@ -3206,18 +3209,16 @@ html[data-theme="dark"] {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: scale(0.95) translateY(-20px);
   transition: transform var(--duration-medium) var(--ease-emphasized);
-  margin: 0 auto;
   
   /* Ensure proper content organization */
   min-width: 320px;
   
   /* Better spacing for desktop */
   @media (min-width: 769px) {
+    top: 8vh; /* Closer to top on larger screens */
     width: 85%;
     max-width: 700px;
-    margin-top: 8vh;
   }
 }
 
@@ -3731,17 +3732,13 @@ html[data-theme="dark"] {
     min-width: 44px;
   }
 
-  /* Mobile modal container - inspired by Jekyll docs and GitHub */
-  .search-modal {
-    padding-top: 5vh; /* Closer to top on mobile */
-  }
-
+  /* Mobile modal container - simplified positioning */
   .search-modal-container {
+    top: 6vh; /* Closer to top on mobile - reduced from desktop 8vh */
     width: calc(100% - 2rem); /* 1rem margin on each side */
     max-width: none;
     max-height: min(85vh, calc(100vh - 80px));
-    margin: 0 1rem;
-    border-radius: 16px; /* Slightly larger radius for modern look */
+    border-radius: 16px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
                 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
