@@ -3731,34 +3731,111 @@ html[data-theme="dark"] {
     min-width: 44px;
   }
 
+  /* Mobile modal container - inspired by Jekyll docs and GitHub */
+  .search-modal {
+    padding-top: 5vh; /* Closer to top on mobile */
+  }
+
   .search-modal-container {
-    width: 95%;
+    width: calc(100% - 2rem); /* 1rem margin on each side */
     max-width: none;
-    max-height: min(90vh, calc(100vh - 60px));
-    margin-top: 2vh;
-    border-radius: 12px;
+    max-height: min(85vh, calc(100vh - 80px));
+    margin: 0 1rem;
+    border-radius: 16px; /* Slightly larger radius for modern look */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
   
+  /* Mobile header - refined layout */
   .search-modal-header {
-    padding: 1rem;
-    gap: 0.5rem;
+    padding: 1rem 1rem 0.875rem;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
   }
 
-  /* Fix alignment of search input and close button on mobile */
+  /* Search input wrapper - better mobile styling */
   .search-input-wrapper {
     flex: 1;
-    margin: 0;
-    padding: 10px 12px;
+    min-width: 0; /* Allow proper flex shrinking */
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    padding: 0.625rem 0.875rem;
+    transition: all 0.2s ease;
+    
+    /* Focus-within for better UX */
+    &:focus-within {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 59, 130, 246), 0.1);
+    }
   }
 
+  /* Search icon */
+  .search-icon {
+    flex-shrink: 0;
+    font-size: 1.125rem;
+    color: var(--text-muted);
+  }
+
+  /* Search input - mobile optimized */
   .search-input {
     font-size: 16px; /* Prevent zoom on iOS */
+    line-height: 1.5;
+    padding: 0;
+    background: transparent;
+    
+    &::placeholder {
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
   }
 
+  /* Clear button */
+  .search-clear-btn {
+    flex-shrink: 0;
+    padding: 0.25rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    
+    &:active {
+      background: var(--bg-muted);
+      transform: scale(0.95);
+    }
+  }
+
+  /* Close button - larger touch target */
   .search-close-btn {
     flex-shrink: 0;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
+    min-width: 54px;
+    height: 40px;
+    padding: 0.5rem 0.875rem;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    
+    &:active {
+      transform: scale(0.96);
+      background: var(--bg-elevated);
+    }
+    
+    .search-shortcut {
+      letter-spacing: 0.5px;
+    }
   }
 
   .search-results {
