@@ -3166,7 +3166,7 @@ html[data-theme="dark"] {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1000;
+  z-index: 9999; /* Ensure it's above navbar and all other elements */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -3198,7 +3198,7 @@ html[data-theme="dark"] {
 .search-modal-container {
   position: relative;
   width: 90%;
-  max-width: 700px;
+  max-width: 1200px; /* Increased from 700px for better desktop UX */
   max-height: min(70vh, calc(100vh - 120px));
   background: var(--bg-elevated);
   border-radius: 16px;
@@ -3208,6 +3208,20 @@ html[data-theme="dark"] {
   overflow: hidden;
   transform: scale(0.95) translateY(-20px);
   transition: transform var(--duration-medium) var(--ease-emphasized);
+
+  /* Responsive width breakpoints */
+  @media (min-width: 1440px) {
+    width: 60%; /* Large desktop: 60% width */
+  }
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    width: 70%; /* Desktop: 70% width */
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    width: 80%; /* Tablet: 80% width */
+    max-width: 850px;
+  }
 }
 
 /* Search Header */

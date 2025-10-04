@@ -364,6 +364,16 @@
     document.body.style.overflow = 'hidden';
     elements.input.focus();
 
+    // Close mobile menu if open (Alpine.js integration)
+    const navElement = document.querySelector('[x-data*="openNav"]');
+    if (navElement && window.Alpine) {
+      // Use Alpine's $data to access component state
+      const alpineData = window.Alpine.$data(navElement);
+      if (alpineData && alpineData.openNav) {
+        alpineData.openNav = false;
+      }
+    }
+
     // Load index if not loaded
     if (!searchState.searchData) {
       loadSearchIndex();
