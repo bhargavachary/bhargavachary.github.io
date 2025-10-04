@@ -264,34 +264,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // EXCLUDE theme toggle from zoom effect
     document.querySelectorAll('.navbar-item:not(.theme-toggle-item), .navbar-link').forEach(el => {
-        // Click: Subtle zoom in
+        // Click: Subtle zoom in - iOS-style haptic feedback
         el.addEventListener('mousedown', function(e) {
-            // Subtle zoom in - reduced from 0.88 to 0.96 for less dramatic effect
-            this.style.transition = 'transform 50ms cubic-bezier(0.4, 0, 1, 1)';
-            this.style.transform = 'scale(0.96)';
+            // More subtle zoom for iOS feel - 0.98 instead of 0.96
+            this.style.transition = 'transform 80ms cubic-bezier(0.4, 0, 1, 1)';
+            this.style.transform = 'scale(0.98)';
         });
 
-        // Release: Zoom back smoothly
+        // Release: Zoom back smoothly with gentle spring
         el.addEventListener('mouseup', function() {
-            // Smooth return without excessive bounce
-            this.style.transition = 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)';
+            // Smooth spring return
+            this.style.transition = 'transform 200ms cubic-bezier(0.68, -0.15, 0.265, 1.15)';
             this.style.transform = 'scale(1)';
         });
 
-        // If mouse leaves while pressed, reset
+        // If mouse leaves while pressed, reset smoothly
         el.addEventListener('mouseleave', function() {
-            this.style.transition = 'transform 150ms ease-out';
+            this.style.transition = 'transform 200ms cubic-bezier(0.4, 0, 0.2, 1)';
             this.style.transform = 'scale(1)';
         });
     });
 
-    // Enhance burger menu with smooth rotation
+    // Enhance burger menu with smooth iOS-style animation
     const burger = document.querySelector('.navbar-burger');
     if (burger) {
         burger.addEventListener('click', function() {
-            this.style.transform = this.classList.contains('is-active')
-                ? 'scale(0.95) rotate(90deg)'
-                : 'scale(1)';
+            // More subtle animation - scale only, no rotation for cleaner look
+            this.style.transition = 'transform 200ms cubic-bezier(0.68, -0.15, 0.265, 1.15)';
+            if (this.classList.contains('is-active')) {
+                this.style.transform = 'scale(0.95)';
+            } else {
+                this.style.transform = 'scale(1)';
+            }
         });
     }
     // Enhanced performance monitoring
