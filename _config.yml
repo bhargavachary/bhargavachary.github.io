@@ -86,6 +86,9 @@ author:
   bio: "Code, Create, Contemplate ✨"
   location: "The Garden City, Bengaluru"
 
+# Visitor Counter Configuration
+visitor_counter_offset: 25
+
 # Social links
 social:
   facebook: https://facebook.com/BhargavAchary.github.io

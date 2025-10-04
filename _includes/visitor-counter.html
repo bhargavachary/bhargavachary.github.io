@@ -23,6 +23,7 @@ Shows unique visitors for the current session/device
     const COUNTER_KEY = 'bhargav_blog_visitors';
     const LAST_VISIT_KEY = 'bhargav_blog_last_visit';
     const VISITOR_ID_KEY = 'bhargav_blog_visitor_id';
+    const OFFSET = {{ site.visitor_counter_offset | default: 0 }};
     
     // Check if this is a unique visit (new visitor or returning after 24 hours)
     const now = new Date().getTime();
@@ -46,13 +47,14 @@ Shows unique visitors for the current session/device
         localStorage.setItem(LAST_VISIT_KEY, now.toString());
     }
     
-    // Display current count
+    // Display current count with offset
     const currentCount = parseInt(localStorage.getItem(COUNTER_KEY) || '0');
+    const displayCount = currentCount + OFFSET;
     const counterElement = document.getElementById('visitor-count');
     
     if (counterElement) {
         // Add some visual flair to the number
-        counterElement.textContent = currentCount.toLocaleString();
+        counterElement.textContent = displayCount.toLocaleString();
         
         // Add a subtle animation for new visits
         if (isNewVisit && currentCount > 1) {
@@ -70,8 +72,8 @@ Shows unique visitors for the current session/device
     // Optional: Add visitor milestone celebrations
     if (isNewVisit && currentCount > 0) {
         const milestones = [100, 500, 1000, 2500, 5000, 10000];
-        if (milestones.includes(currentCount)) {
-            console.log(`🎉 Milestone reached: ${currentCount} visitors!`);
+        if (milestones.includes(displayCount)) {
+            console.log(`🎉 Milestone reached: ${displayCount} visitors!`);
             // Could add confetti or notification here
         }
     }
