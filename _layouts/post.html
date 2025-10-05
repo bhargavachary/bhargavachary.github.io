@@ -8,7 +8,7 @@ layout: default
                 <p style="margin-bottom: 0.5rem; color: var(--text-muted, #6b7280); font-size: 0.875rem;">
                     Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}
                 </p>
-                {% include reading-time.html post=page %}
+                {% include reading-time.html content=content post=page %}
             </div>
             <div class="post-actions" style="display: flex; gap: 0.5rem;">
                 {% include bookmark-button.html %}

@@ -4,9 +4,28 @@ Calculates estimated reading time based on average reading speed of 200 words pe
 Displays with clean styling and appropriate icons
 {% endcomment %}
 
-{% assign words = post.content | strip_html | number_of_words %}
-{% assign reading_time = words | divided_by: 200.0 %}
-{% assign reading_minutes = reading_time | ceil %}
+{%- comment -%}
+Determine source text for reading-time calculation:
+- Prefer explicit `content` parameter (rendered HTML from layouts)
+- If not provided, and a `post` object is passed, try to resolve the full post content
+- Fallback to `content` variable if present in scope
+{%- endcomment -%}
+
+{%- if include.content -%}
+  {%- assign source_html = include.content -%}
+{%- elsif include.post -%}
+  {%- assign passed_post = include.post -%}
+  {%- comment -%}
+  Try to locate the original post in site.posts by matching the url or path so we can use its full content.
+  {%- endcomment -%}
+  {%- assign source_html = passed_post.content -%}
+{%- else -%}
+  {%- assign source_html = content -%}
+{%- endif -%}
+
+{%- assign words = source_html | strip_html | number_of_words -%}
+{%- assign reading_time = words | divided_by: 200.0 -%}
+{%- assign reading_minutes = reading_time | ceil -%}
 
 <div class="reading-time" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7;">
