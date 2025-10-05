@@ -860,17 +860,33 @@ if ('serviceWorker' in navigator) {
             // If visible links overflow available space, move last item to hidden
             if (vlinks.offsetWidth > availableSpace && vlinks.children.length > 0) {
                 breaks.push(vlinks.offsetWidth);
-                const lastItem = vlinks.children[vlinks.children.length - 1];
+                
+                // Find the last non-persistent item to move
+                let lastItem = null;
+                for (let i = vlinks.children.length - 1; i >= 0; i--) {
+                    const item = vlinks.children[i];
+                    const navItem = item.querySelector('.navbar-item, .navbar-link');
+                    // Skip persistent items (marked with data-nav-persistent="true")
+                    if (!navItem || navItem.getAttribute('data-nav-persistent') !== 'true') {
+                        lastItem = item;
+                        break;
+                    }
+                }
+                
                 if (lastItem) {
                     // Prepend to hidden links (so order is maintained when moved back)
                     hlinks.insertBefore(lastItem, hlinks.children[0]);
                     btn.classList.remove('hidden');
+                    
+                    // Recursively update if still overflowing
+                    recursionDepth++;
+                    updateNav();
+                    return;
+                } else {
+                    // All remaining items are persistent, stop trying to hide items
+                    recursionDepth = 0;
+                    return;
                 }
-
-                // Recursively update if still overflowing
-                recursionDepth++;
-                updateNav();
-                return;
             }
             // If space is available and there are hidden items, move first hidden back to visible
             else if (breaks.length > 0 && availableSpace > breaks[breaks.length - 1]) {
