@@ -1,5 +1,6 @@
 - name: Blog
   link: /
+  persistent: true
 - name: init.d
   link: /professional/
 - name: Categories
