@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // iOS-STYLE NAVBAR - SIMPLE ZOOM ON CLICK
     // ===================================
 
-    // EXCLUDE theme toggle from zoom effect
-    document.querySelectorAll('.navbar-item:not(.theme-toggle-item), .navbar-link').forEach(el => {
+    // EXCLUDE theme toggle and search button from zoom effect
+    document.querySelectorAll('.navbar-item:not(.theme-toggle-item):not(.search-button-item), .navbar-link').forEach(el => {
         // Click: Subtle zoom in - iOS-style haptic feedback
         el.addEventListener('mousedown', function(e) {
             // More subtle zoom for iOS feel - 0.98 instead of 0.96

@@ -1,0 +1,66 @@
+<!-- Search Modal -->
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-label" aria-hidden="true">
+    <div class="search-modal-overlay" data-search-close></div>
+    <div class="search-modal-container">
+        <div class="search-modal-header">
+            <h2 id="search-label" class="search-modal-title">Search Posts</h2>
+            <button 
+                class="search-modal-close" 
+                data-search-close 
+                aria-label="Close search"
+                type="button"
+            >
+                <span class="icon">
+                    <i class="fas fa-times"></i>
+                </span>
+            </button>
+        </div>
+        
+        <div class="search-modal-body">
+            <div class="search-input-wrapper">
+                <span class="icon search-icon">
+                    <i class="fas fa-search"></i>
+                </span>
+                <input
+                    type="text"
+                    id="search-input"
+                    class="search-input"
+                    placeholder="Search posts by title, content, category or tag..."
+                    autocomplete="off"
+                    aria-label="Search query"
+                    aria-describedby="search-results-status"
+                />
+                <button 
+                    id="search-clear" 
+                    class="search-clear-btn" 
+                    aria-label="Clear search"
+                    type="button"
+                    style="display: none;"
+                >
+                    <span class="icon">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </button>
+            </div>
+            
+            <div id="search-results-status" class="search-results-status" role="status" aria-live="polite"></div>
+            
+            <div id="search-results" class="search-results">
+                <div class="search-results-empty">
+                    <span class="icon is-large">
+                        <i class="fas fa-search fa-2x"></i>
+                    </span>
+                    <p>Start typing to search through posts...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-modal-footer">
+            <div class="search-keyboard-hints">
+                <span class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+                <span class="search-hint"><kbd>Enter</kbd> Select</span>
+                <span class="search-hint"><kbd>Esc</kbd> Close</span>
+            </div>
+        </div>
+    </div>
+</div>
