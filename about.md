@@ -63,42 +63,7 @@ hero_darken: true
     }
 }
 
-/* Retro Launch Button */
-.retro-launch-button {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #00d1b2;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 15px 35px;
-    background: transparent;
-    border: 3px solid #00d1b2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 209, 178, 0.3);
-    transition: all 0.3s ease;
-}
-
-.retro-launch-button:hover {
-    transform: scale(1.05);
-    background: rgba(0, 209, 178, 0.1);
-    box-shadow: 0 0 20px rgba(0, 209, 178, 0.5);
-}
-
-.retro-launch-button .retro-arrow {
-    display: inline-block;
-}
-
-@keyframes arrow-bounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
-}
-
-.retro-launch-button:hover .retro-arrow {
-    animation: arrow-bounce 1s infinite;
-}
+/* Retro Launch Button styles are now in app.scss for consistency */
 </style>
 
 <script>
