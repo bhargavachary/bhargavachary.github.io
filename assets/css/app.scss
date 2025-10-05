@@ -3440,3 +3440,110 @@ html[data-theme="dark"] {
     background: rgba(0, 0, 0, 0.8);
   }
 }
+
+/* ===================================
+   UNIFIED RETRO LAUNCH BUTTON
+   Consistent styling for About & Professional pages
+   =================================== */
+
+/* Import VT323 font for retro aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.retro-launch-button {
+  display: inline-block;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #00d1b2;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 20px 40px;
+  background: transparent;
+  border: 4px solid #00d1b2;
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px rgba(0, 209, 178, 0.3),
+    0 0 20px rgba(0, 209, 178, 0.2),
+    0 0 30px rgba(0, 209, 178, 0.1),
+    inset 0 0 10px rgba(0, 209, 178, 0.1);
+  text-shadow:
+    0 0 5px rgba(0, 209, 178, 0.5),
+    0 0 10px rgba(0, 209, 178, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  animation: retro-glow-pulse 2s infinite;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    background: rgba(0, 209, 178, 0.1);
+    box-shadow:
+      0 0 20px rgba(0, 209, 178, 0.5),
+      0 0 30px rgba(0, 209, 178, 0.4),
+      0 0 40px rgba(0, 209, 178, 0.3),
+      0 0 50px rgba(0, 209, 178, 0.2),
+      inset 0 0 20px rgba(0, 209, 178, 0.2);
+    text-shadow:
+      0 0 10px rgba(0, 209, 178, 0.8),
+      0 0 20px rgba(0, 209, 178, 0.5),
+      2px 2px 4px rgba(0, 0, 0, 0.9);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  .retro-arrow {
+    display: inline-block;
+  }
+
+  &:hover .retro-arrow {
+    animation: retro-arrow-bounce 1s infinite;
+  }
+}
+
+@keyframes retro-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(0, 209, 178, 0.3),
+      0 0 20px rgba(0, 209, 178, 0.2),
+      0 0 30px rgba(0, 209, 178, 0.1),
+      inset 0 0 10px rgba(0, 209, 178, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(0, 209, 178, 0.4),
+      0 0 25px rgba(0, 209, 178, 0.3),
+      0 0 35px rgba(0, 209, 178, 0.2),
+      0 0 45px rgba(0, 209, 178, 0.1),
+      inset 0 0 15px rgba(0, 209, 178, 0.15);
+  }
+}
+
+@keyframes retro-arrow-bounce {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  50% { 
+    transform: translateX(8px); 
+  }
+}
+
+/* Responsive adjustments for retro button */
+@media (max-width: 768px) {
+  .retro-launch-button {
+    font-size: 1.8em;
+    padding: 15px 30px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .retro-launch-button {
+    font-size: 1.3em;
+    padding: 12px 25px;
+    letter-spacing: 1.5px;
+  }
+}

@@ -262,86 +262,15 @@ hero_darken: true
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-.retro-button {
-  display: inline-block;
-  font-family: 'VT323', 'Courier New', monospace;
-  font-size: 3.5em;
-  font-weight: bold;
-  color: #00ff00;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  padding: 20px 40px;
-  background: #1a1a1a;
-  border: 4px solid #00ff00;
-  border-radius: 10px;
-  box-shadow:
-    0 0 10px #00ff00,
-    0 0 20px #00ff00,
-    0 0 30px #00ff00,
-    inset 0 0 10px rgba(0, 255, 0, 0.2);
-  text-shadow:
-    0 0 5px #00ff00,
-    0 0 10px #00ff00,
-    0 0 15px #00ff00,
-    2px 2px 4px rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease;
-  animation: glow-pulse 2s infinite;
-  position: relative;
-}
-
-.retro-button:hover {
-  transform: scale(1.05);
-  background: rgba(0, 255, 0, 0.1);
-  box-shadow:
-    0 0 20px #00ff00,
-    0 0 30px #00ff00,
-    0 0 40px #00ff00,
-    0 0 50px #00ff00,
-    inset 0 0 20px rgba(0, 255, 0, 0.3);
-}
-
-.retro-button:active {
-  transform: scale(0.98);
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow:
-      0 0 10px #00ff00,
-      0 0 20px #00ff00,
-      0 0 30px #00ff00,
-      inset 0 0 10px rgba(0, 255, 0, 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 15px #00ff00,
-      0 0 25px #00ff00,
-      0 0 35px #00ff00,
-      0 0 45px #00ff00,
-      inset 0 0 15px rgba(0, 255, 0, 0.3);
-  }
-}
-
-.retro-arrow {
-  display: inline-block;
-  animation: arrow-bounce 1s infinite;
-}
-
-@keyframes arrow-bounce {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-}
+/* Retro Launch Button styles are now in app.scss for consistency */
 </style>
 
 <div style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
-  <a href="https://dkbachary.github.io" target="_blank" class="retro-button" id="launch-button">
+  <a href="https://dkbachary.github.io" target="_blank" class="retro-launch-button" id="launch-button">
     <span class="retro-arrow">►►►</span> Launch Main Hub <span class="retro-arrow">◄◄◄</span>
   </a>
   <p style="font-family: 'VT323', monospace; color: #666; font-size: 1.5em; margin-top: 20px;">
-    // Press <kbd style="background: #333; padding: 2px 8px; border-radius: 4px; color: #00ff00; border: 1px solid #555;">ENTER</kbd> to continue...
+    // Press <kbd style="background: #333; padding: 2px 8px; border-radius: 4px; color: #00d1b2; border: 1px solid #555;">ENTER</kbd> to continue...
   </p>
 </div>
 
