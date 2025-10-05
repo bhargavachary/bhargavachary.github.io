@@ -61,6 +61,8 @@ markdown: kramdown
 highlighter: rouge
 timezone: Asia/Calcutta
 
+excerpt_separator: ""
+
 defaults:
   -
     scope:
