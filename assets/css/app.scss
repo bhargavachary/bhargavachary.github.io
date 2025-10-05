@@ -804,6 +804,9 @@ picture img {
   .navbar-brand .navbar-item {
     /* Align brand items with regular navbar items to keep consistent sizing */
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
     margin: 0.25rem 0.35rem;
     padding: 0.5rem 1rem !important;
     border-radius: 20px !important;
