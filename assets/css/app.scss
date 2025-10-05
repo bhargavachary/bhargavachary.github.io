@@ -802,14 +802,16 @@ picture img {
 
   /* Navbar brand items - match pill design of other navbar items */
   .navbar-brand .navbar-item {
+    /* Align brand items with regular navbar items to keep consistent sizing */
     position: relative;
     margin: 0.25rem 0.35rem;
     padding: 0.5rem 1rem !important;
     border-radius: 20px !important;
 
     color: #FFFEF5 !important;
-    font-weight: 600;
-    font-size: 1.15rem;
+    /* Match regular navbar item typography */
+    font-weight: 500;
+    font-size: 0.95rem;
     letter-spacing: 0.5px;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, "Helvetica Neue", Arial, sans-serif;
