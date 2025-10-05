@@ -77,16 +77,7 @@
                 <span>{{ post.date | date: '%b %-d, %Y' }}</span>
             </span>
         </p>
-        {% if post.content %}
-        <p class="card-footer-item">
-            <span class="icon-text">
-                <span class="icon is-small">
-                    <i class="far fa-clock"></i>
-                </span>
-                <span>{% include reading-time.html content=post.content %}</span>
-            </span>
-        </p>
-        {% endif %}
+                <span>{% include reading-time.html post=post %}</span>
     </footer>
 </div>
 

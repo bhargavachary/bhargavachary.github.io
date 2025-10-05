@@ -4,7 +4,7 @@ Calculates estimated reading time based on average reading speed of 200 words pe
 Displays with clean styling and appropriate icons
 {% endcomment %}
 
-{% assign words = content | strip_html | number_of_words %}
+{% assign words = post.content | strip_html | number_of_words %}
 {% assign reading_time = words | divided_by: 200.0 %}
 {% assign reading_minutes = reading_time | ceil %}
 
