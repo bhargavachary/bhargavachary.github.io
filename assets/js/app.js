@@ -829,8 +829,8 @@ if ('serviceWorker' in navigator) {
                 recursionDepth = 0;
             }
 
-            // Only run on desktop (above 1023px where Bulma keeps navbar visible)
-            if (window.innerWidth <= 1023) {
+            // Only run on desktop (above 768px where navbar switches to horizontal)
+            if (window.innerWidth <= 768) {
                 btn.classList.add('hidden');
                 // Move all hidden items back to visible
                 while (hlinks.children.length > 0) {

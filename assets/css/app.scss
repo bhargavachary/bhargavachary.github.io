@@ -210,7 +210,7 @@ html[data-theme="dark"] .navbar {
   }
 
   /* Dark mode mobile menu styling */
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 768px) {
     .navbar-menu {
       background: rgba(10, 10, 10, 0.98) !important;
       border: 1px solid var(--border-subtle);
@@ -406,7 +406,7 @@ html[data-theme="light"] .theme-toggle-item,
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 769px) {
     min-height: 45vh;
     /* Desktop */
   }
@@ -1006,7 +1006,7 @@ picture img {
   }
 
   /* Mobile menu adjustments with beautiful reveal animation */
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 768px) {
     .navbar-menu {
       background: rgba(20, 184, 166, 0.95) !important;
       backdrop-filter: blur(20px);
@@ -1114,7 +1114,7 @@ picture img {
 }
 
 /* Smooth content push-down on mobile when menu opens */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 768px) {
 
   /* Hero section and content below navbar smoothly transition */
   .hero,
@@ -1872,7 +1872,7 @@ nav[class*="navbar"].is-primary a:active {
 }
 
 /* Mobile menu: disable greedy nav, use standard Bulma vertical menu */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 768px) {
   .greedy-nav {
     display: block !important;
     width: 100%;
