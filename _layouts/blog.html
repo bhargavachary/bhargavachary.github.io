@@ -4,7 +4,7 @@ layout: default
 {{ content }}
 
 <div class="columns is-multiline">
-    <div class="column is-12">
+    <div class="column is-12 pagination-top">
         {% include pagination.html %}
     </div>
     {% for post in paginator.posts %}
@@ -12,7 +12,7 @@ layout: default
             {% include post-card.html %}
         </div>
     {% endfor %}
-    <div class="column is-12">
+    <div class="column is-12 pagination-bottom">
         {% include pagination.html %}
     </div>
 </div>
