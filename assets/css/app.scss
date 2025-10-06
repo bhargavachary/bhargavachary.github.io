@@ -1262,6 +1262,11 @@ picture img {
   .button, .card, .navbar-item {
     touch-action: manipulation; /* Faster click response */
   }
+  
+  /* Hide top pagination on mobile, keep only bottom pagination */
+  .pagination-top {
+    display: none;
+  }
 }
 
 /* Accessibility improvements */
