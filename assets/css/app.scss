@@ -3030,6 +3030,28 @@ html[data-theme="dark"] * {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Post card excerpt handling: show full excerpt when provided, otherwise clamp fallback content to ~5 lines */
+  .post-card-excerpt {
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .post-card-excerpt--full {
+    /* Let the full excerpt/summary display naturally */
+    display: block;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .post-card-excerpt--clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* show ~5 lines */
+    overflow: hidden;
+    max-height: calc(1.45em * 5); /* fallback for non-webkit browsers */
+  }
 }
 
 /* Dark mode adjustments for post cards */

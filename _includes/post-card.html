@@ -46,11 +46,11 @@
                 <a class="title is-4 card-main-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             {% endif %}
             {% if post.summary %}
-                {{ post.summary | markdownify }}
+                <div class="post-card-excerpt post-card-excerpt--full">{{ post.summary | markdownify }}</div>
             {% elsif post.excerpt and post.excerpt != "" %}
-                <p>{{ post.excerpt }}</p>
+                <div class="post-card-excerpt post-card-excerpt--full">{{ post.excerpt }}</div>
             {% else %}
-                <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+                <p class="post-card-excerpt post-card-excerpt--clamp">{{ post.content | strip_html | truncatewords: 120 }}</p>
             {% endif %}
         </div>
 
