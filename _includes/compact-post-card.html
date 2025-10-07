@@ -31,8 +31,10 @@
       <p class="is-size-7 compact-card-excerpt" style="margin-bottom: 0.5rem; line-height: 1.4; opacity: 0.8;">
         {% if post.summary %}
           {{ post.summary | strip_html | truncatewords: 20 }}
-        {% else %}
+        {% elsif post.excerpt and post.excerpt != "" %}
           {{ post.excerpt | strip_html | truncatewords: 20 }}
+        {% else %}
+          {{ post.content | strip_html | truncatewords: 20 }}
         {% endif %}
       </p>
       <p class="is-size-7 compact-card-date" style="opacity: 0.6;">
