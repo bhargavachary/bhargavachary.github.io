@@ -10,30 +10,85 @@
         <p class="pagination-next" disabled>Next</p>
     {% endif %}
     <ul class="pagination-list">
-        {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
+        {% comment %}
+            Smart pagination: Show current page, 2 pages on each side, and end pages with ellipsis
+            Example: 1, 2, ... 6, 7, 8, ... 14, 15
+        {% endcomment %}
+        
+        {% assign current = paginator.page %}
+        {% assign total = paginator.total_pages %}
+        {% assign delta = 2 %}
+        
+        {% comment %} Calculate range around current page {% endcomment %}
+        {% assign range_start = current | minus: delta %}
+        {% assign range_end = current | plus: delta %}
+        
+        {% comment %} Always show first page {% endcomment %}
+        {% if current == 1 %}
+            <li>
+                <a class="pagination-link is-current">1</a>
+            </li>
+        {% else %}
+            <li>
+                <a
+                    href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | split: '/' | pop | join: '/' }}"
+                    class="pagination-link"
+                >
+                    1
+                </a>
+            </li>
+        {% endif %}
+        
+        {% comment %} Show ellipsis if there's a gap after first page {% endcomment %}
+        {% if range_start > 2 %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+        {% endif %}
+        
+        {% comment %} Show pages in the middle range {% endcomment %}
+        {% for page in (2..total) %}
+            {% if page >= range_start and page <= range_end and page < total %}
+                {% if page == current %}
+                    <li>
+                        <a class="pagination-link is-current">{{ page }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a
+                            href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
+                            class="pagination-link"
+                        >
+                            {{ page }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        
+        {% comment %} Show ellipsis if there's a gap before last page {% endcomment %}
+        {% if range_end < total | minus: 1 %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+        {% endif %}
+        
+        {% comment %} Always show last page if there's more than one page {% endcomment %}
+        {% if total > 1 %}
+            {% if current == total %}
                 <li>
-                    <a class="pagination-link is-current">{{ page }}</a>
-                </li>
-            {% elsif page == 1 %}
-                <li>
-                    <a
-                        href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | split: '/' | pop | join: '/' }}"
-                        class="pagination-link"
-                    >
-                        {{- page -}}
-                    </a>
+                    <a class="pagination-link is-current">{{ total }}</a>
                 </li>
             {% else %}
                 <li>
                     <a
-                        href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
+                        href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', total }}"
                         class="pagination-link"
                     >
-                        {{- page -}}
+                        {{ total }}
                     </a>
                 </li>
             {% endif %}
-        {% endfor %}
+        {% endif %}
     </ul>
 </nav>
