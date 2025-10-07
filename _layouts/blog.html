@@ -4,9 +4,6 @@ layout: default
 {{ content }}
 
 <div class="columns is-multiline">
-    <div class="column is-12 pagination-top">
-        {% include pagination.html %}
-    </div>
     {% for post in paginator.posts %}
         <div class="column is-12">
             {% include post-card.html %}
