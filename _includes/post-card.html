@@ -47,8 +47,10 @@
             {% endif %}
             {% if post.summary %}
                 {{ post.summary | markdownify }}
-            {% else %}
+            {% elsif post.excerpt and post.excerpt != "" %}
                 <p>{{ post.excerpt }}</p>
+            {% else %}
+                <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
             {% endif %}
         </div>
 
