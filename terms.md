@@ -1,5 +1,5 @@
 ---
-permalink: /terms/
+permalink: /privacy/
 title: "Terms and Privacy Policy"
 layout: page
 hero_image: /images/hero/technology-modern.jpg
