@@ -35,8 +35,10 @@
             {% include footer.html %}
         {% endunless %}
 
-        {% comment %} Newsletter Modal {% endcomment %}
-        {% include newsletter-modal.html %}
+        {% comment %} Newsletter Modal: do not include on the blog roll/home page {% endcomment %}
+        {% unless page.layout == 'blog' or page.url == '/' %}
+            {% include newsletter-modal.html %}
+        {% endunless %}
 
         <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
 
