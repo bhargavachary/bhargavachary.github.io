@@ -19,3 +19,5 @@ Exceptions
 
 Contact
 - For questions or help creating a reproducible preview, open an issue or mention a maintainer in the PR.
+
+Note: The site builds reliably on GitHub Pages. Local builds require careful version matching (Ruby, Bundler, gems, and any Node toolchain) and may fail or produce different output if versions differ.

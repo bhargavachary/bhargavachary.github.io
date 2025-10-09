@@ -11,3 +11,5 @@ If you need to preview changes
 - Open a PR with your changes and request a preview build, or ask a maintainer for a temporary preview environment.
 
 See `CONTRIBUTING.md` for more details.
+
+Note: This repository builds smoothly on GitHub Pages. Local builds can be fragile because they require exact Ruby/Bundler and plugin versions to match the Pages environment.
