@@ -3683,3 +3683,53 @@ html[data-theme="light"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
+
+/* ===================================
+   BLOG POST IMAGE FRAMES
+   Photo frame styling for images in blog posts
+   =================================== */
+
+/* Base styling for images in blog post content */
+.content img,
+.content .img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  
+  /* Photo frame effect - light mode */
+  padding: 12px;
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 
+              0 4px 16px rgba(0, 0, 0, 0.05);
+  
+  transition: transform var(--duration-fast) var(--ease-ios),
+              box-shadow var(--duration-fast) var(--ease-ios);
+}
+
+/* Subtle hover effect for framed images */
+.content img:hover,
+.content .img-responsive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 
+              0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode frame styling */
+html[data-theme="dark"] .content img,
+html[data-theme="dark"] .content .img-responsive {
+  /* Dark mode frame colors */
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
+              0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode hover effect */
+html[data-theme="dark"] .content img:hover,
+html[data-theme="dark"] .content .img-responsive:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 
+              0 8px 24px rgba(45, 212, 191, 0.1);
+}
