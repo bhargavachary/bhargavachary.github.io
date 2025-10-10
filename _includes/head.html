@@ -13,7 +13,13 @@
             }
             
             // Get saved theme or detect from system
-            let savedTheme = localStorage.getItem('theme');
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem('theme');
+            } catch (e) {
+                console.warn('Cannot access localStorage:', e);
+            }
+            
             let currentTheme;
             
             if (savedTheme) {
@@ -23,9 +29,13 @@
                 // First visit - detect from system
                 currentTheme = getSystemTheme();
                 
-                // Save the detected theme as user preference
-                localStorage.setItem('theme', currentTheme);
-                localStorage.setItem('theme-source', 'system-detected');
+                // Save the detected theme as user preference (with error handling)
+                try {
+                    localStorage.setItem('theme', currentTheme);
+                    localStorage.setItem('theme-source', 'system-detected');
+                } catch (e) {
+                    console.warn('Cannot save theme to localStorage:', e);
+                }
             }
             
             const html = document.documentElement;

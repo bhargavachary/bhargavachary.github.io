@@ -58,8 +58,12 @@
         // Set attribute (single source of truth for CSS)
         html.setAttribute('data-theme', validTheme);
         
-        // Store in localStorage
-        localStorage.setItem('theme', validTheme);
+        // Store in localStorage (with error handling for private browsing)
+        try {
+            localStorage.setItem('theme', validTheme);
+        } catch (e) {
+            console.warn('Cannot save theme to localStorage:', e);
+        }
         
         // Update meta theme-color
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
@@ -86,7 +90,12 @@
     }
     
     // Initialize theme early (sync with localStorage or use default)
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    let savedTheme = 'dark';
+    try {
+        savedTheme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+        console.warn('Cannot access localStorage:', e);
+    }
     setTheme(savedTheme);
     
     // Toggle theme function
@@ -101,9 +110,13 @@
         
         setTheme(newTheme);
         
-        // Mark as manual change
-        localStorage.setItem('theme-source', 'manual');
-        localStorage.setItem('last-manual-theme-change', Date.now().toString());
+        // Mark as manual change (with error handling)
+        try {
+            localStorage.setItem('theme-source', 'manual');
+            localStorage.setItem('last-manual-theme-change', Date.now().toString());
+        } catch (e) {
+            console.warn('Cannot save theme metadata to localStorage:', e);
+        }
 
         // Track theme change
         if (typeof gtag !== 'undefined') {
@@ -123,8 +136,18 @@
     function handleThemeToggle(e) {
         // Check if click target is theme toggle button or its children
         const target = e.target;
-        const toggle = target.closest('#theme-toggle') || 
-                      target.closest('.theme-toggle-item');
+        
+        // Try multiple ways to detect theme toggle
+        let toggle = null;
+        
+        // Check if target itself has the ID or class
+        if (target.id === 'theme-toggle' || target.classList.contains('theme-toggle-item')) {
+            toggle = target;
+        }
+        // Check parent elements
+        else {
+            toggle = target.closest('#theme-toggle') || target.closest('.theme-toggle-item');
+        }
         
         if (!toggle) return;
 
@@ -144,7 +167,13 @@
 
     // Sync theme from localStorage (for cached pages, etc.)
     function syncThemeFromStorage() {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        let savedTheme = 'dark';
+        try {
+            savedTheme = localStorage.getItem('theme') || 'dark';
+        } catch (e) {
+            console.warn('Cannot access localStorage:', e);
+        }
+        
         const currentTheme = getCurrentTheme();
         
         if (savedTheme !== currentTheme) {
