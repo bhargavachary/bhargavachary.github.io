@@ -2839,6 +2839,8 @@ html[data-theme="dark"] * {
 }
 
 .post-nav-image {
+  display: block;
+  position: relative;
   width: 100%;
   height: 120px;
   border-radius: 8px;
@@ -2846,9 +2848,11 @@ html[data-theme="dark"] * {
   margin-bottom: 1rem;
 
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform var(--duration-slow) var(--ease-emphasized);
   }
 }
@@ -2896,6 +2900,8 @@ html[data-theme="dark"] * {
 }
 
 .related-post-image {
+  display: block;
+  position: relative;
   width: 100%;
   height: 150px;
   overflow: hidden;
@@ -2903,6 +2909,7 @@ html[data-theme="dark"] * {
   margin: -1.25rem -1.25rem 1rem -1.25rem;
 
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
