@@ -235,7 +235,7 @@ hero_darken: true
       <span class="status-indicator status-warning"></span>professional-growth.service
     </h3>
     <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
-      ● Active: <span style="color: #ffaa00;">optimizing</span> (git push career)<br>
+      ● Active: <span style="color: var(--status-warning);">optimizing</span> (git push career)<br>
       ● Process: Learning > Earning (sometimes)<br>
       ● Network: LinkedIn connections++<br>
       ● Status: Imposter syndrome patched ✓
@@ -250,7 +250,7 @@ hero_darken: true
       <span class="status-indicator status-critical"></span>science-life.service
     </h3>
     <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
-      ● Active: <span style="color: #ff4444;">experimental</span> (caffeine-powered)<br>
+      ● Active: <span style="color: var(--status-critical);">experimental</span> (caffeine-powered)<br>
       ● Process: Optimizing human.exe daily<br>
       ● Data: 10K steps, 8hrs sleep (aspirational)<br>
       ● Error: Work-life balance not found
