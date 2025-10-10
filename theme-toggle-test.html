@@ -1,0 +1,591 @@
+---
+layout: default
+title: Theme Toggle Test & Diagnostics
+---
+
+<style>
+    .test-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: var(--content-bg);
+        border-radius: 8px;
+        border: 2px solid var(--border);
+    }
+    
+    .test-section {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: var(--code-bg);
+        border-radius: 4px;
+        border-left: 4px solid var(--primary);
+    }
+    
+    .test-result {
+        font-family: monospace;
+        padding: 1rem;
+        background: var(--bg);
+        border-radius: 4px;
+        margin: 0.5rem 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .status-pass { color: #00d1b2; }
+    .status-fail { color: #ff3860; }
+    .status-warn { color: #ffdd57; }
+    
+    .test-button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        margin: 0.5rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    .test-button:hover {
+        opacity: 0.9;
+    }
+    
+    .diagnostic-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .diagnostic-card {
+        padding: 1rem;
+        background: var(--bg);
+        border-radius: 4px;
+        border: 1px solid var(--border);
+    }
+    
+    .diagnostic-label {
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .diagnostic-value {
+        font-family: monospace;
+        font-size: 1rem;
+        color: var(--text);
+    }
+    
+    #event-log {
+        max-height: 300px;
+        overflow-y: auto;
+        font-size: 0.875rem;
+    }
+    
+    .log-entry {
+        padding: 0.25rem 0.5rem;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .log-timestamp {
+        color: var(--text-muted);
+        font-size: 0.75rem;
+    }
+</style>
+
+<div class="test-container">
+    <h1>🔬 Theme Toggle Test & Diagnostics</h1>
+    <p>This page helps diagnose and test the dark/light mode toggle functionality.</p>
+    
+    <!-- Current State -->
+    <div class="test-section">
+        <h2>📊 Current State</h2>
+        <div class="diagnostic-grid">
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">Current Theme</div>
+                <div class="diagnostic-value" id="current-theme">Loading...</div>
+            </div>
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">localStorage Theme</div>
+                <div class="diagnostic-value" id="localstorage-theme">Loading...</div>
+            </div>
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">Button Exists</div>
+                <div class="diagnostic-value" id="button-exists">Loading...</div>
+            </div>
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">Button ARIA Label</div>
+                <div class="diagnostic-value" id="button-aria">Loading...</div>
+            </div>
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">Light Icon Opacity</div>
+                <div class="diagnostic-value" id="light-icon-opacity">Loading...</div>
+            </div>
+            <div class="diagnostic-card">
+                <div class="diagnostic-label">Dark Icon Opacity</div>
+                <div class="diagnostic-value" id="dark-icon-opacity">Loading...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Manual Tests -->
+    <div class="test-section">
+        <h2>🎯 Manual Tests</h2>
+        <p>Click these buttons to test various toggle scenarios:</p>
+        
+        <button class="test-button" onclick="testDirectClick()">
+            Test Direct Toggle Click
+        </button>
+        
+        <button class="test-button" onclick="testIconClick()">
+            Test Icon Click
+        </button>
+        
+        <button class="test-button" onclick="testProgrammaticToggle()">
+            Test Programmatic Toggle
+        </button>
+        
+        <button class="test-button" onclick="testRapidClicks()">
+            Test Rapid Clicks (10x)
+        </button>
+        
+        <button class="test-button" onclick="setThemeLight()">
+            Force Light Theme
+        </button>
+        
+        <button class="test-button" onclick="setThemeDark()">
+            Force Dark Theme
+        </button>
+        
+        <button class="test-button" onclick="clearLocalStorage()">
+            Clear localStorage
+        </button>
+        
+        <button class="test-button" onclick="runAllTests()">
+            🚀 Run All Tests
+        </button>
+        
+        <div id="test-results" class="test-result"></div>
+    </div>
+    
+    <!-- Event Log -->
+    <div class="test-section">
+        <h2>📝 Event Log</h2>
+        <button class="test-button" onclick="clearEventLog()">Clear Log</button>
+        <div id="event-log" class="test-result"></div>
+    </div>
+    
+    <!-- Automated Tests -->
+    <div class="test-section">
+        <h2>🤖 Automated Test Results</h2>
+        <div id="automated-tests" class="test-result">
+            Click "Run All Tests" to execute automated tests.
+        </div>
+    </div>
+    
+    <!-- Debug Info -->
+    <div class="test-section">
+        <h2>🐛 Debug Information</h2>
+        <div class="test-result" id="debug-info">Loading...</div>
+    </div>
+</div>
+
+<script>
+// Event logging
+function logEvent(message, type = 'info') {
+    const log = document.getElementById('event-log');
+    const entry = document.createElement('div');
+    entry.className = 'log-entry';
+    
+    const timestamp = new Date().toLocaleTimeString();
+    const color = type === 'error' ? '#ff3860' : type === 'success' ? '#00d1b2' : type === 'warn' ? '#ffdd57' : '#888';
+    
+    entry.innerHTML = `<span class="log-timestamp">[${timestamp}]</span> <span style="color: ${color}">${message}</span>`;
+    log.insertBefore(entry, log.firstChild);
+}
+
+function clearEventLog() {
+    document.getElementById('event-log').innerHTML = '';
+    logEvent('Log cleared', 'info');
+}
+
+// Update diagnostics
+function updateDiagnostics() {
+    try {
+        // Current theme from DOM
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'not set';
+        document.getElementById('current-theme').textContent = currentTheme;
+        
+        // localStorage theme
+        let localStorageTheme = 'not set';
+        try {
+            localStorageTheme = localStorage.getItem('theme') || 'not set';
+        } catch (e) {
+            localStorageTheme = 'ERROR: ' + e.message;
+        }
+        document.getElementById('localstorage-theme').textContent = localStorageTheme;
+        
+        // Button existence
+        const button = document.getElementById('theme-toggle');
+        document.getElementById('button-exists').innerHTML = button ? 
+            '<span class="status-pass">✓ Yes</span>' : 
+            '<span class="status-fail">✗ No</span>';
+        
+        // Button ARIA label
+        const ariaLabel = button ? button.getAttribute('aria-label') : 'Button not found';
+        document.getElementById('button-aria').textContent = ariaLabel;
+        
+        // Icon opacity
+        const lightIcon = document.querySelector('.theme-icon-light');
+        const darkIcon = document.querySelector('.theme-icon-dark');
+        
+        if (lightIcon) {
+            const lightOpacity = window.getComputedStyle(lightIcon).opacity;
+            document.getElementById('light-icon-opacity').textContent = lightOpacity;
+        } else {
+            document.getElementById('light-icon-opacity').textContent = 'Icon not found';
+        }
+        
+        if (darkIcon) {
+            const darkOpacity = window.getComputedStyle(darkIcon).opacity;
+            document.getElementById('dark-icon-opacity').textContent = darkOpacity;
+        } else {
+            document.getElementById('dark-icon-opacity').textContent = 'Icon not found';
+        }
+        
+    } catch (e) {
+        logEvent('Error updating diagnostics: ' + e.message, 'error');
+    }
+}
+
+// Test functions
+function testDirectClick() {
+    logEvent('Testing direct button click...', 'info');
+    const button = document.getElementById('theme-toggle');
+    if (!button) {
+        logEvent('ERROR: Button not found!', 'error');
+        return;
+    }
+    
+    const beforeTheme = document.documentElement.getAttribute('data-theme');
+    button.click();
+    
+    setTimeout(() => {
+        const afterTheme = document.documentElement.getAttribute('data-theme');
+        if (beforeTheme !== afterTheme) {
+            logEvent(`SUCCESS: Theme changed from ${beforeTheme} to ${afterTheme}`, 'success');
+        } else {
+            logEvent(`FAIL: Theme did not change (still ${beforeTheme})`, 'error');
+        }
+        updateDiagnostics();
+    }, 100);
+}
+
+function testIconClick() {
+    logEvent('Testing icon click...', 'info');
+    const icon = document.querySelector('.theme-icon-light, .theme-icon-dark');
+    if (!icon) {
+        logEvent('ERROR: Icon not found!', 'error');
+        return;
+    }
+    
+    const beforeTheme = document.documentElement.getAttribute('data-theme');
+    icon.click();
+    
+    setTimeout(() => {
+        const afterTheme = document.documentElement.getAttribute('data-theme');
+        if (beforeTheme !== afterTheme) {
+            logEvent(`SUCCESS: Theme changed from ${beforeTheme} to ${afterTheme}`, 'success');
+        } else {
+            logEvent(`FAIL: Theme did not change (still ${beforeTheme})`, 'error');
+        }
+        updateDiagnostics();
+    }, 100);
+}
+
+function testProgrammaticToggle() {
+    logEvent('Testing programmatic toggle...', 'info');
+    const beforeTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = beforeTheme === 'light' ? 'dark' : 'light';
+    
+    // Simulate what the toggle function should do
+    document.documentElement.setAttribute('data-theme', newTheme);
+    try {
+        localStorage.setItem('theme', newTheme);
+    } catch (e) {
+        logEvent('WARNING: Could not save to localStorage: ' + e.message, 'warn');
+    }
+    
+    const afterTheme = document.documentElement.getAttribute('data-theme');
+    if (beforeTheme !== afterTheme) {
+        logEvent(`SUCCESS: Theme changed from ${beforeTheme} to ${afterTheme}`, 'success');
+    } else {
+        logEvent(`FAIL: Theme did not change`, 'error');
+    }
+    updateDiagnostics();
+}
+
+function testRapidClicks() {
+    logEvent('Testing rapid clicks (10x)...', 'info');
+    const button = document.getElementById('theme-toggle');
+    if (!button) {
+        logEvent('ERROR: Button not found!', 'error');
+        return;
+    }
+    
+    const startTheme = document.documentElement.getAttribute('data-theme');
+    let clickCount = 0;
+    
+    const interval = setInterval(() => {
+        if (clickCount >= 10) {
+            clearInterval(interval);
+            setTimeout(() => {
+                const endTheme = document.documentElement.getAttribute('data-theme');
+                const expectedTheme = startTheme; // Should be same after even number of clicks
+                if (endTheme === expectedTheme) {
+                    logEvent(`SUCCESS: Theme returned to ${endTheme} after 10 clicks`, 'success');
+                } else {
+                    logEvent(`UNEXPECTED: Theme is ${endTheme}, expected ${expectedTheme}`, 'warn');
+                }
+                updateDiagnostics();
+            }, 100);
+            return;
+        }
+        button.click();
+        clickCount++;
+    }, 50);
+}
+
+function setThemeLight() {
+    logEvent('Forcing light theme...', 'info');
+    document.documentElement.setAttribute('data-theme', 'light');
+    try {
+        localStorage.setItem('theme', 'light');
+        logEvent('Light theme set', 'success');
+    } catch (e) {
+        logEvent('WARNING: Could not save to localStorage: ' + e.message, 'warn');
+    }
+    updateDiagnostics();
+}
+
+function setThemeDark() {
+    logEvent('Forcing dark theme...', 'info');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    try {
+        localStorage.setItem('theme', 'dark');
+        logEvent('Dark theme set', 'success');
+    } catch (e) {
+        logEvent('WARNING: Could not save to localStorage: ' + e.message, 'warn');
+    }
+    updateDiagnostics();
+}
+
+function clearLocalStorage() {
+    logEvent('Clearing localStorage theme...', 'info');
+    try {
+        localStorage.removeItem('theme');
+        localStorage.removeItem('theme-source');
+        localStorage.removeItem('last-manual-theme-change');
+        logEvent('localStorage cleared', 'success');
+    } catch (e) {
+        logEvent('ERROR: Could not clear localStorage: ' + e.message, 'error');
+    }
+    updateDiagnostics();
+}
+
+// Automated tests
+function runAllTests() {
+    const results = document.getElementById('automated-tests');
+    results.innerHTML = '<strong>Running automated tests...</strong><br><br>';
+    
+    const tests = [];
+    
+    // Test 1: Button exists
+    tests.push({
+        name: 'Button Element Exists',
+        run: () => document.getElementById('theme-toggle') !== null
+    });
+    
+    // Test 2: Button has correct attributes
+    tests.push({
+        name: 'Button Has Correct Attributes',
+        run: () => {
+            const button = document.getElementById('theme-toggle');
+            return button && button.hasAttribute('role') && button.hasAttribute('aria-label');
+        }
+    });
+    
+    // Test 3: Icons exist
+    tests.push({
+        name: 'Theme Icons Exist',
+        run: () => {
+            return document.querySelector('.theme-icon-light') !== null && 
+                   document.querySelector('.theme-icon-dark') !== null;
+        }
+    });
+    
+    // Test 4: data-theme attribute exists
+    tests.push({
+        name: 'HTML has data-theme attribute',
+        run: () => document.documentElement.hasAttribute('data-theme')
+    });
+    
+    // Test 5: localStorage accessible
+    tests.push({
+        name: 'localStorage is accessible',
+        run: () => {
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+    });
+    
+    // Test 6: CSS applies correctly
+    tests.push({
+        name: 'CSS Theme Selectors Work',
+        run: () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const lightIcon = document.querySelector('.theme-icon-light');
+            const darkIcon = document.querySelector('.theme-icon-dark');
+            
+            if (!lightIcon || !darkIcon) return false;
+            
+            const lightOpacity = parseFloat(window.getComputedStyle(lightIcon).opacity);
+            const darkOpacity = parseFloat(window.getComputedStyle(darkIcon).opacity);
+            
+            if (currentTheme === 'light') {
+                return lightOpacity > 0.5 && darkOpacity < 0.5;
+            } else {
+                return darkOpacity > 0.5 && lightOpacity < 0.5;
+            }
+        }
+    });
+    
+    // Test 7: Click event works
+    tests.push({
+        name: 'Button Click Changes Theme',
+        run: () => {
+            const button = document.getElementById('theme-toggle');
+            if (!button) return false;
+            
+            const beforeTheme = document.documentElement.getAttribute('data-theme');
+            button.click();
+            const afterTheme = document.documentElement.getAttribute('data-theme');
+            
+            // Toggle back
+            button.click();
+            
+            return beforeTheme !== afterTheme;
+        }
+    });
+    
+    // Run tests
+    let passed = 0;
+    let failed = 0;
+    
+    tests.forEach(test => {
+        try {
+            const result = test.run();
+            if (result) {
+                results.innerHTML += `<span class="status-pass">✓</span> ${test.name}<br>`;
+                passed++;
+            } else {
+                results.innerHTML += `<span class="status-fail">✗</span> ${test.name}<br>`;
+                failed++;
+            }
+        } catch (e) {
+            results.innerHTML += `<span class="status-fail">✗</span> ${test.name} (Error: ${e.message})<br>`;
+            failed++;
+        }
+    });
+    
+    results.innerHTML += `<br><strong>Results: ${passed} passed, ${failed} failed</strong>`;
+    
+    if (failed === 0) {
+        results.innerHTML += '<br><span class="status-pass">🎉 All tests passed!</span>';
+        logEvent('All automated tests passed!', 'success');
+    } else {
+        results.innerHTML += '<br><span class="status-fail">❌ Some tests failed</span>';
+        logEvent(`${failed} automated tests failed`, 'error');
+    }
+    
+    updateDiagnostics();
+}
+
+// Debug info
+function updateDebugInfo() {
+    const debug = document.getElementById('debug-info');
+    
+    let info = '';
+    
+    // Browser info
+    info += `Browser: ${navigator.userAgent}\n\n`;
+    
+    // Window size
+    info += `Window Size: ${window.innerWidth}x${window.innerHeight}\n\n`;
+    
+    // Script execution
+    info += `Document Ready State: ${document.readyState}\n\n`;
+    
+    // Check for app.js functions
+    info += `Theme Toggle Functions Available:\n`;
+    info += `- document.getElementById: ${typeof document.getElementById}\n`;
+    info += `- localStorage: ${typeof localStorage}\n`;
+    info += `- window.matchMedia: ${typeof window.matchMedia}\n\n`;
+    
+    // Check event listeners
+    info += `Event Listeners:\n`;
+    const button = document.getElementById('theme-toggle');
+    if (button) {
+        info += `- Button found: Yes\n`;
+        info += `- Button ID: ${button.id}\n`;
+        info += `- Button classes: ${button.className}\n`;
+        info += `- Button tabindex: ${button.getAttribute('tabindex')}\n`;
+    } else {
+        info += `- Button found: No\n`;
+    }
+    
+    // Check for errors in console
+    info += `\nConsole Errors: Check browser console (F12)\n`;
+    
+    debug.textContent = info;
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    logEvent('Page loaded, initializing diagnostics...', 'info');
+    updateDiagnostics();
+    updateDebugInfo();
+    
+    // Set up auto-refresh of diagnostics
+    setInterval(updateDiagnostics, 2000);
+    
+    // Monitor theme changes
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                const newTheme = document.documentElement.getAttribute('data-theme');
+                logEvent(`Theme changed to: ${newTheme}`, 'success');
+                updateDiagnostics();
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+    
+    logEvent('Diagnostics initialized', 'success');
+});
+
+// Initial update
+updateDiagnostics();
+updateDebugInfo();
+</script>

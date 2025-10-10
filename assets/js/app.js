@@ -45,22 +45,34 @@
     'use strict';
 
     const html = document.documentElement;
+    const DEBUG = true; // Enable debug logging
+    
+    function debug(message, data) {
+        if (DEBUG) {
+            console.log(`[ThemeToggle] ${message}`, data || '');
+        }
+    }
     
     // Single source of truth: always read from/write to localStorage and data-theme
     function getCurrentTheme() {
-        return html.getAttribute('data-theme') || 'dark';
+        const theme = html.getAttribute('data-theme') || 'dark';
+        debug('getCurrentTheme:', theme);
+        return theme;
     }
     
     function setTheme(theme) {
         // Validate theme value
         const validTheme = (theme === 'light' || theme === 'dark') ? theme : 'dark';
+        debug('setTheme called with:', theme + ' -> ' + validTheme);
         
         // Set attribute (single source of truth for CSS)
         html.setAttribute('data-theme', validTheme);
+        debug('data-theme attribute set to:', validTheme);
         
         // Store in localStorage (with error handling for private browsing)
         try {
             localStorage.setItem('theme', validTheme);
+            debug('localStorage updated to:', validTheme);
         } catch (e) {
             console.warn('Cannot save theme to localStorage:', e);
         }
@@ -69,10 +81,15 @@
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
             metaThemeColor.setAttribute('content', validTheme === 'dark' ? '#000000' : '#ffffff');
+            debug('meta theme-color updated');
         }
         
         // Update button ARIA label if it exists
         updateButtonState();
+        
+        // Dispatch custom event for other code to listen to
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: validTheme } }));
+        debug('themechange event dispatched');
         
         return validTheme;
     }
@@ -86,20 +103,29 @@
                     ? 'Switch to light theme' 
                     : 'Switch to dark theme'
             );
+            debug('Button ARIA label updated for theme:', currentTheme);
+        } else {
+            debug('updateButtonState: Button not found in DOM');
         }
     }
     
     // Initialize theme early (sync with localStorage or use default)
+    debug('=== Theme Toggle Initialization ===');
     let savedTheme = 'dark';
     try {
         savedTheme = localStorage.getItem('theme') || 'dark';
+        debug('Initial theme from localStorage:', savedTheme);
     } catch (e) {
         console.warn('Cannot access localStorage:', e);
+        debug('localStorage not accessible, using default: dark');
     }
     setTheme(savedTheme);
+    debug('Initial theme set complete');
     
     // Toggle theme function
     function toggleTheme(e) {
+        debug('toggleTheme called', e ? e.type : 'no event');
+        
         if (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -107,6 +133,7 @@
 
         const currentTheme = getCurrentTheme();
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        debug('Toggling theme from', currentTheme + ' to ' + newTheme);
         
         setTheme(newTheme);
         
@@ -114,6 +141,7 @@
         try {
             localStorage.setItem('theme-source', 'manual');
             localStorage.setItem('last-manual-theme-change', Date.now().toString());
+            debug('Theme metadata saved to localStorage');
         } catch (e) {
             console.warn('Cannot save theme metadata to localStorage:', e);
         }
@@ -127,6 +155,7 @@
                     'source': 'manual'
                 }
             });
+            debug('Analytics event sent');
         }
 
         return false;
@@ -140,20 +169,49 @@
         // Try multiple ways to detect theme toggle
         let toggle = null;
         
-        // Check if target itself has the ID or class
+        // Method 1: Check if target itself has the ID or class
         if (target.id === 'theme-toggle' || target.classList.contains('theme-toggle-item')) {
             toggle = target;
+            debug('handleThemeToggle: Direct hit on', target.id || target.className);
         }
-        // Check parent elements
+        // Method 2: Check parent elements using closest
         else {
             toggle = target.closest('#theme-toggle') || target.closest('.theme-toggle-item');
+            if (toggle) {
+                debug('handleThemeToggle: Found via closest()', toggle.id || toggle.className);
+            }
         }
         
-        if (!toggle) return;
+        if (!toggle) {
+            // Method 3: Check if clicking on icon inside button
+            const iconParent = target.closest('.icon');
+            if (iconParent) {
+                const buttonParent = iconParent.closest('#theme-toggle') || iconParent.closest('.theme-toggle-item');
+                if (buttonParent) {
+                    toggle = buttonParent;
+                    debug('handleThemeToggle: Found via icon parent', buttonParent.id);
+                }
+            }
+        }
+        
+        if (!toggle) {
+            // Not a theme toggle click, ignore silently
+            return;
+        }
+        
+        debug('handleThemeToggle: Theme toggle detected!', {
+            eventType: e.type,
+            targetId: target.id,
+            targetClass: target.className
+        });
 
         // For keyboard events, only trigger on Enter or Space
-        if (e.type === 'keydown' && !(e.key === 'Enter' || e.key === ' ')) {
-            return;
+        if (e.type === 'keydown') {
+            if (!(e.key === 'Enter' || e.key === ' ')) {
+                debug('handleThemeToggle: Ignoring keyboard event (not Enter/Space):', e.key);
+                return;
+            }
+            debug('handleThemeToggle: Keyboard event accepted:', e.key);
         }
 
         e.preventDefault();
@@ -162,11 +220,41 @@
     }
 
     // Use event delegation with capture phase for maximum reliability
+    debug('Registering theme toggle event listeners...');
     document.addEventListener('click', handleThemeToggle, true);
     document.addEventListener('keydown', handleThemeToggle, true);
+    debug('Event listeners registered (capture phase)');
+    
+    // FALLBACK: Direct event listener on button (if it exists or when it's added)
+    function attachDirectListener() {
+        const button = document.getElementById('theme-toggle');
+        if (button && !button.dataset.listenerAttached) {
+            debug('Attaching direct event listener to button');
+            button.addEventListener('click', function(e) {
+                debug('Direct button click listener fired!');
+                // Let the capture phase handler handle it, but log for debugging
+            });
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    debug('Direct button keyboard listener fired!');
+                }
+            });
+            button.dataset.listenerAttached = 'true';
+            debug('Direct listeners attached to button');
+        }
+    }
+    
+    // Try to attach direct listener immediately and after DOM load
+    attachDirectListener();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachDirectListener);
+    } else {
+        setTimeout(attachDirectListener, 100);
+    }
 
     // Sync theme from localStorage (for cached pages, etc.)
     function syncThemeFromStorage() {
+        debug('syncThemeFromStorage called');
         let savedTheme = 'dark';
         try {
             savedTheme = localStorage.getItem('theme') || 'dark';
@@ -175,38 +263,99 @@
         }
         
         const currentTheme = getCurrentTheme();
+        debug('Sync check: localStorage=' + savedTheme + ', current=' + currentTheme);
         
         if (savedTheme !== currentTheme) {
+            debug('Theme mismatch detected, syncing...');
             setTheme(savedTheme);
         } else {
             // Even if theme matches, update button state
             updateButtonState();
         }
     }
+    
+    // Verify button exists and is accessible
+    function verifyButtonSetup() {
+        debug('=== Verifying Button Setup ===');
+        const button = document.getElementById('theme-toggle');
+        if (button) {
+            debug('✓ Button found:', button.outerHTML.substring(0, 100) + '...');
+            debug('✓ Button ID:', button.id);
+            debug('✓ Button classes:', button.className);
+            debug('✓ Button role:', button.getAttribute('role'));
+            debug('✓ Button tabindex:', button.getAttribute('tabindex'));
+            debug('✓ Button aria-label:', button.getAttribute('aria-label'));
+            
+            // Check icons
+            const lightIcon = button.querySelector('.theme-icon-light');
+            const darkIcon = button.querySelector('.theme-icon-dark');
+            debug('✓ Light icon found:', !!lightIcon);
+            debug('✓ Dark icon found:', !!darkIcon);
+            
+            if (lightIcon && darkIcon) {
+                const lightOpacity = window.getComputedStyle(lightIcon).opacity;
+                const darkOpacity = window.getComputedStyle(darkIcon).opacity;
+                debug('✓ Light icon opacity:', lightOpacity);
+                debug('✓ Dark icon opacity:', darkOpacity);
+            }
+            
+            return true;
+        } else {
+            debug('✗ Button NOT found in DOM!');
+            debug('Available elements with id:', Array.from(document.querySelectorAll('[id]')).map(el => el.id).join(', '));
+            return false;
+        }
+    }
 
     // Sync on DOMContentLoaded
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', syncThemeFromStorage);
+        debug('Document still loading, waiting for DOMContentLoaded...');
+        document.addEventListener('DOMContentLoaded', function() {
+            debug('DOMContentLoaded fired');
+            syncThemeFromStorage();
+            verifyButtonSetup();
+        });
     } else {
+        debug('Document already loaded');
         syncThemeFromStorage();
+        // Verify button setup after a short delay to ensure DOM is ready
+        setTimeout(verifyButtonSetup, 100);
     }
 
     // CRITICAL: Handle cached pages (back/forward navigation)
     window.addEventListener('pageshow', function(event) {
+        debug('pageshow event fired, cached:', event.persisted);
         syncThemeFromStorage();
     });
 
     // Sync when page becomes visible (tab switching, etc.)
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
+            debug('Page became visible, syncing theme');
             syncThemeFromStorage();
         }
     });
 
     // Additional safety: sync on window focus
     window.addEventListener('focus', function() {
+        debug('Window focused, syncing theme');
         syncThemeFromStorage();
     });
+    
+    // Expose functions for debugging in console
+    if (DEBUG) {
+        window.ThemeToggleDebug = {
+            getCurrentTheme,
+            setTheme,
+            toggleTheme,
+            updateButtonState,
+            syncThemeFromStorage,
+            verifyButtonSetup
+        };
+        debug('Debug functions exposed as window.ThemeToggleDebug');
+    }
+    
+    debug('=== Theme Toggle Initialization Complete ===');
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
