@@ -20,14 +20,14 @@ hero_darken: true
 }
 
 .terminal {
-  background: #1a1a1a;
-  color: #00ff00;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
   font-family: 'Courier New', monospace;
   padding: 20px;
   border-radius: 8px;
   margin: 20px 0;
-  border: 2px solid #333;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  border: 2px solid var(--terminal-border);
+  box-shadow: 0 0 20px var(--terminal-shadow);
 }
 
 .boot-sequence {
@@ -42,8 +42,8 @@ hero_darken: true
 }
 
 .service-card {
-  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
-  border: 1px solid #444;
+  background: linear-gradient(145deg, var(--card-bg), var(--bg-secondary));
+  border: 1px solid var(--border-medium);
   border-radius: 12px;
   padding: 25px;
   margin: 15px 0;
@@ -53,8 +53,8 @@ hero_darken: true
 }
 
 .service-card:hover {
-  border-color: #00ff00;
-  box-shadow: 0 5px 20px rgba(0, 255, 0, 0.2);
+  border-color: var(--terminal-text);
+  box-shadow: 0 5px 20px var(--terminal-shadow);
   transform: translateY(-5px);
 }
 
@@ -65,7 +65,7 @@ hero_darken: true
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+  background: linear-gradient(90deg, transparent, var(--terminal-text), transparent);
   animation: scan 3s infinite;
 }
 
@@ -83,9 +83,9 @@ hero_darken: true
   animation: pulse 2s infinite;
 }
 
-.status-ok { background: #00ff00; }
+.status-ok { background: var(--terminal-text); }
 .status-warning { background: #ffaa00; }
-.status-info { background: #0088ff; }
+.status-info { background: var(--terminal-accent); }
 .status-critical { background: #ff4444; }
 
 @keyframes pulse {
@@ -144,7 +144,7 @@ hero_darken: true
   <!-- Left Terminal: System Boot & Life Journey -->
   <div class="terminal">
     <div class="boot-sequence">
-      <div style="color: #00ffff; font-weight: bold;">┌──[SYSTEM INITIALIZATION]──</div>
+      <div style="color: var(--terminal-accent); font-weight: bold;">┌──[SYSTEM INITIALIZATION]──</div>
       <div>[    0.000000] Bhargav OS v2024.10 booting...</div>
       <div>[    0.050000] Detecting hardware evolution:</div>
       <div>[    0.100000] ├─ 2005: MS-DOS games on 486DX</div>
@@ -156,14 +156,14 @@ hero_darken: true
       <div>[    0.450000] ✓ curiosity.ko loaded</div>
       <div>[    0.500000] ✓ persistence.ko loaded</div>
       <div>[    0.550000] ✓ innovation.ko loaded</div>
-      <div style="margin-top: 10px; color: #00ff00;">[    0.600000] System ready <span class="cursor"></span></div>
+      <div style="margin-top: 10px; color: var(--terminal-text);">[    0.600000] System ready <span class="cursor"></span></div>
     </div>
   </div>
 
   <!-- Right Terminal: Skills & Technology Stack -->
   <div class="terminal">
     <div class="boot-sequence">
-      <div style="color: #ff00ff; font-weight: bold;">┌──[CAPABILITY MATRIX]──</div>
+      <div style="color: var(--terminal-secondary); font-weight: bold;">┌──[CAPABILITY MATRIX]──</div>
       <div>[  INIT  ] Scanning skill tree...</div>
       <div style="margin-top: 10px;">[  CODE  ] Languages proficient:</div>
       <div>         ├─ Python: ████████░░ 80%</div>
@@ -178,7 +178,7 @@ hero_darken: true
       <div>         ├─ GenAI & LLMs 🤖</div>
       <div>         ├─ Edge Computing 📡</div>
       <div>         └─ Systems Design 🏗️</div>
-      <div style="margin-top: 10px; color: #00ff00;">[  READY ] All systems go! <span class="cursor"></span></div>
+      <div style="margin-top: 10px; color: var(--terminal-text);">[  READY ] All systems go! <span class="cursor"></span></div>
     </div>
   </div>
 </div>
@@ -192,70 +192,70 @@ hero_darken: true
 </style>
 
 <div class="init-header">
-  <h1 style="color: #00ff00; font-size: 2.5em; margin: 0;">
+  <h1 style="color: var(--terminal-text); font-size: 2.5em; margin: 0;">
     ┌─[bhargav@init.d]─[~]<br>
     └──$ systemctl status --all
   </h1>
-  <p style="color: #666; margin-top: 20px;">System initialization complete. All services operational.</p>
+  <p style="color: var(--text-muted); margin-top: 20px;">System initialization complete. All services operational.</p>
 </div>
 
 <div class="system-grid">
   <div class="service-card">
-    <h3 style="color: #00ff00; font-family: 'Courier New', monospace; margin-top: 0;">
+    <h3 style="color: var(--terminal-text); font-family: 'Courier New', monospace; margin-top: 0;">
       <span class="status-indicator status-ok"></span>ai-research.service
     </h3>
-    <div style="color: #ccc; font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
-      ● Active: <span style="color: #00ff00;">running</span> (GPUs go brrrr)<br>
+    <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
+      ● Active: <span style="color: var(--terminal-text);">running</span> (GPUs go brrrr)<br>
       ● Process: Training models while dreaming of AGI<br>
       ● Memory: 99 problems but RAM ain't one<br>
       ● Uptime: ∞ (we don't do downtime here)
     </div>
-    <p style="color: #999; font-size: 14px;">
+    <p style="color: var(--text-muted); font-size: 14px;">
       🤖 LLMs, transformers, and the occasional cat-dog confusion
     </p>
   </div>
 
   <div class="service-card">
-    <h3 style="color: #00ff00; font-family: 'Courier New', monospace; margin-top: 0;">
+    <h3 style="color: var(--terminal-text); font-family: 'Courier New', monospace; margin-top: 0;">
       <span class="status-indicator status-info"></span>tech-gadgets.service
     </h3>
-    <div style="color: #ccc; font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
-      ● Active: <span style="color: #0088ff;">monitoring</span> (gadget radar ON)<br>
+    <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
+      ● Active: <span style="color: var(--terminal-accent);">monitoring</span> (gadget radar ON)<br>
       ● Process: Unboxing therapy in progress<br>
       ● I/O: Credit card → gadgets → happiness<br>
       ● Warning: Wallet.balance critically low
     </div>
-    <p style="color: #999; font-size: 14px;">
+    <p style="color: var(--text-muted); font-size: 14px;">
       📱 If it beeps, blinks, or needs charging...
     </p>
   </div>
 
   <div class="service-card">
-    <h3 style="color: #00ff00; font-family: 'Courier New', monospace; margin-top: 0;">
+    <h3 style="color: var(--terminal-text); font-family: 'Courier New', monospace; margin-top: 0;">
       <span class="status-indicator status-warning"></span>professional-growth.service
     </h3>
-    <div style="color: #ccc; font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
+    <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
       ● Active: <span style="color: #ffaa00;">optimizing</span> (git push career)<br>
       ● Process: Learning > Earning (sometimes)<br>
       ● Network: LinkedIn connections++<br>
       ● Status: Imposter syndrome patched ✓
     </div>
-    <p style="color: #999; font-size: 14px;">
+    <p style="color: var(--text-muted); font-size: 14px;">
       📈 Career growth, skill trees, and debugging life.exe
     </p>
   </div>
 
   <div class="service-card">
-    <h3 style="color: #00ff00; font-family: 'Courier New', monospace; margin-top: 0;">
+    <h3 style="color: var(--terminal-text); font-family: 'Courier New', monospace; margin-top: 0;">
       <span class="status-indicator status-critical"></span>science-life.service
     </h3>
-    <div style="color: #ccc; font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
+    <div style="color: var(--text-secondary); font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 15px;">
       ● Active: <span style="color: #ff4444;">experimental</span> (caffeine-powered)<br>
       ● Process: Optimizing human.exe daily<br>
       ● Data: 10K steps, 8hrs sleep (aspirational)<br>
       ● Error: Work-life balance not found
     </div>
-    <p style="color: #999; font-size: 14px;">
+    <p style="color: var(--text-muted); font-size: 14px;">
       🧬 Where biology meets biography, and curiosity meets chaos
     </p>
   </div>
@@ -269,8 +269,8 @@ hero_darken: true
   <a href="https://dkbachary.github.io" target="_blank" class="retro-launch-button" id="launch-button">
     <span class="retro-arrow">►►►</span> Launch Main Hub <span class="retro-arrow">◄◄◄</span>
   </a>
-  <p style="font-family: 'VT323', monospace; color: #666; font-size: 1.5em; margin-top: 20px;">
-    // Press <kbd style="background: #333; padding: 2px 8px; border-radius: 4px; color: #00d1b2; border: 1px solid #555;">ENTER</kbd> to continue...
+  <p style="font-family: 'VT323', monospace; color: var(--text-muted); font-size: 1.5em; margin-top: 20px;">
+    // Press <kbd style="background: var(--kbd-bg); padding: 2px 8px; border-radius: 4px; color: var(--kbd-text); border: 1px solid var(--kbd-border);">ENTER</kbd> to continue...
   </p>
 </div>
 

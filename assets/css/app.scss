@@ -74,6 +74,23 @@ select {
   --link-color: #14b8a6;
   --link-hover: #0d9488;
 
+  /* Terminal and code element colors */
+  --terminal-bg: #1a1a1a;
+  --terminal-text: #00ff00;
+  --terminal-border: #333333;
+  --terminal-accent: #00ffff;
+  --terminal-secondary: #ff00ff;
+  --terminal-shadow: rgba(0, 255, 0, 0.3);
+
+  /* Newsletter colors */
+  --newsletter-accent: #10b981;
+  --newsletter-accent-hover: #059669;
+
+  /* KBD and special UI elements */
+  --kbd-bg: #333333;
+  --kbd-border: #555555;
+  --kbd-text: #00d1b2;
+
   /* Transition for smooth theme switching */
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -142,6 +159,23 @@ html[data-theme="dark"] {
 
   --link-color: #2dd4bf;
   --link-hover: #5eead4;
+
+  /* Terminal and code element colors - dark mode */
+  --terminal-bg: #0d0d0d;
+  --terminal-text: #00ff00;
+  --terminal-border: #2a2a2a;
+  --terminal-accent: #00ffff;
+  --terminal-secondary: #ff00ff;
+  --terminal-shadow: rgba(0, 255, 0, 0.4);
+
+  /* Newsletter colors - dark mode */
+  --newsletter-accent: #10b981;
+  --newsletter-accent-hover: #34d399;
+
+  /* KBD and special UI elements - dark mode */
+  --kbd-bg: #1a1a1a;
+  --kbd-border: #3a3a3a;
+  --kbd-text: #2dd4bf;
 }
 
 /* Apply theme colors to base elements */
