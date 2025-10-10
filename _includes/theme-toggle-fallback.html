@@ -1,0 +1,72 @@
+<!-- APPROACH 11: Bulletproof Theme Toggle - Inline Script on Button Itself -->
+<script>
+(function() {
+    'use strict';
+    
+    // Wait for DOM to be fully loaded
+    function initFallbackToggle() {
+        const button = document.getElementById('theme-toggle');
+        if (!button) {
+            console.warn('[ThemeToggleFallback] Button not found, retrying...');
+            return;
+        }
+        
+        console.log('[ThemeToggleFallback] Initializing bulletproof toggle handler');
+        
+        // Super simple click handler - no complex logic
+        button.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('[ThemeToggleFallback] Button clicked!');
+            
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            console.log('[ThemeToggleFallback] Toggling from', currentTheme, 'to', newTheme);
+            
+            // Set theme
+            html.setAttribute('data-theme', newTheme);
+            
+            // Save to localStorage
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (err) {
+                console.warn('[ThemeToggleFallback] localStorage not available');
+            }
+            
+            // Update meta theme color
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (metaThemeColor) {
+                metaThemeColor.setAttribute('content', newTheme === 'dark' ? '#000000' : '#ffffff');
+            }
+            
+            // Update ARIA label
+            button.setAttribute('aria-label', 
+                newTheme === 'dark' 
+                    ? 'Switch to light theme' 
+                    : 'Switch to dark theme'
+            );
+            
+            console.log('[ThemeToggleFallback] Theme toggled successfully to', newTheme);
+            
+            return false;
+        };
+        
+        console.log('[ThemeToggleFallback] Handler attached successfully');
+    }
+    
+    // Try multiple times to ensure button is found
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFallbackToggle);
+    } else {
+        initFallbackToggle();
+    }
+    
+    // Retry after various delays
+    setTimeout(initFallbackToggle, 100);
+    setTimeout(initFallbackToggle, 500);
+    setTimeout(initFallbackToggle, 1000);
+})();
+</script>

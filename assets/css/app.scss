@@ -270,6 +270,11 @@ html[data-theme="dark"] .navbar {
   cursor: pointer !important;
   user-select: none !important;
   pointer-events: auto !important;
+  position: relative !important;
+  z-index: 100 !important; /* Ensure it's above other elements */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
   .icon {
     position: relative;
@@ -294,6 +299,7 @@ html[data-theme="dark"] .navbar {
     transition: 
       opacity 0.3s ease,
       transform 0.3s ease;
+    pointer-events: none !important; /* Icons should not intercept clicks */
   }
 
   /* Default: dark mode - show moon icon */
