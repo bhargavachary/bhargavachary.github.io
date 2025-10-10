@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bhargavachary-v1.0.0';
+const CACHE_NAME = 'bhargavachary-v1.0.1'; // Incremented to bust cache for theme toggle fix
 const OFFLINE_URL = '/offline.html';
 
 // Files to cache for offline functionality

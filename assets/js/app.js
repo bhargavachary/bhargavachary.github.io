@@ -242,6 +242,28 @@
             button.dataset.listenerAttached = 'true';
             debug('Direct listeners attached to button');
         }
+        
+        // APPROACH 9: Also try to find button by data attribute
+        const buttonByAttr = document.querySelector('[data-theme-toggle]');
+        if (buttonByAttr && !buttonByAttr.dataset.listenerAttached2) {
+            debug('Found button by [data-theme-toggle] attribute');
+            buttonByAttr.addEventListener('click', function(e) {
+                debug('data-theme-toggle button clicked!');
+                toggleTheme(e);
+            });
+            buttonByAttr.dataset.listenerAttached2 = 'true';
+        }
+        
+        // APPROACH 10: Find by class name as last resort
+        const buttonByClass = document.querySelector('.theme-toggle-item');
+        if (buttonByClass && !buttonByClass.dataset.listenerAttached3) {
+            debug('Found button by .theme-toggle-item class');
+            buttonByClass.addEventListener('click', function(e) {
+                debug('theme-toggle-item button clicked!');
+                toggleTheme(e);
+            });
+            buttonByClass.dataset.listenerAttached3 = 'true';
+        }
     }
     
     // Try to attach direct listener immediately and after DOM load
@@ -250,6 +272,8 @@
         document.addEventListener('DOMContentLoaded', attachDirectListener);
     } else {
         setTimeout(attachDirectListener, 100);
+        setTimeout(attachDirectListener, 500); // Try again after 500ms
+        setTimeout(attachDirectListener, 1000); // And after 1 second
     }
 
     // Sync theme from localStorage (for cached pages, etc.)
@@ -350,9 +374,49 @@
             toggleTheme,
             updateButtonState,
             syncThemeFromStorage,
-            verifyButtonSetup
+            verifyButtonSetup,
+            enableDebug: () => { window.THEME_TOGGLE_DEBUG = true; debug('Debug mode enabled'); },
+            disableDebug: () => { window.THEME_TOGGLE_DEBUG = false; console.log('Debug mode disabled'); }
         };
         debug('Debug functions exposed as window.ThemeToggleDebug');
+        console.log('%c[ThemeToggle] Debug mode active - Use window.ThemeToggleDebug for diagnostics', 'background: #00d1b2; color: white; padding: 4px 8px; border-radius: 4px;');
+    }
+    
+    // APPROACH 7: Add visual feedback when button is clicked (temporary for debugging)
+    function addVisualFeedback() {
+        const button = document.getElementById('theme-toggle');
+        if (button && DEBUG) {
+            button.addEventListener('click', function() {
+                // Flash the button briefly to show it was clicked
+                this.style.outline = '2px solid #00d1b2';
+                setTimeout(() => {
+                    this.style.outline = '';
+                }, 500);
+            }, true);
+            debug('Visual feedback added to button');
+        }
+    }
+    setTimeout(addVisualFeedback, 100);
+    
+    // APPROACH 8: Monitor for button being added dynamically (if using SPA framework)
+    if (DEBUG) {
+        const buttonObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.id === 'theme-toggle' || (node.querySelector && node.querySelector('#theme-toggle'))) {
+                        debug('Theme toggle button was added to DOM dynamically!');
+                        attachDirectListener();
+                        verifyButtonSetup();
+                    }
+                });
+            });
+        });
+        
+        buttonObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        debug('MutationObserver watching for button addition');
     }
     
     debug('=== Theme Toggle Initialization Complete ===');
