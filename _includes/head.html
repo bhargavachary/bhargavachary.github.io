@@ -30,11 +30,8 @@
             
             const html = document.documentElement;
             
-            // Set theme attribute immediately
+            // Set theme attribute immediately (SINGLE SOURCE OF TRUTH)
             html.setAttribute('data-theme', currentTheme);
-            
-            // Add CSS fallback classes for instant styling
-            html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
             
             // Update meta theme-color immediately
             const themeColor = currentTheme === 'dark' ? '#000000' : '#ffffff';

@@ -273,30 +273,38 @@ html[data-theme="dark"] .navbar {
 
   .icon {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: all 0.3s ease;
     font-size: 1.25rem;
     pointer-events: none;
     /* Let clicks go through to parent */
   }
 
-  /* Show current mode icon */
-  .theme-icon-light {
+  /* Both icons positioned in same space */
+  .theme-icon-light,
+  .theme-icon-dark {
     position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transform: scale(0) rotate(90deg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     transition: 
-      opacity var(--duration-spring) var(--ease-spring),
-      transform var(--duration-spring) var(--ease-spring);
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Default: dark mode - show moon icon */
+  .theme-icon-light {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(90deg);
   }
 
   .theme-icon-dark {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition: 
-      opacity var(--duration-spring) var(--ease-spring),
-      transform var(--duration-spring) var(--ease-spring);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
 
   &:hover {
@@ -304,7 +312,7 @@ html[data-theme="dark"] .navbar {
 
     .icon {
       transform: scale(1.15) rotate(5deg);
-      transition: transform var(--duration-fast) var(--ease-spring);
+      transition: transform 0.2s cubic-bezier(0.68, -0.15, 0.265, 1.15);
     }
   }
 
@@ -313,37 +321,34 @@ html[data-theme="dark"] .navbar {
 
     .icon {
       transform: scale(0.92) rotate(-5deg);
-      transition: transform var(--duration-instant) var(--ease-ios-in);
+      transition: transform 0.1s cubic-bezier(0.42, 0, 1, 1);
     }
   }
 }
 
-/* Standard Bulma navbar structure - no custom overrides needed */
-
-/* Light mode - show sun icon (multiple selectors for reliability) */
-html[data-theme="light"] .theme-toggle-item,
-.theme-light .theme-toggle-item {
+/* Light mode - show sun icon (only using data-theme attribute) */
+html[data-theme="light"] .theme-toggle-item {
   .theme-icon-light {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
 
   .theme-icon-dark {
     opacity: 0;
-    transform: scale(0) rotate(-90deg);
+    transform: translate(-50%, -50%) scale(0) rotate(-90deg);
   }
 }
 
-/* Dark mode - show moon icon (fallback class support) */
-.theme-dark .theme-toggle-item {
+/* Dark mode - show moon icon (explicit for clarity) */
+html[data-theme="dark"] .theme-toggle-item {
   .theme-icon-light {
     opacity: 0;
-    transform: scale(0) rotate(90deg);
+    transform: translate(-50%, -50%) scale(0) rotate(90deg);
   }
 
   .theme-icon-dark {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
 }
 

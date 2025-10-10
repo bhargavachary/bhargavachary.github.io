@@ -39,39 +39,56 @@
 })();
 
 // ===================================
-// DARK MODE TOGGLE - Initialize theme early
+// DARK MODE TOGGLE - Consolidated & Robust Implementation
 // ===================================
-(function() {
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-})();
-
-// Function to initialize theme toggle - simplified and more robust
-// This uses event delegation on the document to ensure it always works
 (function() {
     'use strict';
 
     const html = document.documentElement;
-
-    // Sync theme button state with actual DOM theme
-    function syncThemeButtonState() {
-        const currentTheme = html.getAttribute('data-theme');
-        const toggle = document.getElementById('theme-toggle');
+    
+    // Single source of truth: always read from/write to localStorage and data-theme
+    function getCurrentTheme() {
+        return html.getAttribute('data-theme') || 'dark';
+    }
+    
+    function setTheme(theme) {
+        // Validate theme value
+        const validTheme = (theme === 'light' || theme === 'dark') ? theme : 'dark';
         
+        // Set attribute (single source of truth for CSS)
+        html.setAttribute('data-theme', validTheme);
+        
+        // Store in localStorage
+        localStorage.setItem('theme', validTheme);
+        
+        // Update meta theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', validTheme === 'dark' ? '#000000' : '#ffffff');
+        }
+        
+        // Update button ARIA label if it exists
+        updateButtonState();
+        
+        return validTheme;
+    }
+    
+    function updateButtonState() {
+        const toggle = document.getElementById('theme-toggle');
         if (toggle) {
-            // Update ARIA label for accessibility
+            const currentTheme = getCurrentTheme();
             toggle.setAttribute('aria-label', 
                 currentTheme === 'dark' 
                     ? 'Switch to light theme' 
                     : 'Switch to dark theme'
             );
-            
-            // Force icon visibility update via CSS classes
-            html.className = currentTheme === 'dark' ? 'theme-dark' : 'theme-light';
         }
     }
-
+    
+    // Initialize theme early (sync with localStorage or use default)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    
     // Toggle theme function
     function toggleTheme(e) {
         if (e) {
@@ -79,24 +96,14 @@
             e.stopPropagation();
         }
 
-        const currentTheme = html.getAttribute('data-theme');
+        const currentTheme = getCurrentTheme();
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
         
-        // Mark as manual change to prevent auto-override from system
+        setTheme(newTheme);
+        
+        // Mark as manual change
         localStorage.setItem('theme-source', 'manual');
         localStorage.setItem('last-manual-theme-change', Date.now().toString());
-
-        // Update meta theme-color
-        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', newTheme === 'dark' ? '#000000' : '#ffffff');
-        }
-
-        // Sync button state immediately after toggle
-        syncThemeButtonState();
 
         // Track theme change
         if (typeof gtag !== 'undefined') {
@@ -114,10 +121,10 @@
 
     // Single unified event handler - handles click, touch, and keyboard
     function handleThemeToggle(e) {
-        // Identify theme toggle button
-        const toggle = e.target.closest('#theme-toggle') ||
-                      e.target.closest('[data-theme-toggle]') ||
-                      e.target.closest('.theme-toggle-item');
+        // Check if click target is theme toggle button or its children
+        const target = e.target;
+        const toggle = target.closest('#theme-toggle') || 
+                      target.closest('.theme-toggle-item');
         
         if (!toggle) return;
 
@@ -135,30 +142,28 @@
     document.addEventListener('click', handleThemeToggle, true);
     document.addEventListener('keydown', handleThemeToggle, true);
 
-    // Force sync theme from localStorage on every page load/show
+    // Sync theme from localStorage (for cached pages, etc.)
     function syncThemeFromStorage() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
-        const currentTheme = html.getAttribute('data-theme');
+        const currentTheme = getCurrentTheme();
         
         if (savedTheme !== currentTheme) {
-            html.setAttribute('data-theme', savedTheme);
-            html.className = savedTheme === 'dark' ? 'theme-dark' : 'theme-light';
+            setTheme(savedTheme);
+        } else {
+            // Even if theme matches, update button state
+            updateButtonState();
         }
-        
-        syncThemeButtonState();
     }
-
-    // Sync immediately
-    syncThemeFromStorage();
 
     // Sync on DOMContentLoaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', syncThemeFromStorage);
+    } else {
+        syncThemeFromStorage();
     }
 
     // CRITICAL: Handle cached pages (back/forward navigation)
     window.addEventListener('pageshow', function(event) {
-        // Always sync, especially for cached pages
         syncThemeFromStorage();
     });
 
@@ -176,15 +181,6 @@
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ===================================
-    // Verify theme toggle is ready
-    // ===================================
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-    } else {
-        console.warn('Theme toggle button not found on this page layout');
-    }
-
     // ===================================
     // iOS-STYLE NAVBAR - SIMPLE ZOOM ON CLICK
     // ===================================
@@ -760,17 +756,20 @@ if ('serviceWorker' in navigator) {
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a');
 
-        // CRITICAL: Skip theme toggle button to prevent interference
-        if (link && link.id === 'theme-toggle') {
+        // Skip if not a link
+        if (!link || !link.href || link.target || link.hasAttribute('download')) {
             return;
         }
 
-        // ALSO: Skip any element with theme-toggle class
-        if (link && (link.classList.contains('theme-toggle') || link.classList.contains('theme-toggle-item'))) {
+        // CRITICAL: Skip theme toggle button and similar UI elements
+        if (link.id === 'theme-toggle' || 
+            link.classList.contains('theme-toggle-item') ||
+            link.closest('.theme-toggle-item') ||
+            link.closest('#theme-toggle')) {
             return;
         }
 
-        if (link && link.href && !link.target && !link.hasAttribute('download')) {
+        if (link && link.href) {
             try {
                 const url = new URL(link.href);
                 const currentUrl = new URL(window.location.href);
