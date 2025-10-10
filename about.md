@@ -35,15 +35,15 @@ hero_darken: true
             <p class="has-text-centered" style="margin-top: 2rem;">
                 <strong>Looking for my professional portfolio?</strong><br>
                 <span style="opacity: 0.9;">More details about my work and projects at</span>
-                <a href="/professional/" style="font-weight: 600; color: #00d1b2;">init.d</a> ✨
+                <a href="/professional/" style="font-weight: 600; color: var(--primary-color);">init.d</a> ✨
             </p>
 
             <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
                 <a href="https://dkbachary.github.io" target="_blank" class="retro-launch-button" id="launch-button-about">
                     <span class="retro-arrow">►►►</span> Launch Main Hub <span class="retro-arrow">◄◄◄</span>
                 </a>
-                <p style="font-family: 'Courier New', monospace; color: #666; font-size: 1.2em; margin-top: 15px;">
-                    // Press <kbd style="background: #333; padding: 2px 8px; border-radius: 4px; color: #00d1b2; border: 1px solid #555;">ENTER</kbd> to continue...
+                <p style="font-family: 'Courier New', monospace; color: var(--text-muted); font-size: 1.2em; margin-top: 15px;">
+                    // Press <kbd style="background: var(--kbd-bg); padding: 2px 8px; border-radius: 4px; color: var(--kbd-text); border: 1px solid var(--kbd-border);">ENTER</kbd> to continue...
                 </p>
             </div>
         </div>

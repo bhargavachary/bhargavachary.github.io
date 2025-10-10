@@ -74,6 +74,29 @@ select {
   --link-color: #14b8a6;
   --link-hover: #0d9488;
 
+  /* Terminal and code element colors - light mode defaults */
+  --terminal-bg: #f8f8f8;
+  --terminal-text: #008800;
+  --terminal-border: #d0d0d0;
+  --terminal-accent: #0077cc;
+  --terminal-secondary: #bb00bb;
+  --terminal-shadow: rgba(0, 136, 0, 0.15);
+
+  /* Newsletter colors */
+  --newsletter-accent: #10b981;
+  --newsletter-accent-hover: #059669;
+
+  /* KBD and special UI elements - light mode */
+  --kbd-bg: #e8e8e8;
+  --kbd-border: #c0c0c0;
+  --kbd-text: #14b8a6;
+
+  /* Status indicator colors */
+  --status-warning: #ff9800;
+  --status-critical: #f44336;
+  --status-success: #4caf50;
+  --status-info: #2196f3;
+
   /* Transition for smooth theme switching */
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -142,6 +165,29 @@ html[data-theme="dark"] {
 
   --link-color: #2dd4bf;
   --link-hover: #5eead4;
+
+  /* Terminal and code element colors - dark mode */
+  --terminal-bg: #0d0d0d;
+  --terminal-text: #00ff00;
+  --terminal-border: #2a2a2a;
+  --terminal-accent: #00ffff;
+  --terminal-secondary: #ff00ff;
+  --terminal-shadow: rgba(0, 255, 0, 0.4);
+
+  /* Newsletter colors - dark mode */
+  --newsletter-accent: #10b981;
+  --newsletter-accent-hover: #34d399;
+
+  /* KBD and special UI elements - dark mode */
+  --kbd-bg: #1a1a1a;
+  --kbd-border: #3a3a3a;
+  --kbd-text: #2dd4bf;
+
+  /* Status indicator colors - dark mode */
+  --status-warning: #ffaa00;
+  --status-critical: #ff4444;
+  --status-success: #00ff00;
+  --status-info: #00ffff;
 }
 
 /* Apply theme colors to base elements */
@@ -715,6 +761,7 @@ picture img {
 .terminal {
   font-family: 'Courier New', 'Monaco', monospace;
   line-height: 1.4;
+  transition: var(--theme-transition);
 }
 
 /* Reading progress enhancement with gradient animation */
@@ -3567,5 +3614,61 @@ html[data-theme="dark"] {
     font-size: 1.3em;
     padding: 12px 25px;
     letter-spacing: 1.5px;
+  }
+}
+
+/* ===================================
+   LIGHT MODE TERMINAL ADAPTATIONS
+   Make terminal elements readable in light mode
+   =================================== */
+
+html[data-theme="light"] {
+  /* Adjust terminal colors for light mode readability */
+  --terminal-bg: #f0f0f0;
+  --terminal-text: #009900;
+  --terminal-border: #d0d0d0;
+  --terminal-accent: #0088cc;
+  --terminal-secondary: #cc00cc;
+  --terminal-shadow: rgba(0, 153, 0, 0.2);
+
+  /* Enhance terminal visibility in light mode */
+  .terminal {
+    background: var(--terminal-bg);
+    border: 2px solid var(--terminal-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 20px var(--terminal-shadow);
+  }
+
+  .service-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      border-color: var(--terminal-text);
+      box-shadow: 0 4px 16px rgba(0, 153, 0, 0.15);
+    }
+  }
+
+  /* Make init header more visible in light mode */
+  .init-header h1 {
+    text-shadow: 0 2px 4px rgba(0, 153, 0, 0.1);
+  }
+
+  /* Adjust status indicators for light mode */
+  .status-indicator {
+    box-shadow: 0 0 8px currentColor;
+  }
+
+  /* Boot sequence text adjustments */
+  .boot-sequence {
+    opacity: 0.9;
+  }
+
+  /* Enhance KBD elements in light mode */
+  kbd {
+    background: var(--kbd-bg);
+    color: var(--kbd-text);
+    border: 1px solid var(--kbd-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }

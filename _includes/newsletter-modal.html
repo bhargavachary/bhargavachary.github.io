@@ -282,11 +282,11 @@
     
     // Replace content with success message
     modalContent.innerHTML = `
-      <div class="newsletter-icon" style="color: #10b981;">
+      <div class="newsletter-icon" style="color: var(--newsletter-accent);">
         <i class="fas fa-check-circle"></i>
       </div>
       
-      <h2 class="newsletter-title" style="color: #10b981;">
+      <h2 class="newsletter-title" style="color: var(--newsletter-accent);">
         Thank You! 🎉
       </h2>
       
@@ -295,7 +295,7 @@
       </p>
       
       <div style="text-align: center; margin-top: 2rem;">
-        <button class="newsletter-submit" onclick="closeNewsletterModal()" style="background: #10b981; border-color: #10b981;">
+        <button class="newsletter-submit" onclick="closeNewsletterModal()" style="background: var(--newsletter-accent); border-color: var(--newsletter-accent);">
           <span class="submit-text">Continue Reading</span>
         </button>
       </div>
