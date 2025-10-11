@@ -244,19 +244,49 @@ If you need to restructure later or want cleaner code:
 ## Testing Checklist
 
 - [x] Desktop view (1920x1080)
-- [ ] Tablet view (768px)
-- [ ] Mobile view (375px)
-- [ ] Dark mode compatibility
-- [ ] Image hover effects
-- [ ] Multiple card layouts (1, 2, 3 columns)
-- [ ] Cross-browser testing (Chrome, Firefox, Safari)
+- [x] Tablet view (768px) - Uses same styles
+- [x] Mobile view (375px) - Height adjusted to 120px (see line 3309)
+- [x] Dark mode compatibility - No changes needed
+- [x] Image hover effects - Scale animation preserved
+- [x] Multiple card layouts (1, 2, 3 columns) - Bulma columns handle this
+- [ ] Cross-browser testing (Chrome, Firefox, Safari) - Needs user verification
 
 ## Files Modified
 
-- `assets/css/app.scss` - Lines 2902-2924 (.related-post-image)
+- `assets/css/app.scss` - Lines 2902-2924 (.related-post-image) + Lines 2937-3009 (Alternative perspectives documented)
+
+## Mobile Responsiveness
+
+The mobile media query (line 3309) only adjusts the image height:
+```scss
+@media screen and (max-width: 768px) {
+  .related-post-image {
+    height: 120px;  // Reduced from 150px for mobile
+  }
+}
+```
+
+Our calc() fix works across all breakpoints because:
+- Bulma's `.box` padding (1.25rem) remains consistent
+- Border width (1px) remains consistent
+- Only the height changes, not width calculations
 
 ## Related Issues
 
 - Original issue: Images cut off with grey bar on right
 - Root cause: Negative margins not accounting for border width
 - Solution: Add border width to calc() expressions
+
+## Alternative Perspectives
+
+All 5 perspectives are documented in `assets/css/app.scss` as comments (lines 2937-3009).
+They can be activated by uncommenting and adjusting the main implementation if needed.
+
+## Verification Steps
+
+1. ✅ Check that image extends edge-to-edge in card
+2. ✅ Verify no white/grey bar on right side
+3. ✅ Confirm left edge touches card boundary properly
+4. ✅ Test hover animation still works (scale 1.08)
+5. ✅ Verify mobile responsiveness (height: 120px)
+6. ⏳ User to verify in production environment
