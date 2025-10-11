@@ -2419,6 +2419,28 @@ html[data-theme="dark"] {
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    
+    /* Force Disqus iframe to respect theme colors */
+    iframe {
+      background-color: var(--card-bg) !important;
+      color-scheme: auto;
+    }
+    
+    /* Style Disqus elements that may leak through */
+    a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+  }
+  
+  /* Additional styling for Disqus comment section header */
+  .content h4.title.is-4 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
   }
 
   /* Skeleton loading */

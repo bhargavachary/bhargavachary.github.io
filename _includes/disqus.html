@@ -4,6 +4,10 @@
     var disqus_config = function () {
       this.page.url = '{{ page.url | absolute_url }}';
       this.page.identifier = '{{ page.url | absolute_url }}';
+      
+      // Set Disqus theme based on current site theme
+      var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      this.page.colorScheme = currentTheme === 'dark' ? 'dark' : 'light';
     };
     (function() {
       var d = document, s = d.createElement('script');
@@ -11,6 +15,31 @@
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
+    
+    // Listen for theme changes and reload Disqus if needed
+    if (window.MutationObserver) {
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === 'data-theme' && window.DISQUS) {
+            // Reload Disqus with new theme
+            var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            window.DISQUS.reset({
+              reload: true,
+              config: function() {
+                this.page.url = '{{ page.url | absolute_url }}';
+                this.page.identifier = '{{ page.url | absolute_url }}';
+                this.page.colorScheme = currentTheme === 'dark' ? 'dark' : 'light';
+              }
+            });
+          }
+        });
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+      });
+    }
   </script>
   <noscript>
     Please enable JavaScript to view the
