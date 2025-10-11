@@ -2902,11 +2902,16 @@ html[data-theme="dark"] * {
 .related-post-image {
   display: block;
   position: relative;
-  width: 100%;
+  /* FIX: Use calc() to properly extend image edge-to-edge accounting for box padding AND border */
+  /* Box has 1.25rem padding + 1px border on each side */
+  width: calc(100% + 2.5rem + 2px);
   height: 150px;
   overflow: hidden;
   border-radius: 6px 6px 0 0;
+  /* Position the image to cover the padding and border properly */
   margin: -1.25rem -1.25rem 1rem -1.25rem;
+  margin-left: calc(-1.25rem - 1px);
+  margin-right: calc(-1.25rem - 1px);
 
   img {
     display: block;
